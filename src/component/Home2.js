@@ -6,14 +6,28 @@ import logo3 from "../Image2/s-logo3.png";
 import logo4 from "../Image2/s-logo4.png";
 import logo5 from "../Image2/s-logo5.png";
 import logo6 from "../Image2/s-logo6.png";
+import image from "../Image2/s new arrivals1.png";
+import image1 from "../Image2/s new arrivals2.jpg";
 
  function Home1() {
-    // const card = [
-    //     {
-    //         id:1,
-    //         img
-    //     }
-    // ]
+    const card = [
+        {
+            id:1,
+            img:image
+        },
+        {
+          id:2,
+          img:image1
+        },
+         {
+            id:1,
+            img:image
+        },
+        {
+          id:2,
+          img:image1
+        }
+    ]
   return ( 
      <>
     <div className={styles.hero}>
@@ -55,8 +69,13 @@ import logo6 from "../Image2/s-logo6.png";
     <div className={styles.hero3}>
       <h1>New Arrivals</h1>
       <div className={styles.card1}>
-        
-      </div>
+     {card.map((item) => (
+    <div key={item.id} className={styles.recentCard}>
+      <img src={item.img} alt="" className={styles.image} />
+    </div>
+  ))}
+</div>
+
     </div>
     </>
   );
