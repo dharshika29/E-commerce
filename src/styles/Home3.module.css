@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
-  padding: 50px 80px;
+  padding: 50px 40px;
   background-image: url(../image3/j\ homemain.png);
   height: 100vh;
   background-repeat: no-repeat;
@@ -25,12 +25,13 @@
 
 .title {
   font-size: 70px;
-  font-weight: 700;
+  font-weight: 600;
   color: #fffefe;
   line-height: 1.2;
+  text-shadow: 0 4px 6px rgb(117, 114, 114), 0 6px 8px rgba(80, 78, 78, 0.6);
 }
 .subtitle {
-  font-size: 24px;
+  font-size: 25px;
   /* margin: 10px 0; */
   color: white;
   text-align: start;
@@ -65,4 +66,9 @@
   .title {
     font-size: 36px;
   }
+}
+.hero1{
+  margin-top: 60px;
+  font-size: 35px;
+
 }
