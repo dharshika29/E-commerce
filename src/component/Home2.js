@@ -2,6 +2,9 @@ import React from 'react'
 
 export default function Home2() {
   return (
-    <div>Home2</div>
+    <>
+    <h1>Welcome</h1>
+    
+    </>
   )
 }
