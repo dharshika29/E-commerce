@@ -1,0 +1,63 @@
+.hslidebg {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.slideWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+  position: relative;
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.fadeIn {
+  animation: fadeIn 0.5s forwards ease;
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translatex(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translatex(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+}
+.slideimg {
+  width: 100%;
+  height: 100%;
+}
+.slideimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slidesimg1 img {
+  object-position: center top;
+}
+
+.slideimg2 img {
+  object-position: center center;
+}
+
