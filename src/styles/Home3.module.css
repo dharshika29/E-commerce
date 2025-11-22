@@ -2,31 +2,28 @@
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
-  padding: 50px 40px;
+  padding: 20px 120px;
   background-image: url(../image3/j\ homemain.png);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
 }
-
-/* .left {
-  flex: 1;
-} */
-
 .heroImg {
   width: 100%;
   max-width: 480px;
 }
-
 .right {
   flex: 1;
   padding-left: 40px;
 }
-
 .title {
   font-size: 70px;
+  font-weight: 600;
 }
-
+.subtitle{
+  font-size: 27px;
+}
 .btn {
   background: #38CB89;;
   color: black;
@@ -36,8 +33,8 @@
   cursor: pointer;
   font-size: 16px;
   transition: 0.3s ease;
+  margin-top: 20px;
 }
-
 .btn:hover {
   opacity: 0.8;
 }
@@ -47,15 +44,107 @@
     text-align: center;
     padding: 40px;
   }
-
   .right {
     padding: 0;
     margin-top: 20px;
   }
-
   .title {
     font-size: 36px;
   }
+}
+.hh1{
+  margin-top: 70px;
+  margin-left: 60px;
+}
+.pp1{
+   font-size: 18px;
+   color: black;
+}
+.pp2{
+  color: black;
+  font-weight: 800;
+  font-size: 17px;
+}
+.star{
+ font-size: 18px;
+}
+.maincard{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.cardimg{
+  background-color:rgb(233, 232, 232);
+  
+}
+.card{
+  border: none !important;
+  
+ 
+}
+.hot{
+  border: 1px solid;
+  border-radius: 5px;
+  color: black;
+  width:40px;
+  text-align: center;
+   position: relative;
+   top: 50px;
+   left: 5px;
+   background-color: white;
+   border: none;
+  
+}
+.imageWrapper {
+  position: relative;
+}
+
+.cardimg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cartBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 50%;
+}
+.imageWrapper:hover .cartBtn {
+  opacity: 1;
+  visibility: visible;
+}
+.cateimg{
+  width: 20%;
+  
+}
+.catemain{
+  display: flex;
+  justify-content: center;
+  margin-top: 90px;
+  gap: 90px;
+  padding: 10px;
+ 
+}
+.catemain p{
+  text-align: center;
+  font-size: 19px;
+  font-weight: 500;
+}
+.categories h1{
+  text-align: center;
+  margin-top: 50px;
+  
 }
 
 
