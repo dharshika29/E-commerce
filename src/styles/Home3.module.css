@@ -25,16 +25,6 @@
 
 .title {
   font-size: 70px;
-  font-weight: 600;
-  color: #fffefe;
-  line-height: 1.2;
-  text-shadow: 0 4px 6px rgb(117, 114, 114), 0 6px 8px rgba(80, 78, 78, 0.6);
-}
-.subtitle {
-  font-size: 25px;
-  /* margin: 10px 0; */
-  color: white;
-  text-align: start;
 }
 
 .btn {
@@ -67,8 +57,5 @@
     font-size: 36px;
   }
 }
-.hero1{
-  margin-top: 60px;
-  font-size: 35px;
 
-}
+

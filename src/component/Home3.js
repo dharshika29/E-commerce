@@ -1,9 +1,16 @@
 import React from "react";
 import styles from "../styles/Home3.module.css";
+import featuredimg1 from '../image3/j-featuredimg1.png';
+import featuredimg2 from '../image3/j featuredimg2.png';
+import featuredimg3 from '../image3/j featuredimg3.png';
+import featuredimg4 from '../image3/j featured4.png';
 
 function Home3() {
-  const part=[
-    {title:"Featured"}
+  const item=[
+    {img:featuredimg1},
+    {img:featuredimg2},
+    {img:featuredimg3},
+    {img:featuredimg4}
   ]
   return (
     <>
@@ -19,14 +26,17 @@ function Home3() {
         <button className={styles.btn}>Shopping Now</button>
       </div>
     </div>
-    {part.map((parts,index)=>(
-      <div key={index} className={styles.hero1}>
-         <p>{parts.title}</p>
-        <div className={styles.title}>
-        </div>
+     <div className={styles.hero1}>
+      <h1>Featured</h1>
+     </div>
+     <div className={styles.maintitle}>
+     {item.map((part,index)=>(
+      <div className={styles.title1} key={index}>
+        <img src={part.img} alt="" width="70%"/>
       </div>
-
-    ))}
+     ))}
+     </div>
+      
     </>
   );
 }
