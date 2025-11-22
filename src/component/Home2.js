@@ -1,15 +1,42 @@
 import React from "react";
 import styles from "../styles/Home2.module.css";
-import logo1 from "../Image2/s-logo1.png";
-import logo2 from "../Image2/s-logo2.png";
-import logo3 from "../Image2/s-logo3.png";
-import logo4 from "../Image2/s-logo4.png";
-import logo5 from "../Image2/s-logo5.png";
-import logo6 from "../Image2/s-logo6.png";
+import img1 from "../Image2/s-logo1.png";
+import img2 from "../Image2/s-logo2.png";
+import img3 from "../Image2/s-logo3.png";
+import img4 from "../Image2/s-logo4.png";
+import img5 from "../Image2/s-logo5.png";
+import img6 from "../Image2/s-logo6.png";
 import image from "../Image2/s new arrivals1.png";
 import image1 from "../Image2/s new arrivals2.jpg";
-
+import image2 from "../Image2/s new arrivals3.png";
+import image3 from "../Image2/s new arrivals4.png";
  function Home1() {
+  const logo =[
+    {
+      id:1,
+      img:img1
+    },
+    {
+      id:2,
+      img:img2
+    },
+    {
+      id:3,
+      img:img3
+    },
+    {
+      id:4,
+      img:img4
+    },
+    {
+      id:5,
+      img:img5
+    },
+    {
+      id:6,
+      img:img6
+    }
+  ]
     const card = [
         {
             id:1,
@@ -21,11 +48,11 @@ import image1 from "../Image2/s new arrivals2.jpg";
         },
          {
             id:1,
-            img:image
+            img:image2
         },
         {
           id:2,
-          img:image1
+          img:image3
         }
     ]
   return ( 
@@ -47,24 +74,9 @@ import image1 from "../Image2/s new arrivals2.jpg";
       </div>
     </div>
     <div className={styles.hero1}>
-       <img 
-       src={logo1}
-       alt=""/>
-       <img 
-       src={logo2}
-       alt=""/>
-       <img 
-       src={logo3}
-       alt=""/>
-       <img 
-       src={logo4}
-       alt=""/>
-       <img 
-       src={logo5}
-       alt=""/>
-        <img 
-       src={logo6}
-       alt=""/>
+      {logo.map((item)=>(
+        <img src={item.img}alt=""/>
+      ))}
     </div>
     <div className={styles.hero3}>
       <h1>New Arrivals</h1>

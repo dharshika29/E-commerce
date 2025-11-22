@@ -75,7 +75,7 @@
 }
 .hero1{
   display: flex;
-  justify-content: space-around;
+  margin-left: 50px;
   gap: 20px;
     width: 167;
 height: 64;
