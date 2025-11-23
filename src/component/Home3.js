@@ -72,15 +72,12 @@ function Home3() {
         ))}
       </div>
         <h1 className={styles.hh2}>Shop by Categories</h1>
-<div className={styles.part1}>
-        {part.map((parts)=>(
-          <div className={styles.catemainu}>
-          <img src={parts.img} alt="" width="50%"/>
-          <p>{parts.desc}</p>
-           <img src={parts.img1} alt="" width="50%"/>
-          <p>{parts.desc}</p>
-         </div>
-        ))}
+        <div className={styles.main}>
+         {part.map((parts,index)=>(
+          <div className={styles.category} key={index}>
+             <img src={parts.img} alt="" width="50%"/>
+            </div>
+         ))}
         </div>
       
     

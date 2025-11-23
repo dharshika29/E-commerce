@@ -124,11 +124,10 @@
   opacity: 1;
   visibility: visible;
 }
-.part1{
+.main{
 display: flex;
   justify-content: center;
   margin-top: 90px;
-  padding: 10px;
 }
 .hh2{
   text-align: center;
