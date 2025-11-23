@@ -21,9 +21,9 @@ function Home3() {
     { img: featuredimg3, desc: "G/FORE - Mens Left Glove Snow 2023", price: "$30.00" },
     { img: featuredimg4, desc: "Utility Rover-R Double Strap Bag All Black - 2023", price: "$200.00" }
   ]
-  const category = [
+  const part = [
     { img: category1, desc: "Golf Clubs" }, { img: category2, desc: "Golf Balls" }, { img: category3, desc: "Golf Bags" },
-   
+    { img1: category4, desc: "Golf Clubs" }, { img1: category5, desc: "Golf Balls" }, { img1: category6, desc: "Golf Bags" },
   ]
   return (
     <>
@@ -71,18 +71,18 @@ function Home3() {
           </div>
         ))}
       </div>
-
-        <h1>Shop by Categories</h1>
-        <div className={styles.catemain}>
-        {category.map((categor) => (
-         <img src={categor.img} alt="" className={styles.cateimg}/>
+        <h1 className={styles.hh2}>Shop by Categories</h1>
+<div className={styles.part1}>
+        {part.map((parts)=>(
+          <div className={styles.catemainu}>
+          <img src={parts.img} alt="" width="50%"/>
+          <p>{parts.desc}</p>
+           <img src={parts.img1} alt="" width="50%"/>
+          <p>{parts.desc}</p>
+         </div>
         ))}
-      </div>
-       <div className={styles.catemain}>
-        {category.map((categor) => (
-         <img src={categor.img1} alt="" className={styles.cateimg}/>
-        ))}
-      </div>
+        </div>
+      
     
     </>
   );

@@ -124,27 +124,16 @@
   opacity: 1;
   visibility: visible;
 }
-.cateimg{
-  width: 20%;
-  
-}
-.catemain{
-  display: flex;
+.part1{
+display: flex;
   justify-content: center;
   margin-top: 90px;
-  gap: 90px;
   padding: 10px;
- 
 }
-.catemain p{
+.hh2{
   text-align: center;
-  font-size: 19px;
-  font-weight: 500;
-}
-.categories h1{
-  text-align: center;
-  margin-top: 50px;
-  
+  margin-top: 80px;
+
 }
 
 
