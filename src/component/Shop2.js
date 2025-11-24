@@ -1,7 +1,9 @@
 import React from 'react'
-
+import shop from "../Image2/s-shop-main.jpg";
 export default function Shop2() {
   return (
-    <div>Shop2</div>
+    <>
+    <h1>Shop Page</h1>
+    </>
   )
 }

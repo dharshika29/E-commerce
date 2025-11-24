@@ -30,8 +30,8 @@ import insta1 from "../Image2/s instagram1.jpg";
 import insta2 from "../Image2/s instagram2.jpg";
 import insta3 from "../Image2/s instagram3.jpg";
 import insta4 from "../Image2/s instagram4.jpg";
-import join from "../Image2/s join1.jpg";
-import girlImg from "../Image2/s join2.jpg";
+import join from "../Image2/s join1.png";
+import girlImg from "../Image2/s join2.png";
 import { FiMail } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
 import { SlSocialFacebook } from "react-icons/sl";
@@ -196,10 +196,10 @@ function Home1() {
       <div className={styles.hero}>
         <div className={styles.left}></div>
         <div className={styles.right}>
-          <h1 className={styles.title}>
+          <h1 className={styles.titley}>
             Listen to the <span>amazing</span> music sound.
           </h1>
-          <p className={styles.subtitle}>Experience music like never before</p>
+          <p className={styles.subtitley}>Experience music like never before</p>
           <button className={styles.btn}>Shopping Now</button>
         </div>
       </div>
@@ -364,10 +364,10 @@ function Home1() {
       </div>
 
       <section className={styles.banner}>
-        <img src={join} alt="Headphone" className={styles.leftImg} />
+        {/* <img src={join} alt="Headphone" className={styles.leftImg} /> */}
 
         <div className={styles.centerContent}>
-          <h2 className={styles.title}>Join Our Newsletter</h2>
+          <h2 className={styles.tit}>Join Our Newsletter</h2>
           <p className={styles.text}>
             Sign up for deals, new products and promotions
           </p>
@@ -378,8 +378,8 @@ function Home1() {
             <button>Signup</button>
           </div>
         </div>
-
-        <img src={girlImg} alt="Girl" className={styles.rightImg} />
+{/* 
+        <img src={girlImg} alt="Girl" className={styles.rightImg} /> */}
       </section>
 
        {/* Footer */}

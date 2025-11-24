@@ -15,7 +15,7 @@
   flex: 1;
   padding-left: 40px;
 }
-.title {
+.titley {
   font-size: 58px !important;
   font-weight: 700;
   color: #000;
@@ -24,7 +24,7 @@
 .title span {
   color: #3879f7;
 }
-.subtitle {
+.subtitley {
   font-size: 16px;
   margin: 20px 0;
   color: #555;
@@ -247,7 +247,10 @@
   }
 
   .bigCard {
-    grid-row: span 1;
+    grid-row: span 2;
+  }
+  .bigCard{
+    width:50%;
   }
 }
 .hero4{
@@ -394,19 +397,24 @@
   justify-content: space-between;
   background: #f2f2f2;
   padding: 50px 0;
+  background: url(../Image2/Paste\ image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 50px;
+  height: 35vh;
 }
 
-.leftImg,
 .rightImg {
-  width: 280px;
-  object-fit: contain;
+  width: 50%;
+  
 }
 
 .centerContent {
   text-align: center;
+  margin-left: 35%;
 }
 
-.title {
+.tit {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 8px;
@@ -620,4 +628,173 @@
 
 .links p {
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hero {
+   
+   
+     
+  overflow: hidden;
+    text-align: center;
+    background-position:unset;
+  }
+
+  .left {
+    display: none;
+    
+  overflow: hidden;
+  }
+
+  .right {
+    padding-left: 0;
+    max-width: 100%;
+  overflow: hidden;
+  }
+.right img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+  .titley {
+    font-size: 32px !important;
+  }
+
+  .subtitley {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+  }
+
+
+  .hero1 {
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero1 img {
+    width: 70px;
+  }
+
+  
+  .hero2 {
+    margin-left: 10px;
+  }
+
+  .card1 {
+    justify-content: center;
+  }
+
+  .recentCard {
+    width: 160px;
+  }
+
+  .imageWrapper {
+    height: 150px;
+  }
+
+ 
+  .hero3 {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bigCard,
+  .smallCard {
+    width: 100%;
+  }
+
+  .smallImage {
+    width: 40%;
+  }
+
+ 
+  .hero4 {
+    margin-left: 10px;
+  }
+
+  .card2 {
+    justify-content: center;
+  }
+
+
+  .hero5 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .leftImage,
+  .rightBox {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .rightBox {
+    padding: 20px;
+    width: auto;
+  }
+
+
+  .hero6 {
+    padding: 20px;
+  }
+
+  
+  .a1 {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .a3 {
+    width: 45%;
+   
+  }
+
+  
+  .banner {
+    height: auto;
+    padding: 30px 10px;
+    background-position: center;
+  }
+
+  
+
+  .emailBox {
+    width: 90%;
+  }
+
+ 
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footerTop {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .insta {
+    margin-left: 0;
+  }
 }
