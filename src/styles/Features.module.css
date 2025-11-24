@@ -1,0 +1,40 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;  
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  background: #f7f7f7;
+  padding: 30px 20px;
+  border-radius: 6px;
+}
+
+.icon {
+  font-size: 40px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #666;
+}
