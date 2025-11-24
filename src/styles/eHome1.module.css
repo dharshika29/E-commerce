@@ -163,6 +163,13 @@
   left: 25px;
   font-size: 15px;
   cursor: pointer;
+  text-decoration: underline ;
+}
+.home_product_col1 a{
+  color: black;
+}
+.home_product_col1 a:hover{
+  cursor: pointer;
 }
 .home_product_col2 {
   width: 50%;
@@ -176,7 +183,7 @@
   position: relative;
   height: 319px;
   overflow: hidden;
-}
+} 
 .home_product_col21 img,
 .home_product_col22 img {
   /* width: 100%; */
@@ -202,6 +209,19 @@
   top: 75%;
   font-size: 15px;
   cursor: pointer;
+  text-decoration: underline ;
+}
+.home_product_col21 a{
+  color: black;
+}
+.home_product_col21 a:hover{
+  cursor: pointer;
+}
+.home_product_col22 a{
+  color: black;
+}
+.home_product_col22 a:hover{
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   .home_product_row {
@@ -212,4 +232,65 @@
   .home_product_col2 {
     width: 100%;
   }
+}
+
+/* ---------------New Arrivals-------------------- */
+.new1{
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 50px 0px 50px;
+}
+.new1 a{
+  color: black;
+}
+/* card--------- */
+.cardwrap{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.card {
+  width: 260px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.cardimg {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.card:hover .cardimg {
+  transform: scale(1.05);
+}
+.cardBody {
+  padding: 15px;
+}
+.rating {
+  font-size: 18px;
+  display: flex;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+.price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price span {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+}
+
+.price del {
+  color: #888;
+  font-size: 16px;
 }
