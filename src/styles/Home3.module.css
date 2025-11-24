@@ -327,4 +327,26 @@ font-size: 50px;
 .lisi{
   padding-left: 300px;
 } 
+.instagram{
+  text-align: center;
+  margin-top: 20px;
+}
+.feed{
+  font-size: 19px;
+  color: grey;
+  font-weight: 600;
+}
+.pp6{
+  font-size: 18px;
+}
+.offi{
+  font-size: 19px;
+  font-weight: 700;
+}
+.instamain{
+  display: flex;
+  margin-top: 50px;
+ 
+ 
+}
 

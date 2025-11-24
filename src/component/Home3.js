@@ -23,6 +23,8 @@ import article2 from '../image3/j article2.png'
 import article3 from '../image3/j article3.png'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa";
+import insta1 from '../image3/j Cards.png';
+
 
 
 
@@ -70,9 +72,12 @@ function Home3() {
 
     return () => clearInterval(timer);
   }, []);
-  const article=[
-    {img:article1,desc:"Air Jordan x Travis Scott Event"}, {img:article2,desc:"The timeless classics on the green"}, 
-    {img:article3,desc:"The 2023 Ryder Cup"}
+  const article = [
+    { img: article1, desc: "Air Jordan x Travis Scott Event" }, { img: article2, desc: "The timeless classics on the green" },
+    { img: article3, desc: "The 2023 Ryder Cup" }
+  ]
+  const insta = [
+    { img: insta1 },
   ]
   return (
     <>
@@ -209,7 +214,7 @@ function Home3() {
         </div>
       </div>
       <h1 className={styles.hh1}>Latest Articles</h1>
-        <div className={styles.main1}>
+      <div className={styles.main1}>
         {article.map((articles) => (
           <div className={styles.category}>
             <img src={articles.img} alt="" width="100%" />
@@ -219,16 +224,26 @@ function Home3() {
         ))}
       </div>
       <div className={styles.news}>
-      <h1 className={styles.hh3}>Join Our Newsletter</h1>
-      <p className={styles.pp5}>Sign up for deals, new products and promotions</p>
-      <div className={styles.li}>
-       <li><FaEnvelope /></li>
-        <li>Email Address</li>
-         <li className={styles.lisi}>SignUp</li>
-      </div>
+        <h1 className={styles.hh3}>Join Our Newsletter</h1>
+        <p className={styles.pp5}>Sign up for deals, new products and promotions</p>
+        <div className={styles.li}>
+          <li><FaEnvelope /></li>
+          <li>Email Address</li>
+          <li className={styles.lisi}>SignUp</li>
+        </div>
       </div>
       <div className={styles.instagram}>
-        <p></p><h1
+        <p className={styles.feed}>NEWSFEED</p>
+        <h1 className={styles.gram}>Instagram</h1>
+        <p className={styles.pp6}>Follow us on social media for more discount & promotions</p>
+        <p className={styles.offi}>@3legant_official</p>
+      </div>
+      <div className={styles.instamain}>
+        {insta.map((instas) => (
+          <div className={styles.insimg}>
+            <img src={instas.img} alt="" width="105%" />
+          </div>
+        ))}
       </div>
 
 
