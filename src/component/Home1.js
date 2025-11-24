@@ -21,12 +21,12 @@ function Homeslide() {
     {
       id: 1,
       img: home1e,
-      reverse :false,
+      reverse: false,
     },
     {
       id: 2,
       img: home2e,
-      reverse : true,
+      reverse: true,
     },
   ];
 
@@ -62,6 +62,21 @@ function Homeslide() {
           >
             <img src={slide.img} alt={`Slide ${slide.id}`} />
           </div>
+        </div>
+      </div>
+      {/* slide botton title-------------------------------------------------- */}
+      <div className={styles.bottom_text_bg}>
+        <div className={styles.bottom_text1}>
+          <h1>
+            Simply Unique <span>/</span> <br />
+            Simply Better <span>.</span>
+          </h1>
+        </div>
+        <div className={styles.bottom_text2}>
+          <p>
+            <span>3legant</span> is a gift & decorations store based in HCMC, <br /> Vietnam.
+            Est since 2019.
+          </p>
         </div>
       </div>
     </>
