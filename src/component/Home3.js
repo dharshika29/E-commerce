@@ -22,6 +22,7 @@ import article1 from '../image3/j article1.png'
 import article2 from '../image3/j article2.png'
 import article3 from '../image3/j article3.png'
 import { FaArrowRightLong } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa";
 
 
 
@@ -217,8 +218,18 @@ function Home3() {
           </div>
         ))}
       </div>
-      <h1 className={styles.hh2}>Join Our Newsletter</h1>
-      <p className={styles.hh2}>Sign up for deals, new products and promotions</p>
+      <div className={styles.news}>
+      <h1 className={styles.hh3}>Join Our Newsletter</h1>
+      <p className={styles.pp5}>Sign up for deals, new products and promotions</p>
+      <div className={styles.li}>
+       <li><FaEnvelope /></li>
+        <li>Email Address</li>
+         <li className={styles.lisi}>SignUp</li>
+      </div>
+      </div>
+      <div className={styles.instagram}>
+        <p></p><h1
+      </div>
 
 
 
