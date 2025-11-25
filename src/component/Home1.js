@@ -26,6 +26,9 @@ import articaleimg1 from "../img1/e-h7.png";
 import articaleimg2 from "../img1/e-h8.png";
 import articaleimg3 from "../img1/e-h9.png";
 
+import newsletterimg from "../img1/e-h10.png";
+import { MdOutlineEmail } from "react-icons/md";
+
 function Home1() {
   return (
     <>
@@ -68,7 +71,7 @@ function Homeslide() {
 
   const slide = hslide[index];
   return (
-    <>
+    <div div className={styles.home_page}>
       <div className={styles.hslidebg}>
         {/* <div className={styles.slideTitleBox}>
           <h3 className={styles.slideMainTitle}><span>3</span>legant.</h3>
@@ -112,7 +115,7 @@ function Homeslide() {
           <div className={styles.home_product_col1}>
             <h4>Living Room</h4>
             <a href="/shop">
-              <p>Shop Now →</p>{" "}
+              <p>Shop Now →</p>
             </a>
             <img src={homeproduct1} alt="product" />
           </div>
@@ -139,8 +142,7 @@ function Homeslide() {
       <div className={styles.new_arrivals}>
         <div className={styles.new1}>
           <h1>
-            New <br />
-            Arrivals
+            New Arrivals
           </h1>
           <a href="/shop">
             <p>More Products →</p>
@@ -251,19 +253,21 @@ function Homeslide() {
       </div>
 
       {/* Join Our Newsletter------------------------------- */}
-      <div>
+      <div className={styles.news_bg}>
+        <div className={styles.news_img} >
         <img src={newsletterimg} alt="" />
-        <div>
+        </div>
+        <div className={styles.news_text}>
           <h1>Join Our Newsletter</h1>
           <p>Sign up for deals, new products and promotions</p>
-          <div>
-            <i></i>
+          <div className={styles.news_icon}>
+            <i><MdOutlineEmail /></i>
           <input type="email" placeholder="Email address" />
           <span>Signup</span>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
