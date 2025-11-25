@@ -17,6 +17,9 @@ import {
   FaStar,
   FaStarHalfAlt,
 } from "react-icons/fa";
+
+import { CiDeliveryTruck } from "react-icons/ci";
+
 function Home1() {
   return (
     <>
@@ -136,10 +139,21 @@ function Homeslide() {
           <Cardhome />
         </div>
       </div>
+
+      <div className={styles.a}>
+        <div>
+          <i><CiDeliveryTruck /></i>
+        </div>
+        <div>
+          <h5>Free Shipping</h5>
+          <p>Order above $200</p>
+        </div>
+      </div>
     </>
   );
 }
 
+ /* =======New Arrivals--------------------------------------- */
 function Cardhome() {
   const homecard = [
     {
