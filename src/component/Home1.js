@@ -254,7 +254,7 @@ function Homeslide() {
       </div>
 
       {/* Join Our Newsletter------------------------------- */}
-      <div className={styles.news_bg}>
+      {/* <div className={styles.news_bg}>
         <div className={styles.news_img} >
         <img src={newsletterimg} alt="" />
         </div>
@@ -267,7 +267,8 @@ function Homeslide() {
           <span>Signup</span>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Sfooter />
     </div>
   );
 }
@@ -324,7 +325,6 @@ function Cardhome() {
           </div>
         </div>
       ))}
-      <Sfooter />
     </>
   );
 }
