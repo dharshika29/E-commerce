@@ -85,6 +85,7 @@ import outdoorimg6 from "../img1/Shop1/outdoor/6.jpg";
 import outdoorimg7 from "../img1/Shop1/outdoor/7.jpg";
 import outdoorimg8 from "../img1/Shop1/outdoor/8.jpg";
 import outdoorimg9 from "../img1/Shop1/outdoor/9.jpg";
+import Sfooter from "./Sfooter";
 
 
 export default function Shop1() {
@@ -97,11 +98,11 @@ export default function Shop1() {
         </div>
         <div className={styles.shop_text}>
           <div className={styles.shop_icon}>
-            <h5>Home</h5>
+            <a href="/"><h5>Home</h5></a>
             <span>
               <MdKeyboardArrowRight />
             </span>
-            <h5>Shop</h5>
+            <a href="/shop"><h5>Shop</h5></a>
           </div>
           <h1>Shop Page</h1>
           <p>Let’s design the place you always imagined.</p>
@@ -118,6 +119,7 @@ export default function Shop1() {
 function Shopcards() {
   const [category, setCategory] = useState("all");
   return (
+    <>
     <div className={`container ${styles.shop_card_bg}`}>
       <div className={`row ${styles.shop_card_row}`}>
         <div className={`col-md-3 ${styles.shop_card_col1}`}>
@@ -202,6 +204,9 @@ function Shopcards() {
         </div>
       </div>
     </div>
+    <Sfooter/>
+    </>
+      
   );
 }
 
@@ -321,7 +326,7 @@ function All() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -468,7 +473,7 @@ function Living() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -615,7 +620,7 @@ function Bedroom() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -762,7 +767,7 @@ function Kitchen() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -909,7 +914,7 @@ function Bathroom() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -1056,7 +1061,7 @@ function Dinning() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -1203,7 +1208,7 @@ function Outdoor() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
