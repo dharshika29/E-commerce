@@ -39,24 +39,31 @@
   font-size: 25px;
   margin-top: 5px;
 }
+
 @media (max-width: 768px) {
-  .shop_bg {
-    height: 40vh;
+  .shop_text {
+    top: 30%;
   }
 
   .shop_text h1 {
-    font-size: 30px;
+    font-size: 25px;
+    margin-top: 0px;
   }
 
   .shop_text p {
     font-size: 14px;
   }
 
-  .shop_icon h5 {
-    font-size: 12px;
+  .shop_icon {
+    font-size: 10px;
+    margin-top: 50px;
+  }
+
+  .shop_icon span {
+    font-size: 14px;
+    transform: translateY(1px);
   }
 }
-
 /* ========= card=============================================== */
 .shop_card_bg {
   margin: 50px 60px;
@@ -70,9 +77,8 @@
 .shop_card_col1 {
   width: 22%;
   background: #fff;
-  border: 1px solid #e5e5e5;
+  /* border: 1px solid #e5e5e5; */
   padding: 20px;
-  border-radius: 12px;
   height: 100%;
 }
 
@@ -121,6 +127,38 @@
   justify-content: space-between;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .shop_card_bg {
+    margin: 20px 15px;
+  }
+
+  .shop_card_row {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .shop_card_col1 {
+    width: 90%;
+    order: 1;
+  }
+
+  .shop_card_col2 {
+    width: 100%;
+    order: 2;
+  }
+
+  .shop_card_title h2 {
+    font-size: 18px;
+  }
+
+  .filter ul li,
+  .price_list li {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+}
+
 
 /* .filter h2,
 .filter_box h2 {
@@ -313,3 +351,44 @@
   background-color: #000;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .rightSection {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .product_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .product_card {
+    padding: 15px;
+  }
+
+  .product_name {
+    font-size: 14px;
+  }
+
+  .new_price {
+    font-size: 16px;
+  }
+
+  .old_price {
+    font-size: 12px;
+  }
+
+  .addCartBtn {
+    width: 120px;
+    height: 36px;
+    font-size: 13px;
+  }
+}
+
