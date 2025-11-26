@@ -31,14 +31,13 @@ export default function Navbar() {
 
         <div className={styles.logo}>3legant.</div>
 
-        {/* Mobile Icon */}
         <div className={styles.mobileIcon} onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <FiX /> : <FiMenu />}
         </div>
 
         <ul className={`${styles.links} ${mobileOpen ? styles.showMenu : ""}`}>
 
-          {/* HOME */}
+          
           <li className={styles.dropItem}>
             <div className={styles.menuTitle}>
               <Link to="/" className={isActive("/") ? styles.active : ""} onClick={closeMobile}>Home</Link>
@@ -53,7 +52,6 @@ export default function Navbar() {
             )}
           </li>
 
-          {/* SHOP */}
           <li className={styles.dropItem}>
             <div className={styles.menuTitle}>
               <Link to="/shop" className={isActive("/shop") ? styles.active : ""} onClick={closeMobile}>Shop</Link>
@@ -68,7 +66,6 @@ export default function Navbar() {
             )}
           </li>
 
-          {/* PRODUCT */}
           <li className={styles.dropItem}>
             <div className={styles.menuTitle}>
               <Link to="/product" className={isActive("/product") ? styles.active : ""} onClick={closeMobile}>Product</Link>
