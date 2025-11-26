@@ -2,42 +2,30 @@
   display: flex;
   align-items: center;
   /* justify-content: space-between; */
-  padding: 50px 80px;
+  padding: 20px 120px;
   background-image: url(../image3/j\ homemain.png);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
 }
-
-/* .left {
-  flex: 1;
-} */
-
 .heroImg {
   width: 100%;
   max-width: 480px;
 }
-
 .right {
   flex: 1;
   padding-left: 40px;
 }
-
 .title {
   font-size: 70px;
-  font-weight: 700;
-  color: #fffefe;
-  line-height: 1.2;
+  font-weight: 600;
 }
-.subtitle {
-  font-size: 24px;
-  /* margin: 10px 0; */
-  color: white;
-  text-align: start;
+.subtitle{
+  font-size: 27px;
 }
-
 .btn {
-  background: #38CB89;;
+  background: #38CB89;
   color: black;
   padding: 12px 26px;
   border: none;
@@ -45,8 +33,8 @@
   cursor: pointer;
   font-size: 16px;
   transition: 0.3s ease;
+  margin-top: 20px;
 }
-
 .btn:hover {
   opacity: 0.8;
 }
@@ -56,13 +44,390 @@
     text-align: center;
     padding: 40px;
   }
-
   .right {
     padding: 0;
     margin-top: 20px;
   }
-
   .title {
     font-size: 36px;
   }
 }
+.hh1{
+  margin-top: 70px;
+  margin-left: 60px;
+}
+.pp1{
+   font-size: 18px;
+   color: black;
+}
+.pp2{
+  color: black;
+  font-weight: 800;
+  font-size: 17px;
+}
+.star{
+ font-size: 18px;
+}
+.maincard{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.cardimg{
+  background-color:rgb(233, 232, 232);
+  width: 100%;
+  
+}
+.card{
+  border: none !important;
+  
+ 
+}
+.hot{
+  border: 1px solid;
+  border-radius: 5px;
+  color: black;
+  width:40px;
+  text-align: center;
+   position: relative;
+   top: 50px;
+   left: 5px;
+   background-color: white;
+   border: none;
+  
+}
+.imageWrapper {
+  position: relative;
+}
+
+.cardimg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.cartBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 50%;
+}
+.imageWrapper:hover .cartBtn {
+  opacity: 1;
+  visibility: visible;
+}
+.main1{
+display: flex;
+  justify-content: center;
+  margin-top: 90px;
+  gap: 30px;
+}
+.hh2{
+  text-align: center;
+  margin-top: 50px;
+}
+.pp3{
+  text-align: center;
+  font-size: 19px;
+  font-weight: 700;
+  padding-top: 10px;
+}
+.main2 {
+  display: flex;
+  width: 100%;
+  height: 430px;
+  margin-top: 100px;
+}
+
+.limitedimg {
+  width: 50%;
+  border-radius: 8px 0 0 8px;
+}
+
+.Boxtwo {
+  width: 50%;
+  background:black;
+  padding: 40px 40px;
+}
+
+.edition {
+  color:  #38CB89;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.offer {
+  font-size: 36px;
+  margin: 10px 0;
+  font-weight: 700;
+  color: white;
+}
+
+.subTitle {
+  font-size: 16px;
+  opacity: 0.8;
+  color: white;
+}
+
+.expire {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: white;
+}
+
+.timerRow {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.timerBox {
+  background: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timerBox h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.timerBox p {
+  margin: 0;
+  font-size: 11px;
+  opacity: 0.6;
+}
+.hero3 {
+ max-height: 100vh;
+  overflow: hidden;
+  padding: 40px 80px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.bigCard {
+  grid-row: span 2;
+  background: #f5f5f5;
+ margin-left: 100px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-height: 90vh;
+}
+
+.bigImage {
+  width: 100%;
+  height: auto;
+  
+}
+.smallCard {
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  max-height: 80%;
+  margin-top: 15px;
+ 
+}
+
+.smallImage {
+  width: 50%;
+  height: auto;
+  background: none;
+  margin-left: 80px;
+}
+
+.textBox {
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+  position: relative;
+  bottom: 80px;
+  left: 15px;
+}
+
+.textBox h3 {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: start;
+}
+
+.link {
+  font-size: 14px;
+  border: none;
+  text-decoration: underline;
+  background: none;
+  font-size: 18px;
+  text-align: start;
+   position: relative;
+   right: 5px;
+}
+.pp4{
+  margin-top: 10px;
+  font-size: 19px;
+  color: black;
+  font-weight: 500;
+}
+.category a{
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+  text-decoration: underline;
+}
+.pp5{
+  text-align: center;
+  font-size: 25px
+}
+.hh3{
+  text-align: center;
+  margin-top: 150px;
+padding-top: 100px;
+font-size: 50px;
+}
+.news{
+  background-image: url(../image3/j\ newsletter.png);
+   height: 55vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.li{
+  display: flex;
+  margin-left: 33%;
+  list-style:none;
+  gap: 10px;
+  margin-top: 50px;
+  font-size: 17px;
+  border-bottom: 1px solid;
+  width: 35%;
+ 
+}
+.lisi{
+  padding-left: 300px;
+} 
+.instagram{
+  text-align: center;
+  margin-top: 20px;
+}
+.feed{
+  font-size: 19px;
+  color: grey;
+  font-weight: 600;
+}
+.pp6{
+  font-size: 18px;
+}
+.offi{
+  font-size: 19px;
+  font-weight: 700;
+}
+.instamain{
+  display: flex;
+  margin-top: 50px;
+}
+@media (min-width: 768px) {
+  .maincard {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .main1 {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .main2 {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .instamain {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .li {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .maincard {
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .bigCard {
+    width: 80%;
+    margin-left: 50px;
+  }
+
+  .smallCard {
+    width: 70%;
+  }
+
+  .main2 {
+    height: 430px;
+  }
+
+  .limitedimg {
+    width: 50%;
+  }
+
+  .Boxtwo {
+    width: 50%;
+    padding: 50px;
+  }
+  .li {
+    margin-left: 33%;
+    width: 35%;
+  }
+}
+@media (min-width: 1200px) {
+  .hero3 {
+    padding: 40px 120px;
+  }
+
+  .bigCard {
+    width: 70%;
+  }
+
+  .smallCard {
+    width: 60%;
+  }
+
+  .li {
+    font-size: 20px;
+  }
+
+  .hh3 {
+    font-size: 60px;
+  }
+}
+
