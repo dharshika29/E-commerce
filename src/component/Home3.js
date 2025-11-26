@@ -221,7 +221,7 @@ function Home3() {
           <div className={styles.category}>
             <img src={articles.img} alt="" width="100%" />
             <p className={styles.pp4}>{articles.desc}</p>
-            <a href="">Read More <FaArrowRightLong /></a>
+            <a href="#">Read More <FaArrowRightLong /></a>
           </div>
         ))}
       </div>

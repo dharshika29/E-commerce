@@ -87,6 +87,7 @@ import outdoorimg8 from "../img1/Shop1/outdoor/8.jpg";
 import outdoorimg9 from "../img1/Shop1/outdoor/9.jpg";
 
 
+
 export default function Shop1() {
   return (
     <div className={styles.shope_page}>
@@ -321,7 +322,7 @@ function All() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <a href="product"><button className={styles.addCartBtn}>Add to Cart</button></a>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -1229,6 +1230,7 @@ function Outdoor() {
       <div className={styles.Show_more_btn}>
         <button>Show more</button>
       </div>
+      
     </>
   );
 }

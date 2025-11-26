@@ -2,8 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import ContactUs from "./component/ContactUs";
-import Product1 from "./component/Product1";
-import Product2 from "./component/Product2";
+import Product from "./component/Product";
 import Shop1 from "./component/Shop1";
 import Home1 from "./component/Home1";
 import Home2 from "./component/Home2";
@@ -37,8 +36,8 @@ function App() {
 
         <Route path="/shop" element={<Shop1 />} />
 
-        <Route path="/product" element={<Product2 />} />
-        <Route path="/product/product1" element={<Product1 />} />
+        <Route path="/product" element={<Product />} />
+        
 
         <Route path="/contact" element={<ContactUs />} />
       </Routes>
