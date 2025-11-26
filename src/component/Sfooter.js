@@ -33,11 +33,11 @@ export default function Sfooter() {
           <p className={styles.logoo}>3legant<span style={{ color: "grey" }}>.</span><span className={styles.logo}>Headphone store</span> </p>
 
           <nav className={styles.nav}>
-            <a>Home</a>
-            <a>Shop</a>
-            <a>Product</a>
-            <a>Blog</a>
-            <a>Contact Us</a>
+            <a href='/'>Home</a>
+            <a href='/'>Shop</a>
+            <a href='/'>Product</a>
+            <a href='/'>Blog</a>
+            <a href='/'>Contact Us</a>
           </nav>
         </div>
 
