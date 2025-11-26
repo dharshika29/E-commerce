@@ -85,6 +85,7 @@ import outdoorimg6 from "../img1/Shop1/outdoor/6.jpg";
 import outdoorimg7 from "../img1/Shop1/outdoor/7.jpg";
 import outdoorimg8 from "../img1/Shop1/outdoor/8.jpg";
 import outdoorimg9 from "../img1/Shop1/outdoor/9.jpg";
+import Sfooter from "./Sfooter";
 
 
 
@@ -98,11 +99,11 @@ export default function Shop1() {
         </div>
         <div className={styles.shop_text}>
           <div className={styles.shop_icon}>
-            <h5>Home</h5>
+            <a href="/"><h5>Home</h5></a>
             <span>
               <MdKeyboardArrowRight />
             </span>
-            <h5>Shop</h5>
+            <a href="/shop"><h5>Shop</h5></a>
           </div>
           <h1>Shop Page</h1>
           <p>Let’s design the place you always imagined.</p>
@@ -119,6 +120,7 @@ export default function Shop1() {
 function Shopcards() {
   const [category, setCategory] = useState("all");
   return (
+    <>
     <div className={`container ${styles.shop_card_bg}`}>
       <div className={`row ${styles.shop_card_row}`}>
         <div className={`col-md-3 ${styles.shop_card_col1}`}>
@@ -203,6 +205,9 @@ function Shopcards() {
         </div>
       </div>
     </div>
+    <Sfooter/>
+    </>
+      
   );
 }
 
@@ -322,7 +327,7 @@ function All() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <a href="product"><button className={styles.addCartBtn}>Add to Cart</button></a>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -469,7 +474,7 @@ function Living() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -616,7 +621,7 @@ function Bedroom() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -724,7 +729,7 @@ function Kitchen() {
       discount: "-50%",
     },
   ];
-  return (
+return (
     <>
       <div className={styles.topbar}>
         <h2 className={styles.title}>Kitchen</h2>
@@ -736,18 +741,10 @@ function Kitchen() {
           </div>
 
           <div className={styles.viewButtons}>
-            <button className={styles.active}>
-              <CgMenuGridR />
-            </button>
-            <button>
-              <PiSquaresFourFill />
-            </button>
-            <button>
-              <PiSquareSplitHorizontalFill />
-            </button>
-            <button>
-              <FaServer />
-            </button>
+            <button className={styles.active}><CgMenuGridR /></button>
+            <button><PiSquaresFourFill /></button>
+            <button><PiSquareSplitHorizontalFill /></button>
+            <button><FaServer /></button>
           </div>
         </div>
       </div>
@@ -758,34 +755,29 @@ function Kitchen() {
             <div className={styles.card_img}>
               <div className={styles.card_tags}>
                 {item.isNew && <span className={styles.tag_new}>NEW</span>}
-                {item.discount && (
-                  <span className={styles.tag_discount}>{item.discount}</span>
-                )}
+                {item.discount && <span className={styles.tag_discount}>{item.discount}</span>}
               </div>
+
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
+
             <div className={styles.card_body}>
               <p className={styles.stars}>
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
+                <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
               </p>
 
               <h3 className={styles.product_name}>{item.name}</h3>
 
               <div className={styles.price_box}>
                 <span className={styles.new_price}>{item.price}</span>
-                {item.old && (
-                  <span className={styles.old_price}>{item.old}</span>
-                )}
+                {item.old && <span className={styles.old_price}>{item.old}</span>}
               </div>
             </div>
           </div>
         ))}
       </div>
+
       <div className={styles.Show_more_btn}>
         <button>Show more</button>
       </div>
@@ -910,7 +902,7 @@ function Bathroom() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -1057,7 +1049,7 @@ function Dinning() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
@@ -1204,7 +1196,7 @@ function Outdoor() {
                 )}
               </div>
               <img src={item.img} alt={item.name} />
-              <button className={styles.addCartBtn}>Add to Cart</button>
+              <button className={styles.addCartBtn}>View Product</button>
             </div>
             <div className={styles.card_body}>
               <p className={styles.stars}>
