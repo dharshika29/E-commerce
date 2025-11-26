@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Home3.module.css";
-import featuredimg1 from '../image3/j-featuredimg1.png';
-import featuredimg2 from '../image3/j category4.png';
-import featuredimg3 from '../image3/j category6.png';
-import featuredimg4 from '../image3/j featured4.png';
+import featuredimg1 from '../image3/j featuredimg1.png';
+import featuredimg2 from '../image3/j featuredimg2.png';
+import featuredimg3 from '../image3/j featuredimg3.png';
+import featuredimg4 from '../image3/j featuredimg4.png';
 import { FaStar } from "react-icons/fa";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
@@ -23,7 +23,12 @@ import article2 from '../image3/j article2.png'
 import article3 from '../image3/j article3.png'
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaEnvelope } from "react-icons/fa";
-import insta1 from '../image3/j Cards.png';
+import insta1 from '../image3/j lastimg1.png';
+import insta2 from '../image3/j lastimg2.png';
+import insta3 from '../image3/j lastimg3.png';
+import insta4 from '../image3/j lastimg4.png';
+import insta5 from '../image3/j lastimg5.png';
+import insta6 from '../image3/j lastimg6.png';
 
 
 
@@ -77,7 +82,7 @@ function Home3() {
     { img: article3, desc: "The 2023 Ryder Cup" }
   ]
   const insta = [
-    { img: insta1 },
+    { img: insta1 }, { img: insta2 }, { img: insta3 }, { img: insta4 }, { img: insta5 }, { img: insta6 },
   ]
   return (
     <>
@@ -229,7 +234,7 @@ function Home3() {
         <div className={styles.li}>
           <li><FaEnvelope /></li>
           <li>Email Address</li>
-          <li className={styles.lisi}>SignUp</li>
+        <li className={styles.lisi}>SignUp</li>
         </div>
       </div>
       <div className={styles.instagram}>
@@ -241,7 +246,8 @@ function Home3() {
       <div className={styles.instamain}>
         {insta.map((instas) => (
           <div className={styles.insimg}>
-            <img src={instas.img} alt="" width="105%" />
+            <img src={instas.img} alt="" width="125%"/>
+           
           </div>
         ))}
       </div>

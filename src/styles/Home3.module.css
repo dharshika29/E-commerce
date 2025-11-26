@@ -227,7 +227,7 @@ display: flex;
 .bigCard {
   grid-row: span 2;
   background: #f5f5f5;
- margin-left: 50px;
+ margin-left: 100px;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -319,10 +319,10 @@ font-size: 50px;
   list-style:none;
   gap: 10px;
   margin-top: 50px;
-  font-size: 19px;
+  font-size: 17px;
   border-bottom: 1px solid;
   width: 35%;
-  padding: 5px;
+ 
 }
 .lisi{
   padding-left: 300px;
@@ -346,7 +346,88 @@ font-size: 50px;
 .instamain{
   display: flex;
   margin-top: 50px;
- 
- 
+}
+@media (min-width: 768px) {
+  .maincard {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .main1 {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .main2 {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .instamain {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .li {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .maincard {
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .bigCard {
+    width: 80%;
+    margin-left: 50px;
+  }
+
+  .smallCard {
+    width: 70%;
+  }
+
+  .main2 {
+    height: 430px;
+  }
+
+  .limitedimg {
+    width: 50%;
+  }
+
+  .Boxtwo {
+    width: 50%;
+    padding: 50px;
+  }
+  .li {
+    margin-left: 33%;
+    width: 35%;
+  }
+}
+@media (min-width: 1200px) {
+  .hero3 {
+    padding: 40px 120px;
+  }
+
+  .bigCard {
+    width: 70%;
+  }
+
+  .smallCard {
+    width: 60%;
+  }
+
+  .li {
+    font-size: 20px;
+  }
+
+  .hh3 {
+    font-size: 60px;
+  }
 }
 
