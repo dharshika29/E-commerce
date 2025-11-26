@@ -85,10 +85,13 @@ import outdoorimg6 from "../img1/Shop1/outdoor/6.jpg";
 import outdoorimg7 from "../img1/Shop1/outdoor/7.jpg";
 import outdoorimg8 from "../img1/Shop1/outdoor/8.jpg";
 import outdoorimg9 from "../img1/Shop1/outdoor/9.jpg";
+import Sfooter from "./Sfooter";
 
 
 export default function Shop1() {
   return (
+    <>
+    
     <div className={styles.shope_page}>
       {/* shop bg page ---------------------------------- */}
       <div className={styles.shop_bg}>
@@ -112,6 +115,8 @@ export default function Shop1() {
         <Shopcards />
       </div>
     </div>
+    <Sfooter/>
+    </>
   );
 }
 
