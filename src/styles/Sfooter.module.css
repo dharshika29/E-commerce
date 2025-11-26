@@ -1,0 +1,279 @@
+
+.banner {
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: space-between; */
+  background: #f2f2f2;
+  padding: 50px 0;
+  background: url(../Image2/s-footer2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 50px;
+  height: 35vh;
+}
+
+
+
+.centerContent {
+  text-align: center;
+  /* margin-left: 30%; */
+}
+/* .name2{
+  display: flex;
+  justify-content:center ;
+} */
+
+.tit {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* EMAIL BOX */
+.inputBox {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.inputBox input {
+  width: 240px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.inputBox button {
+  padding: 12px 24px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 80px;
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.logo {
+   border-left: 1px  solid white;
+  margin-left: 20px;
+  padding-left: 20px;
+  font-weight: lighter;
+  color: grey;
+    font-size: 15px;
+
+}
+.logoo{
+  margin-left: 30px;
+  font-weight: bold !important;
+  font-size: 25px;
+}
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+
+.nav a {
+  color: #ddd;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+
+.footerBottom {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.insta {
+  margin-left: 40%;
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.container {
+  width: 100%;
+}
+
+
+.newsletter {
+  background: #f7f7f7;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftImg {
+  width: 330px;
+  object-fit: contain;
+}
+
+.rightImg {
+  width: 330px;
+  object-fit: contain;
+}
+
+.centerBox {
+  text-align: center;
+  width: 450px;
+}
+
+.centerBox h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.centerBox p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.emailBox {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid grey;
+  width: 360px;
+  margin: auto;
+  padding: 12px 15px; 
+  gap: 10px;
+}
+
+.mailIcon {
+  font-size: 20px;
+  color: #666;
+}
+
+.emailBox input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: none;
+}
+
+.emailBox button {
+  background: none;
+  color: grey;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.footer {
+  background: #111;
+  color: white;
+  padding: 40px 80px;
+}
+
+
+.row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.row1 h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu p {
+  cursor: pointer;
+  font-size: 14px;
+}
+.row2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+.links {
+  display: flex;
+  gap: 20px;
+}
+.links p {
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .banner {
+    height: auto;
+    padding: 30px 10px;
+    background-position: center;
+  }
+
+  
+
+  
+
+ 
+  .footer {
+    padding: 50px 20px;
+  }
+
+  .footerTop {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .insta {
+    margin-left: 0;
+  }
+  .container{
+   display: grid !important;
+  }
+  .centerContent{
+    margin: 0;
+  }
+}
