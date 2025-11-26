@@ -28,7 +28,8 @@ import articaleimg3 from "../img1/e-h9.png";
 
 import newsletterimg from "../img1/e-h10.png";
 import { MdOutlineEmail } from "react-icons/md";
-
+import Sfooter from "./Sfooter";
+ 
 function Home1() {
   return (
     <>
@@ -323,6 +324,7 @@ function Cardhome() {
           </div>
         </div>
       ))}
+      <Sfooter />
     </>
   );
 }
