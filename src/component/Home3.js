@@ -29,6 +29,7 @@ import insta3 from '../image3/j lastimg3.png';
 import insta4 from '../image3/j lastimg4.png';
 import insta5 from '../image3/j lastimg5.png';
 import insta6 from '../image3/j lastimg6.png';
+import Sfooter from '../component/Sfooter'
 
 
 
@@ -247,10 +248,10 @@ function Home3() {
         {insta.map((instas) => (
           <div className={styles.insimg}>
             <img src={instas.img} alt="" width="125%"/>
-           
           </div>
         ))}
       </div>
+      <Sfooter/>
 
 
 
