@@ -30,9 +30,6 @@ import insta4 from '../image3/j lastimg4.png';
 import insta5 from '../image3/j lastimg5.png';
 import insta6 from '../image3/j lastimg6.png';
 
-
-
-
 function Home3() {
   const carditem = [
     { img: featuredimg1, desc: "Shark - Men's cabretta white golf glove ", price: "$19.00" },
