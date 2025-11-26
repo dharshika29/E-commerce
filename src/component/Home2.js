@@ -36,15 +36,6 @@ import SignPopup from "./SignPopup";
 
 import Sfooter from "../component/Sfooter";
 function Home1() {
-   const [showPopup, setShowPopup] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 5000); // 5 sec
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const [timeLeft, setTimeLeft] = useState({
     days: 2,
@@ -201,9 +192,7 @@ function Home1() {
 
   return (
     <>
-     {/* ---------- POPUP SHOW HERE ---------- */}
-      {showPopup && <SignPopup close={() => setShowPopup(false)} />}
-      {/* ------------------------------------- */}
+
       <div className={styles.hero}>
         <div className={styles.left}></div>
         <div className={styles.right}>
