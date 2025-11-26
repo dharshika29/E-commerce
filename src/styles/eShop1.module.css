@@ -26,7 +26,7 @@
   font-size: 25px;
 }
 .shop_icon span {
-  transform: translateY(5px);
+  transform: translateY(-6px);
   font-size: 30px;
 }
 .shop_text h1 {
@@ -71,7 +71,7 @@
 
 .shop_card_row {
   display: flex;
-  gap: 25px;
+  
 }
 
 .shop_card_col1 {
