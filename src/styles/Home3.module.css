@@ -318,11 +318,15 @@ font-size: 50px;
   margin-left: 33%;
   list-style:none;
   gap: 10px;
-  margin-top: 50px;
+  margin-top: 100px;
   font-size: 17px;
-  border-bottom: 1px solid;
   width: 35%;
  
+}
+.li p{
+  text-align: center;
+   margin-top: 100px;
+   font-size: 29px;
 }
 .lisi{
   padding-left: 300px;
