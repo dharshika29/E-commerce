@@ -1,5 +1,6 @@
 .home_page{
   font-family: "Poppins", sans-serif;
+  overflow: hidden;
 }
 .hslidebg {
   width: 100%;
