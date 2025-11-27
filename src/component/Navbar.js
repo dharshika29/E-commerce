@@ -96,33 +96,6 @@ export default function Navbar() {
             </Link>
           </li>
 
-          <li className={styles.dropItem}>
-            <div className={styles.menuTitle}>
-              <Link
-                to="/product"
-                className={isActive("/product") ? styles.active : ""}
-                onClick={closeMobile}
-              >
-                Product
-              </Link>
-              <FiChevronDown
-                className={styles.arrow}
-                onClick={() => toggleDropdown("product")}
-              />
-            </div>
-
-            {activeDropdown === "product" && (
-              <div className={styles.dropdownMenu}>
-                <Link to="/product/product1" onClick={closeMobile}>
-                  Product 1
-                </Link>
-                <Link to="/product/product2" onClick={closeMobile}>
-                  Product 2
-                </Link>
-              </div>
-            )}
-          </li>
-
           <li>
             <Link
               to="/blog"
