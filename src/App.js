@@ -9,6 +9,7 @@ import Home3 from "./component/Home3";
 import Navbar from "./component/Navbar";
 import SignPopup from "./component/SignPopup";
 import ProductPage from "./component/ProductPage";
+import Blog from "./component/Blog";
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/home/home1" element={<Home2 />} />
         <Route path="/home/home2" element={<Home3 />} />
         <Route path="/shop" element={<Shop1 />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/contact" element={<ContactUs />} />
       </Routes>

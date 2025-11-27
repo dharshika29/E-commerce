@@ -10,7 +10,7 @@ import homeproduct3 from "../img1/e-h5.png";
 
 import productcard1 from "../img1/card/1.png";
 import productcard2 from "../img1/card/2.png";
-import productcard3 from "../img1/card/3.png";
+import productcard3 from "../Image2/s-sofa3.png";
 import productcard4 from "../img1/card/4.png";
 
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
