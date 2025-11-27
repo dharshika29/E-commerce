@@ -1,0 +1,229 @@
+.reviewsPage {
+  width: 100%;
+  padding: 30px 0 50px;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-family: "Inter", sans-serif;
+  color: #222;
+}
+
+.tabs {
+  display: flex;
+  gap: 30px;
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 25px;
+}
+
+.tabs span {
+  cursor: pointer;
+}
+
+.active {
+  color: #000;
+  font-weight: 600;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.stars {
+  font-size: 18px;
+  color: #000;
+}
+
+.revCount {
+  margin-left: 10px;
+  color: #777;
+}
+
+
+.pill {
+  margin-top: 15px;
+  background: #f7f7f8;
+  padding: 10px 25px;
+  border-radius: 50px;
+  width: max-content;
+  border: 1px solid #eee;
+}
+
+.actionRow {
+  margin-top: 20px;
+}
+
+
+.emojiWrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid rgb(172, 171, 171);
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.emojiRow {
+  display: flex;
+  gap: 12px;
+  font-size: 28px;
+  opacity: 0;
+  transform: translateY(5px);
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.writeButton {
+  background: #000;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-left: auto;   
+}
+
+.writeButton:hover {
+  background: #333;
+  transform: scale(1.04);
+}
+
+
+.sortRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 35px;
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.sortSelect {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+
+.list {
+  margin-top: 25px;
+}
+
+.reviewCard {
+  display: flex;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.reviewContent {
+  flex: 1;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.cardStars {
+  color: #000;
+  margin: 5px 0;
+}
+
+.text {
+  color: #555;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.actions span {
+  color: #777;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.loadMore {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 30px;
+  background: #f7f7f8;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.emojiWrapper {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+
+.emojiTooltip {
+  position: absolute;
+  right: 0;                 
+  bottom: 48px;           
+  background: white;
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 18px rgba(0,0,0,0.15);
+  font-size: 24px;
+  gap: 10px;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(5px);
+  transition: 0.25s ease;
+}
+
+
+.emojiWrapper:hover .emojiTooltip {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.writeButton {
+  margin-left: auto;
+  background: #000;
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
