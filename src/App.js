@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import {   useEffect, useState } from "react";
 
 import ContactUs from "./component/ContactUs";
 import Product1 from "./component/Product1";
@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowPopup(true);
-    }, 5000); // show after 5 sec
+    }, 0); // show after 5 sec
 
     return () => clearTimeout(timer);
   }, []);
