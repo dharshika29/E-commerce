@@ -52,15 +52,15 @@
 .hero2 {
   margin-top: 40px;
 }
-.name{
+.name {
   display: flex;
   justify-content: center;
 }
-.name1{
+.name1 {
   display: flex !important;
   justify-content: center !important;
   padding-left: 8%;
-} 
+}
 .card1 {
   display: flex;
   gap: 10px;
@@ -185,14 +185,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; 
+  justify-content: flex-end;
   height: 236px;
 }
 
 .largeCard {
   flex: 1;
-  height: 500px; 
-  background-position: left center; 
+  height: 500px;
+  background-position: left center;
   padding-left: 50px;
 }
 
@@ -227,7 +227,6 @@
 .link:hover span {
   transform: translateX(5px);
 }
-
 
 .card2 {
   display: flex;
@@ -325,7 +324,8 @@
 }
 
 .icon {
-  color: #d6a85a;  margin-bottom: 5px;
+  color: #d6a85a;
+  margin-bottom: 5px;
 }
 
 .titlee {
@@ -335,25 +335,25 @@
 }
 
 .subtitle {
-  font-size: 14px; 
+  font-size: 14px;
   color: #777;
 }
-.a1{
- display: flex;
- justify-content: center;
+.a1 {
+  display: flex;
+  justify-content: center;
 }
 .a3 {
   width: 262px;
-  height:262px;
+  height: 262px;
   padding-left: 20px;
 }
-.pass{
+.pass {
   text-align: center;
 }
-.join img{
+.join img {
   width: 30%;
 }
-.above{
+.above {
   display: flex;
   gap: 100px;
   text-decoration: underline;
@@ -364,34 +364,30 @@
   background: #fff;
 }
 
-
 @media (max-width: 768px) {
   .hero {
-   
-   
-     
-  overflow: hidden;
+    overflow: hidden;
     text-align: center;
-    background-position:unset;
+    background-position: unset;
   }
 
   .left {
     display: none;
-    
-  overflow: hidden;
+
+    overflow: hidden;
   }
 
   .right {
     padding-left: 0;
     max-width: 100%;
-  overflow: hidden;
+    overflow: hidden;
   }
-.right img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+  .right img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 
   .titley {
     font-size: 32px !important;
@@ -405,7 +401,6 @@
     padding: 10px 20px;
   }
 
-
   .hero1 {
     margin-left: 0;
     justify-content: center;
@@ -416,7 +411,6 @@
     width: 70px;
   }
 
-  
   .hero2 {
     margin-left: 10px;
   }
@@ -433,7 +427,6 @@
     height: 150px;
   }
 
- 
   /* .hero3 {
     padding: 20px;
   } */
@@ -450,10 +443,10 @@
   .smallImage {
     width: 40%;
   }
-.hero3{
-  display: wrap;
-}
- 
+  .hero3 {
+    display: wrap;
+  }
+
   .hero4 {
     margin-left: 100px;
   }
@@ -461,7 +454,6 @@
   .card2 {
     justify-content: center;
   }
-
 
   .hero5 {
     flex-direction: column;
@@ -479,33 +471,25 @@
     width: auto;
   }
 
-
   .hero6 {
     padding: 20px;
   }
 
-  
   .a1 {
     display: grid;
     gap: 30px;
   }
 
- 
-
-  
   .banner {
     height: auto;
     padding: 30px 10px;
     background-position: center;
   }
 
-  
-
   .emailBox {
     width: 90%;
   }
 
- 
   .footer {
     padding: 50px 20px;
   }
@@ -531,10 +515,10 @@
   .insta {
     margin-left: 0;
   }
-  .container{
-   display: grid !important;
+  .container {
+    display: grid !important;
   }
-  .centerContent{
+  .centerContent {
     margin: 0;
   }
 }
@@ -543,7 +527,7 @@
   margin-left: ;
 }
 } */
- /* overlay */
+/* overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -628,7 +612,14 @@ input {
   border-radius: 4px;
   margin-bottom: 15px;
 }
-
+.success {
+  background: #f3fff3;
+  color: #34a853;
+  padding: 10px;
+  border-left: 4px solid #0d6f32;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
 .close {
   position: absolute;
   right: 20px;

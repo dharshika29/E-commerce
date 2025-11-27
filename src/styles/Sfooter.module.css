@@ -262,4 +262,9 @@
   .centerContent {
     margin: 0;
   }
+  .name2{
+    transform: translateY(-40px);
+  }
 }
+
+
