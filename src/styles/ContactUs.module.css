@@ -16,14 +16,14 @@
 
 .profileCard {
   padding: 0px 50px;
-  background:#F3F5F7;
+  background: #f3f5f7;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
 
-.profileCard_img{
+.profileCard_img {
   text-align: center;
 }
 .profileImg {
@@ -62,7 +62,7 @@
   font-weight: 700;
   padding: 12px 0;
   cursor: pointer;
-  color: #605F5F;
+  color: #605f5f;
   border-bottom: 1px solid #eee;
   transition: 0.3s;
 }
@@ -71,7 +71,7 @@
   color: black;
   font-weight: 700;
 }
-.sidebarMenu a{
+.sidebarMenu a {
   text-decoration: none;
 }
 
@@ -132,7 +132,7 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
-   position: relative;
+  position: relative;
   width: 100%;
 }
 
@@ -168,7 +168,7 @@
   transform: translateY(1%);
   cursor: pointer;
   color: #555;
-  font-size: 14px;
+  font-size: 16px;
   /* user-select: none;  */
 }
 .error {
@@ -191,7 +191,6 @@
   transition: 0.3s;
 }
 @media (max-width: 768px) {
-
   .account_profile_row {
     flex-direction: column;
     gap: 20px;
@@ -209,19 +208,13 @@
   .account_profile_rightside {
     padding: 25px;
   }
+  .toggleIcon {
+    transform: none;
+    font-size: 18px;
+  }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/* alert----------------------------------------------------------- */
 .alert_overlay {
   position: fixed;
   top: 0;
@@ -282,9 +275,7 @@
     opacity: 1;
   }
 }
-
-
-
+/* active menu -------------------------------------------------------------------------------------------- */
 .activeMenu {
   color: #008702 !important;
   font-weight: 700;
@@ -313,9 +304,147 @@
   width: 100%;
 }
 
+/* address-------------------------------------------------------------------------------------- */
+.address_section {
+  padding: 20px;
+}
+.address_grid {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+}
 
+.address_card {
+  width: 430px;
+  padding: 18px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+}
 
+.address_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.address_header h4 {
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.edit_btn {
+  font-size: 15px;
+  color: #777;
+  cursor: pointer;
+}
+.edit_btn_icon {
+  font-size: 17px;
+}
 
+.address_name {
+  font-weight: 500;
+  margin-top: 10px;
+}
 
+.address_phone {
+  margin: 5px 0;
+}
 
+.address_detail {
+  font-size: 14px;
+  color: #555;
+}
+.address_btn {
+  width: 180px;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
+/* OrdersHistory================================================================ */
+.order_table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 10px;
+  background: #fff;
+}
+.table_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 18px 0;
+  font-weight: 600;
+  color: #000000;
+  border-bottom: 1px solid #e6e6e6;
+}
+.table_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  padding: 15px 0px;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 15px;
+  color: #333;
+}
+.table_row:hover {
+  cursor: pointer;
+  background: #f9f9f9;
+}
+.delivered {
+  color: #2b8a3e;
+  font-weight: 500;
+}
+.order_view_btn {
+  border: 1px solid;
+  width: 90px;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center; 
+  padding: 5px;
+  transform: translateY(-5px);
+
+}
+@media (max-width: 768px) {
+  .table_header {
+    color: #000;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr ;
+  }
+
+  .table_row {
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr;
+    /* padding: 16px 0; */
+    gap: 6px;
+  }
+  .order_view_btn{
+    display: none;
+  }
+}
+/* wishlist========================================== */
+.wishlist_table{
+ width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 10px;
+  background: #fff; 
+}
+.wishlist_header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 18px 0;
+  font-weight: 600;
+  color: #000000;
+  border-bottom: 1px solid #e6e6e6; 
+}

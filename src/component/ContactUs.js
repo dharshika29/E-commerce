@@ -5,6 +5,8 @@ import Sfooter from "./Sfooter";
 import img from "../img1/e-h1.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+import { TbPencilCog } from "react-icons/tb";
+
 export default function ContactUs() {
   const [category, setCategory] = useState("account");
 
@@ -81,9 +83,9 @@ export default function ContactUs() {
     }
   };
 
-  const closeAlert = () => {
+  const closeAlert = (nexttab) => {
     setShowAlert(false);
-    window.location.href = "/"; // redirect next page
+    setCategory(nexttab); // jump to Address tab
   };
   return (
     <>
@@ -119,7 +121,7 @@ export default function ContactUs() {
 
                 <ul className={styles.sidebarMenu}>
                   <li
-                    className={ 
+                    className={
                       category === "account" ? styles.activeMenu : "account"
                     }
                     onClick={() => setCategory("account")}
@@ -366,7 +368,8 @@ export default function ContactUs() {
 
                         <button
                           className={styles.alert_btn}
-                          onClick={closeAlert}
+                          onClick={() => closeAlert("address")}
+                          // onClick={closeAlert}
                         >
                           OK
                         </button>
@@ -379,7 +382,63 @@ export default function ContactUs() {
               {/* ADDRESS-------------------------------------------- */}
               {category === "address" && (
                 <>
-                  <h2>Address Section</h2>
+                  <h2 className={styles.sectionTitle}>Address Details</h2>
+                  <div className={styles.address_section}>
+                    <div className={styles.address_grid}>
+                      {/* Billing Address --------------- */}
+                      <div className={styles.address_card}>
+                        <div className={styles.address_header}>
+                          <h4>Billing Address</h4>
+                          <span
+                            className={styles.edit_btn}
+                            // onClick={() => setShowAlert(true)}
+                          >
+                            <i>
+                              <TbPencilCog />
+                            </i>
+                            Edit
+                          </span>
+                        </div>
+
+                        <p className={styles.address_name}>Sofia Havertz</p>
+                        <p className={styles.address_phone}>(+1) 234 567 890</p>
+                        <p className={styles.address_detail}>
+                          345 Long Island, NewYork, United States
+                        </p>
+                      </div>
+
+                      {/* Shipping Address-------------------- */}
+                      <div className={styles.address_card}>
+                        <div className={styles.address_header}>
+                          <h4>Shipping Address</h4>
+                          <span
+                            className={styles.edit_btn}
+                            // onClick={() => setShowAlert(true)}
+                          >
+                            <i className={styles.edit_btn_icon}>
+                              <TbPencilCog />
+                            </i>
+                            Edit
+                          </span>
+                        </div>
+
+                        <p className={styles.address_name}>Sofia Havertz</p>
+                        <p className={styles.address_phone}>(+1) 234 567 890</p>
+                        <p className={styles.address_detail}>
+                          345 Long Island, NewYork, United States
+                        </p>
+                      </div>
+                    </div>
+                    <div className={styles.address_btndiv}>
+                      <button
+                        className={styles.address_btn}
+                        onClick={() => setShowAlert(true)}
+                      >
+                        {" "}
+                        Save Address
+                      </button>
+                    </div>
+                  </div>
 
                   {showAlert && (
                     <div className={styles.alert_overlay}>
@@ -389,7 +448,8 @@ export default function ContactUs() {
 
                         <button
                           className={styles.alert_btn}
-                          onClick={closeAlert}
+                          onClick={() => closeAlert("orders")}
+                          // onClick={closeAlert}
                         >
                           OK
                         </button>
@@ -402,14 +462,70 @@ export default function ContactUs() {
               {/* ORDERS ---------------------------------------- */}
               {category === "orders" && (
                 <>
-                  <h2>Orders Section</h2>
+                  <h2 className={styles.sectionTitle}>Your Orders</h2>
+                  <div className={styles.order_table}>
+                    <div className={styles.table_header}>
+                      <p>Number ID</p>
+                      <p>Dates</p>
+                      <p>Status</p>
+                      <p>Price</p>
+                      <p>Check</p>
+                    </div>
+
+                    <div className={styles.table_row}>
+                      <p>#3456_768</p>
+                      <p>October 17, 2023</p>
+                      <p className={styles.delivered}>Delivered</p>
+                      <p>$1234.00</p>
+
+                      <p className={styles.order_view_btn}>View</p>
+                    </div>
+
+                    <div className={styles.table_row}>
+                      <p>#3456_980</p>
+                      <p>October 11, 2023</p>
+                      <p className={styles.delivered}>Delivered</p>
+                      <p>$345.00</p>
+                      <p className={styles.order_view_btn}>View</p>
+                    </div>
+
+                    <div className={styles.table_row}>
+                      <p>#3456_120</p>
+                      <p>August 24, 2023</p>
+                      <p className={styles.delivered}>Delivered</p>
+                      <p>$2345.00</p>
+                      <p className={styles.order_view_btn}>View</p>
+                    </div>
+
+                    <div className={styles.table_row}>
+                      <p>#3456_030</p>
+                      <p>August 12, 2023</p>
+                      <p className={styles.delivered}>Delivered</p>
+                      <p>$845.00</p>
+                      <p className={styles.order_view_btn}>View</p>
+                    </div>
+                    <button
+                      className={styles.address_btn}
+                      onClick={() => closeAlert("wishlist")}
+                    >
+                      Next
+                    </button>
+                  </div>
                 </>
               )}
 
               {/* WISHLIST------------------------------- */}
               {category === "wishlist" && (
                 <>
-                <h2>Wishlist Section</h2>
+                  <h2 className={styles.sectionTitle}>Wishlist Section</h2>
+                  <div className={styles.wishlist_table}>
+                    <div className={styles.wishlist_header}>
+                      <p>Product</p>
+                      <p>Price</p>
+                      <p>Action</p>
+                      <p>Remove</p>
+                    </div>
+                  </div>
                 </>
               )}
             </div>
