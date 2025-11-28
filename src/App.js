@@ -14,6 +14,7 @@ import Home3 from "./component/Home3";
 import Navbar from "./component/Navbar";
 import SignPopup from "./component/SignPopup";
 import ProductPage from "./component/ProductPage";
+import Account from "./component/Account";
 import Blog from "./component/Blog";
 import SingleBlog from "./component/SingleBlog";
 
@@ -44,6 +45,8 @@ function App() {
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/blog/:id" element={<SingleBlog />} />
+
+        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
   );
