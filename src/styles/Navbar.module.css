@@ -118,6 +118,18 @@
   cursor: pointer;
 }
 
+.icon {
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+.icon:hover {
+  color: #5A31F4;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+
 /* MOBILE ICON (Hamburger) */
 .mobileIcon {
   display: none;

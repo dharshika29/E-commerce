@@ -13,7 +13,7 @@ import productcard2 from "../img1/card/2.png";
 import productcard3 from "../img1/card/3.png";
 import productcard4 from "../img1/card/4.png";
 
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 import { CiDeliveryTruck } from "react-icons/ci";
 import { RiMoneyRupeeCircleLine } from "react-icons/ri";
@@ -27,7 +27,8 @@ import articaleimg2 from "../img1/e-h8.png";
 import articaleimg3 from "../img1/e-h9.png";
 
 import Sfooter from "./Sfooter";
- 
+import { useNavigate } from "react-router-dom";
+
 function Home1() {
   return (
     <>
@@ -140,9 +141,7 @@ function Homeslide() {
       {/* =======New Arrivals--------------------------------------- */}
       <div className={styles.new_arrivals}>
         <div className={styles.new1}>
-          <h1>
-            New Arrivals
-          </h1>
+          <h1>New Arrivals</h1>
           <a href="/shop">
             <p>More Products →</p>
           </a>
@@ -233,18 +232,26 @@ function Homeslide() {
           <p>More Articles →</p>
         </div>
         <div className={styles.articale_card}>
+          <div className={styles.articale_full_card1}>
           <div className={styles.articale_card1}>
             <img src={articaleimg1} alt="" />
+          </div>
             <h6>7 ways to decor your home</h6>
             <a href="/">Read More →</a>
           </div>
+
+          <div className={styles.articale_full_card1}>
           <div className={styles.articale_card1}>
             <img src={articaleimg2} alt="" />
+          </div>
             <h6>Kitchen organization</h6>
             <a href="/">Read More →</a>
           </div>
+
+          <div className={styles.articale_full_card1}>
           <div className={styles.articale_card1}>
             <img src={articaleimg3} alt="" />
+          </div>
             <h6>Decor your bedroom</h6>
             <a href="/">Read More →</a>
           </div>
@@ -272,57 +279,92 @@ function Homeslide() {
 }
 
 /* =======New Arrivals--------------------------------------- */
-function Cardhome() {
+function Cardhome(category) {
+  const navigate = useNavigate();
+
   const homecard = [
     {
       id: 1,
-      title: "Bamboo basket",
+      name: "Bamboo basket",
       img: productcard1,
-      newprice: 499,
-      oldprice: 799,
+      price: "$199.00",
+      old: "$400.00",
+      isNew: true,
+      discount: "-50%",
     },
     {
       id: 2,
-      title: "Beige Table Lamp",
+      name: "Beige Table Lamp",
       img: productcard2,
-      newprice: 499,
-      oldprice: 799,
+      price: "$199.00",
+      old: "$400.00",
+      isNew: true,
+      discount: "-50%",
     },
     {
       id: 3,
-      title: "Loveseat Sofa",
+      name: "Loveseat Sofa",
       img: productcard3,
-      newprice: 499,
-      oldprice: 799,
+      price: "$199.00",
+      old: "$400.00",
+      isNew: true,
+      discount: "-50%",
     },
     {
       id: 4,
-      title: "Table Lamp",
+      name: "Table Lamp",
       img: productcard4,
-      newprice: 499,
-      oldprice: 799,
+      price: "$199.00",
+      old: "$400.00",
+      isNew: true,
+      discount: "-50%",
     },
   ];
   return (
     <>
-      {homecard.map((product) => (
-        <div className={styles.card} key={product.id}>
-          <img src={product.img} alt="" className={styles.cardimg} />
-          <div className={styles.cardBody}>
-            <div className={styles.rating}>
-              <FaStar />
-              <FaStar />
-              <FaStar />
-              <FaStarHalfAlt />
+
+      <div className={styles.product_grid}>
+        {homecard.map((item) => (
+          <div key={item.id} className={styles.product_card}>
+            <div className={styles.card_img}>
+              <div className={styles.card_tags}>
+                {item.isNew && <span className={styles.tag_new}>NEW</span>}
+                {item.discount && (
+                  <span className={styles.tag_discount}>{item.discount}</span>
+                )}
+              </div>
+
+              <img src={item.img} alt={item.name} />
+
+              <button
+                className={styles.addCartBtn}
+                onClick={() => navigate(`/product/${item.id}?cat=${category}`)}
+              >
+                View Product
+              </button>
             </div>
-            <h3 className={styles.title}>{product.title}</h3>
-            <div className={styles.price}>
-              <span>₹{product.newprice}</span>
-              <del>₹{product.oldprice}</del>
+
+            <div className={styles.card_body}>
+              <p className={styles.stars}>
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </p>
+
+              <h3 className={styles.product_name}>{item.name}</h3>
+
+              <div className={styles.price_box}>
+                <span className={styles.new_price}>{item.price}</span>
+                {item.old && (
+                  <span className={styles.old_price}>{item.old}</span>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </>
   );
 }

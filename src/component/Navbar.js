@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
 import {
   FiSearch,
@@ -11,6 +11,7 @@ import {
 } from "react-icons/fi";
 
 export default function Navbar() {
+   const navigate = useNavigate();
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
@@ -104,9 +105,13 @@ export default function Navbar() {
         </ul>
 
         <div className={styles.icons}>
-          <FiSearch />
-          <FiUser />
-          <FiShoppingBag />
+          <FiSearch className={styles.icon} />
+          <FiUser
+        className={styles.icon}
+        onClick={() => navigate("/account")}
+        style={{ cursor: "pointer" }}
+      />
+          <FiShoppingBag className={styles.icon}/>
         </div>
       </nav>
     </div>
