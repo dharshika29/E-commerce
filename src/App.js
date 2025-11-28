@@ -1,5 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import {   useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import ContactUs from "./component/ContactUs";
 import Shop1 from "./component/Shop1";
@@ -10,6 +15,7 @@ import Navbar from "./component/Navbar";
 import SignPopup from "./component/SignPopup";
 import ProductPage from "./component/ProductPage";
 import Blog from "./component/Blog";
+import SingleBlog from "./component/SingleBlog";
 
 function App() {
   // const [showPopup, setShowPopup] = useState(false);
@@ -17,7 +23,7 @@ function App() {
   // useEffect(() => {
   //   const timer = setTimeout(() => {
   //     setShowPopup(true);
-  //   },0); 
+  //   },0);
 
   //   return () => clearTimeout(timer);
   // }, []);
@@ -37,13 +43,13 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/blog/:id" element={<SingleBlog />} />
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
 
 function PopupController() {
   const location = useLocation();

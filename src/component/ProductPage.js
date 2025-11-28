@@ -100,7 +100,7 @@ export default function ProductPage() {
             </p>
 
             <div className={styles.priceWrap}>
-              <span className={styles.newPrice}>{product.price}.00</span>
+              <span className={styles.newPrice}>{product.price}</span>
               <span className={styles.oldPrice}>
                 ${product.oldPrice}.00
               </span>

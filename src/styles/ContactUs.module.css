@@ -1,3 +1,4 @@
+
 .My_Account_page {
   font-family: "Poppins", sans-serif;
   padding: 60px 0;
@@ -9,10 +10,7 @@
   font-weight: 700;
   margin-bottom: 40px;
 }
-.account_profile_leftside {
-  /* display: flex; */
-  /* justify-content: center; */
-}
+
 
 .profileCard {
   padding: 0px 50px;
