@@ -9,6 +9,9 @@ import Home3 from "./component/Home3";
 import Navbar from "./component/Navbar";
 import SignPopup from "./component/SignPopup";
 import ProductPage from "./component/ProductPage";
+import Cart from "./component/Cart";
+import { CartProvider } from "./component/CartContext";
+
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -22,6 +25,7 @@ function App() {
   }, []);
 
   return (
+    <CartProvider>
     <Router>
       {showPopup && <SignPopup close={() => setShowPopup(false)} />}
 
@@ -34,8 +38,12 @@ function App() {
         <Route path="/shop" element={<Shop1 />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/contact" element={<ContactUs />} />
+          <Route path="/cart" element={<Cart />} />
+            <Route path="/" element={<Cart />} />
+       
       </Routes>
     </Router>
+    </CartProvider>
   );
 }
 

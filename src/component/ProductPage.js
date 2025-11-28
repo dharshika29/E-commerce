@@ -3,12 +3,17 @@ import { useParams, useLocation } from "react-router-dom";
 import { PRODUCT_DATA } from "./Shop1";
 import styles from "../styles/ProductPage.module.css";
 import Reviews from "./Reviews";
+import { useNavigate } from "react-router-dom";
+import { useCart } from "../component/CartContext";
+
 
 export default function ProductPage() {
+  const { addToCart } = useCart(); // get addToCart function
+  const navigate = useNavigate();   // <-- ADD THIS
+
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const category = params.get("cat") || "all";
-
   const { id } = useParams();
 
 
@@ -51,7 +56,6 @@ export default function ProductPage() {
     return () => clearInterval(timer);
   }, []);
 
-  if (!product) return <h2>Product not found</h2>;
 
 
   const images = [
@@ -63,7 +67,7 @@ export default function ProductPage() {
   return (
     <>
       <div className={styles.page}>
-   
+
         <div className={styles.breadcrumb}>
           <a href="/">Home</a> &gt;
           <a href="/shop"> Shop</a> &gt;
@@ -73,9 +77,9 @@ export default function ProductPage() {
           &gt; <span>{product.name}</span>
         </div>
 
-   
+
         <div className={styles.container}>
-    
+
           <div className={styles.left}>
             <img src={product.img} alt="" className={styles.mainImg} />
 
@@ -86,7 +90,7 @@ export default function ProductPage() {
             </div>
           </div>
 
-    
+
           <div className={styles.right}>
             <div className={styles.review}>
               ★★★★★ <span>11 Reviews</span>
@@ -100,13 +104,13 @@ export default function ProductPage() {
             </p>
 
             <div className={styles.priceWrap}>
-              <span className={styles.newPrice}>{product.price}.00</span>
+              <span className={styles.newPrice}>{product.price}</span>
               <span className={styles.oldPrice}>
                 ${product.oldPrice}.00
               </span>
             </div>
 
-     
+
             <div className={styles.timerBox}>
               <h4>Offer expires in:</h4>
               <div className={styles.timerRow}>
@@ -162,8 +166,9 @@ export default function ProductPage() {
 
               <button className={styles.wishlist}>♡ Wishlist</button>
             </div>
-
-            <button className={styles.addCart}>Add to Cart</button>
+            <button className={styles.addCart} onClick={() => { addToCart(product, qty); navigate("/cart"); }}>
+              Add to Cart
+            </button>
 
             <div className={styles.extraInfo}>
               <p>SKU: 1117</p>
@@ -172,7 +177,6 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
-
       <Reviews />
     </>
   );
