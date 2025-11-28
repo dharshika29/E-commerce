@@ -1,4 +1,4 @@
-.home_page{
+.home_page {
   font-family: "Poppins", sans-serif;
   overflow: hidden;
 }
@@ -380,7 +380,7 @@
     display: none;
   }
 
-  .new1 h1 {    
+  .new1 h1 {
     font-size: 22px;
   }
 
@@ -583,10 +583,13 @@
   justify-content: space-between;
   align-content: center;
   margin: 60px 50px 30px 50px;
-  font-weight: 700;
 }
 .articale_title h2 {
   font-size: 35px;
+  font-weight: 700;
+}
+.articale_title a{
+  color: black;
 }
 .articale_card {
   display: flex;
@@ -618,46 +621,64 @@
 .articale_card1:hover img {
   transform: scale(1.12);
 }
+
 @media (max-width: 768px) {
-  .articale_title {
-    /* flex-direction: column; */
-    text-align: center;
-    text-align: center;
-    gap: 5px;
+  .articale_bg {
+    padding: 0 15px;
   }
-
   .articale_title h2 {
-    font-size: 26px;
-    transform: translateY(-15px);
-  }
+    font-size: 22px;
+    transform: translateY(-5px);
 
-  .articale_title p {
-    font-size: 14px;
+  }
+  .articale_title a {
+     font-size: 14px;
+  }
+  .articale_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px 10px 0px;
   }
 
   .articale_card {
+    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 25px;
-    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .articale_full_card1 {
+    width: 100%;
+    max-width: 350px;
   }
 
   .articale_card1 {
-    width: 90%;
-    text-align: center;
+    width: 100%;
+    height: auto;
   }
 
   .articale_card1 img {
     width: 100%;
     height: auto;
+    object-fit: cover; /* PERFECT IMAGE FIT */
+    border-radius: 8px;
   }
 
-  .articale_card1 h6 {
+  .articale_full_card1 h6 {
+    margin-top: 10px;
     font-size: 18px;
+    font-weight: 600;
+    text-align: center;
   }
 
-  .articale_card1 a {
-    font-size: 15px;
+  .articale_full_card1 a {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: black;
   }
 }
 
@@ -737,9 +758,6 @@
     width: fit-content;
   }
 }
-
-
-
 
 /* ----------------------------------------- */
 .product_grid {
@@ -849,20 +867,20 @@
   text-decoration: line-through;
   color: gray;
 }
-.Show_more_btn{
+.Show_more_btn {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
-.Show_more_btn button{
+.Show_more_btn button {
   width: 200px;
   height: 50px;
   border-radius: 50px;
   font-size: 16px;
   background-color: transparent;
 }
-.Show_more_btn button:hover{
+.Show_more_btn button:hover {
   color: white;
   background-color: #000;
   cursor: pointer;
@@ -907,4 +925,3 @@
     font-size: 13px;
   }
 }
-

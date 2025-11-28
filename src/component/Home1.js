@@ -229,31 +229,31 @@ function Homeslide() {
       <div className={styles.articale_bg}>
         <div className={styles.articale_title}>
           <h2>Articles</h2>
-          <p>More Articles →</p>
+          <a href="/blog"><p>More Articles →</p></a>
         </div>
         <div className={styles.articale_card}>
           <div className={styles.articale_full_card1}>
-          <div className={styles.articale_card1}>
-            <img src={articaleimg1} alt="" />
-          </div>
+            <div className={styles.articale_card1}>
+              <img src={articaleimg1} alt="" />
+            </div>
             <h6>7 ways to decor your home</h6>
-            <a href="/">Read More →</a>
+            <a href="/blog">Read More →</a>
           </div>
 
           <div className={styles.articale_full_card1}>
-          <div className={styles.articale_card1}>
-            <img src={articaleimg2} alt="" />
-          </div>
+            <div className={styles.articale_card1}>
+              <img src={articaleimg2} alt="" />
+            </div>
             <h6>Kitchen organization</h6>
-            <a href="/">Read More →</a>
+            <a href="/blog">Read More →</a>
           </div>
 
           <div className={styles.articale_full_card1}>
-          <div className={styles.articale_card1}>
-            <img src={articaleimg3} alt="" />
-          </div>
+            <div className={styles.articale_card1}>
+              <img src={articaleimg3} alt="" />
+            </div>
             <h6>Decor your bedroom</h6>
-            <a href="/">Read More →</a>
+            <a href="/blog">Read More →</a>
           </div>
         </div>
       </div>
@@ -322,7 +322,6 @@ function Cardhome(category) {
   ];
   return (
     <>
-
       <div className={styles.product_grid}>
         {homecard.map((item) => (
           <div key={item.id} className={styles.product_card}>
