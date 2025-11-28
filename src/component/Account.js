@@ -33,6 +33,11 @@ export default function Account() {
   const [showRepeat, setShowRepeat] = useState(false);
 
   const [showAlert, setShowAlert] = useState(false);
+  const [wishlistItems, setWishlistItems] = useState([]);
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("wishlist")) || [];
+    setWishlistItems(items);
+  }, [category]); // wishlist tab open பண்ணும்போது reload ஆகும்
 
   // Load saved data from localStorage
   useEffect(() => {
@@ -483,10 +488,10 @@ export default function Account() {
                 </>
               )}
 
-              {/* WISHLIST------------------------------- */}
               {category === "wishlist" && (
                 <>
                   <h2 className={styles.sectionTitle}>Wishlist Section</h2>
+
                   <div className={styles.wishlist_table}>
                     <div className={styles.wishlist_header}>
                       <p>Product</p>
@@ -494,6 +499,45 @@ export default function Account() {
                       <p>Action</p>
                       <p>Remove</p>
                     </div>
+
+                    {wishlistItems.length === 0 && (
+                      <p style={{ padding: "20px" }}>No items in wishlist</p>
+                    )}
+
+                    {wishlistItems.map((item) => (
+                      <div className={styles.wishlist_row} key={item.id}>
+                        {/* PRODUCT + IMAGE */}
+                        <div className={styles.product_info}>
+                          <img src={item.img} className={styles.wishlist_img} />
+                          <p>{item.name}</p>
+                        </div>
+
+                        <p>{item.price}</p>
+
+                        <button
+                          className={styles.address_btn1}
+                          onClick={() => alert("Add to cart pressed")}
+                        >
+                          Add to Cart
+                        </button>
+
+                        <button
+                          className={styles.removeBtn}
+                          onClick={() => {
+                            const updated = wishlistItems.filter(
+                              (w) => w.id !== item.id
+                            );
+                            setWishlistItems(updated);
+                            localStorage.setItem(
+                              "wishlist",
+                              JSON.stringify(updated)
+                            );
+                          }}
+                        >
+                          X
+                        </button>
+                      </div>
+                    ))}
                   </div>
                 </>
               )}

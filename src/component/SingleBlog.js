@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import styles from "../styles/SingleBlog.module.css";
 
 import { blogData } from "../data/BlogData";
+import YouMightAlsoLike from "./Article";
+import Sfooter from "./Sfooter";
 
 export default function SingleBlog() {
   const { id } = useParams();
@@ -13,10 +15,9 @@ export default function SingleBlog() {
   return (
     <>
       <div className={styles.singleBlog}>
-
-        {/* Breadcrumb */}
         <div className={styles.breadcrumb}>
-          Home › Blog › {blog.title}
+          Home › Blog ›{" "}
+          <span className={styles.breadcrumbTitle}>{blog.title}</span>
         </div>
 
         {/* Category */}
@@ -67,7 +68,8 @@ export default function SingleBlog() {
         {/* Clutter */}
         <h2 className={styles.heading}>Kit your clutter for easy access</h2>
         <p className={styles.textBlock}>
-          A labelled system helps everyone find what they need without searching.
+          A labelled system helps everyone find what they need without
+          searching.
         </p>
       </div>
 
@@ -84,11 +86,14 @@ export default function SingleBlog() {
 
           <h2>Make your mop disappear</h2>
           <p>
-            Keep cleaning tools hidden inside cabinets or drawers. Sliding baskets
-            and wall hooks help maintain a tidy environment effortlessly.
+            Keep cleaning tools hidden inside cabinets or drawers. Sliding
+            baskets and wall hooks help maintain a tidy environment
+            effortlessly.
           </p>
         </div>
       </div>
+      <YouMightAlsoLike />
+      <Sfooter />
     </>
   );
 }

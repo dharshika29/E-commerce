@@ -75,13 +75,7 @@
   text-decoration: none;
 }
 
-/* ==================================================== */
-.account_profile_rightside {
-  /* background: white; */
-  /* padding: 35px; */
-  /* border-radius: 12px; */
-  /* box-shadow: 0 4px 15px rgba(0,0,0,0.1); */
-}
+
 
 .sectionTitle {
   font-size: 26px;
@@ -362,15 +356,15 @@
   color: #555;
 }
 .address_btn {
-  width: 180px;
+  width: 100px;
   padding: 12px;
-  font-size: 17px;
+  font-size: 10px;
   font-weight: 600;
   border: none;
   background: black;
   color: white;
   border-radius: 6px;
-  margin-top: 15px;
+
   cursor: pointer;
   transition: 0.3s;
 }
@@ -454,4 +448,66 @@
   font-weight: 600;
   color: #000000;
   border-bottom: 1px solid #e6e6e6; 
+}
+.product_info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.wishlist_img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.wishlist_table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.wishlist_header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+  padding: 15px 0;
+  border-bottom: 2px solid #ddd;
+  font-weight: bold;
+}
+
+.wishlist_row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 0.5fr;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ececec;
+  gap: 10px;
+}
+
+.address_btn {
+  /* padding: 8px 18px; */
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.address_btn1 {
+  padding: 8px;
+  width: 100px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+}
+
+.removeBtn {
+  padding: 5px 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
 }

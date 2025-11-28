@@ -11,13 +11,11 @@ export default function ProductPage() {
 
   const { id } = useParams();
 
-
   const allProducts = Object.values(PRODUCT_DATA).flat();
   const product = allProducts.find((p) => p.id === Number(id));
 
   const [qty, setQty] = useState(1);
   const [selectedColor, setSelectedColor] = useState("Black");
-
 
   const offerEndRef = useRef(null);
 
@@ -53,17 +51,29 @@ export default function ProductPage() {
 
   if (!product) return <h2>Product not found</h2>;
 
-
   const images = [
     product.img,
     product.img2 || product.img,
     product.img3 || product.img,
   ];
+  const addToWishlist = () => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    // Already exist-ஆ இருந்தா duplicate ஆகாதவாறு check
+    const exists = wishlist.some((item) => item.id === product.id);
+
+    if (!exists) {
+      wishlist.push(product);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      alert("Added to wishlist!");
+    } else {
+      alert("Already in wishlist");
+    }
+  };
 
   return (
     <>
       <div className={styles.page}>
-   
         <div className={styles.breadcrumb}>
           <a href="/">Home</a> &gt;
           <a href="/shop"> Shop</a> &gt;
@@ -73,9 +83,7 @@ export default function ProductPage() {
           &gt; <span>{product.name}</span>
         </div>
 
-   
         <div className={styles.container}>
-    
           <div className={styles.left}>
             <img src={product.img} alt="" className={styles.mainImg} />
 
@@ -86,7 +94,6 @@ export default function ProductPage() {
             </div>
           </div>
 
-    
           <div className={styles.right}>
             <div className={styles.review}>
               ★★★★★ <span>11 Reviews</span>
@@ -101,12 +108,9 @@ export default function ProductPage() {
 
             <div className={styles.priceWrap}>
               <span className={styles.newPrice}>{product.price}</span>
-              <span className={styles.oldPrice}>
-                ${product.oldPrice}.00
-              </span>
+              <span className={styles.oldPrice}>${product.oldPrice}.00</span>
             </div>
 
-     
             <div className={styles.timerBox}>
               <h4>Offer expires in:</h4>
               <div className={styles.timerRow}>
@@ -153,14 +157,14 @@ export default function ProductPage() {
 
             <div className={styles.actions}>
               <div className={styles.qtyBox}>
-                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)}>
-                  -
-                </button>
+                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)}>-</button>
                 <span>{qty}</span>
                 <button onClick={() => setQty(qty + 1)}>+</button>
               </div>
 
-              <button className={styles.wishlist}>♡ Wishlist</button>
+              <button className={styles.wishlist} onClick={addToWishlist}>
+                ♡ Wishlist
+              </button>
             </div>
 
             <button className={styles.addCart}>Add to Cart</button>
