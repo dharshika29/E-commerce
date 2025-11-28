@@ -119,26 +119,31 @@
 }
 
 .card {
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
 }
 
-.imgBox {
+.imgBox img {
   width: 100%;
-  height: 220px;
-  /* background: #e6e6e6; */
-  border-radius: 10px;
+  height: auto;
+  border-radius: 8px; 
 }
+
+.cardText {
+  padding: 8px 0;
+}
+
 
 .card h3 {
   margin: 12px 0 6px;
   font-size: 18px;
   font-weight: 600;
-  color: white;
 }
 
 .date {
   font-size: 14px;
-  color: rgb(243, 238, 238);
+  color: grey;
 }
 
 .loadMore {
@@ -149,5 +154,8 @@
   background: transparent;
   border-radius: 25px;
   font-size: 15px;
-  cursor: pointer;
+}
+.loadMore:hover{
+background-color: black;
+color: white;
 }

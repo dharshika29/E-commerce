@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import {   useEffect, useState } from "react";
 
 import ContactUs from "./component/ContactUs";
@@ -10,6 +10,7 @@ import Navbar from "./component/Navbar";
 import SignPopup from "./component/SignPopup";
 import ProductPage from "./component/ProductPage";
 import Blog from "./component/Blog";
+import BlogPost from "./component/BlogPost";
 
 function App() {
   // const [showPopup, setShowPopup] = useState(false);
@@ -37,6 +38,9 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/contact" element={<ContactUs />} />
+         <Route path="/" element={<Navigate to="/blog" replace />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
     </Router>
   );
