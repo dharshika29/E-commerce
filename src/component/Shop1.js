@@ -686,6 +686,7 @@ function ProductGrid({ title, products, category }) {
       <div className={styles.Show_more_btn}>
         <button>Show more</button>
       </div>
+      
     </>
   );
 }

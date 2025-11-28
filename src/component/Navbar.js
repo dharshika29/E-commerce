@@ -9,24 +9,19 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
-
 export default function Navbar() {
    const navigate = useNavigate();
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-
   const toggleDropdown = (name) => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
-
   const closeMobile = () => {
     setMobileOpen(false);
     setActiveDropdown(null);
   };
-
   const isActive = (path) => location.pathname === path;
-
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.offerBar}>
@@ -35,17 +30,14 @@ export default function Navbar() {
           Shop Now →
         </Link>
       </div>
-
       <nav className={styles.nav}>
         <div className={styles.logo}>3legant.</div>
-
         <div
           className={styles.mobileIcon}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <FiX /> : <FiMenu />}
         </div>
-
         <ul className={`${styles.links} ${mobileOpen ? styles.showMenu : ""}`}>
           <li className={styles.dropItem}>
             <div className={styles.menuTitle}>
@@ -61,7 +53,6 @@ export default function Navbar() {
                 onClick={() => toggleDropdown("home")}
               />
             </div>
-
             {activeDropdown === "home" && (
               <div className={styles.dropdownMenu}>
                 <Link to="/home/home1" onClick={closeMobile}>
@@ -73,7 +64,6 @@ export default function Navbar() {
               </div>
             )}
           </li>
-
           <li>
             <Link
               to="/shop"
@@ -83,7 +73,6 @@ export default function Navbar() {
               Shop
             </Link>
           </li>
-
           <li>
             <Link
               to="/blog"
@@ -103,7 +92,6 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-
         <div className={styles.icons}>
           <FiSearch className={styles.icon} />
           <FiUser
