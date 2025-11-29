@@ -686,6 +686,7 @@ function ProductGrid({ title, products, category }) {
       <div className={styles.Show_more_btn}>
         <button>Show more</button>
       </div>
+      
     </>
   );
 }
@@ -704,9 +705,9 @@ export default function Shop1() {
 
           <div className={styles.shop_text}>
             <div className={styles.shop_icon}>
-              <a href="/"><h5>Home</h5></a>
+              <a href="/">Home</a>
               <span><MdKeyboardArrowRight /></span>
-              <a href="/shop"><h5>Shop</h5></a>
+              <a href="/shop">Shop</a>
             </div>
 
             <h1>Shop Page</h1>
@@ -716,11 +717,10 @@ export default function Shop1() {
 
         <div className={`container ${styles.shop_card_bg}`}>
           <div className={`row ${styles.shop_card_row}`}>
-            
-            {/* LEFT FILTER */}
+
             <div className={`col-md-3 ${styles.shop_card_col1}`}>
               <div className={styles.shop_card_title}>
-                <CiSliderHorizontal />
+                <i><CiSliderHorizontal /></i>
                 <h2>Filter</h2>
               </div>
 

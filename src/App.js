@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {   useEffect, useState } from "react";
 
 import ContactUs from "./component/ContactUs";
 import Shop1 from "./component/Shop1";
@@ -9,25 +9,18 @@ import Home3 from "./component/Home3";
 import Navbar from "./component/Navbar";
 import SignPopup from "./component/SignPopup";
 import ProductPage from "./component/ProductPage";
-import Cart from "./component/Cart";
+import Account from "./component/Account";
+import Blog from "./component/Blog";
 import { CartProvider } from "./component/CartContext";
-
+import Cart from "./component/Cart";
 
 function App() {
-  const [showPopup, setShowPopup] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 5000); 
-
-    return () => clearTimeout(timer);
-  }, []);
-
+  
   return (
     <CartProvider>
     <Router>
-      {showPopup && <SignPopup close={() => setShowPopup(false)} />}
+      {/* {showPopup && <SignPopup close={() => setShowPopup(false)} />} */}
+      <PopupController />
 
       <Navbar />
 
@@ -36,11 +29,11 @@ function App() {
         <Route path="/home/home1" element={<Home2 />} />
         <Route path="/home/home2" element={<Home3 />} />
         <Route path="/shop" element={<Shop1 />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/contact" element={<ContactUs />} />
-          <Route path="/cart" element={<Cart />} />
-            <Route path="/" element={<Cart />} />
-       
+        <Route path="/account" element={<Account />} />
+         <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
     </CartProvider>
@@ -48,3 +41,21 @@ function App() {
 }
 
 export default App;
+
+
+function PopupController() {
+  const location = useLocation();
+  const [showPopup, setShowPopup] = useState(false);
+
+  useEffect(() => {
+    const homePages = ["/", "/home/home1", "/home/home2"];
+    if (homePages.includes(location.pathname)) {
+      const timer = setTimeout(() => setShowPopup(true), 0);
+      return () => clearTimeout(timer);
+    } else {
+      setShowPopup(false);
+    }
+  }, [location.pathname]);
+
+  return showPopup ? <SignPopup close={() => setShowPopup(false)} /> : null;
+}

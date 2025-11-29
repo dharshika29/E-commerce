@@ -98,6 +98,10 @@
 }
 .imageWrapper {
   position: relative;
+   transition: 0.3s ease;
+}
+.imageWrapper:hover{
+   transform: translateY(-10px);
 }
 
 .cardimg {
@@ -375,7 +379,6 @@ font-size: 50px;
 
   .instamain {
     flex-direction: row;
-    flex-wrap: wrap;
     overflow: hidden;
   }
 
