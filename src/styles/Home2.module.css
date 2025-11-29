@@ -528,7 +528,7 @@
 }
 } */
 /* overlay */
-.overlay {
+/* .overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -539,6 +539,20 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+} */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25); /* Slight dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .box {

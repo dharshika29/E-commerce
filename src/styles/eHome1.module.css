@@ -1,4 +1,4 @@
-.home_page{
+.home_page {
   font-family: "Poppins", sans-serif;
   overflow: hidden;
 }
@@ -150,6 +150,8 @@
 .bottom_text_bg {
   display: flex;
   justify-content: space-around;
+  margin-top: 70px;
+  margin-bottom: 50px;
 }
 .bottom_text1 h1 {
   font-size: 50px;
@@ -209,7 +211,7 @@
 /* ------------home Living Room-------------------------- */
 .home_product_container {
   margin-top: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 .home_product_row {
   display: flex;
@@ -364,7 +366,7 @@
 .new1 {
   display: flex;
   justify-content: space-between;
-  padding: 0px 50px 0px 50px;
+  padding: 0px 110px 0px 110px;
 }
 .new1 a {
   color: black;
@@ -378,7 +380,7 @@
     display: none;
   }
 
-  .new1 h1 {    
+  .new1 h1 {
     font-size: 22px;
   }
 
@@ -517,12 +519,14 @@
 .hundres_col2 h6 {
   color: #377dff;
   font-size: 19px;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 .hundres_col2 h1 {
   color: #141718;
   font-size: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 .hundres_col2 p {
   color: #141718;
@@ -578,26 +582,30 @@
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin: 50px 50px 0px 50px;
+  margin: 60px 50px 30px 50px;
 }
 .articale_title h2 {
   font-size: 35px;
+  font-weight: 700;
+}
+.articale_title a{
+  color: black;
 }
 .articale_card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.articale_card1 h6,
-.articale_card1 a {
+.articale_full_card1 h6,
+.articale_full_card1 a {
   margin: 0px;
   line-height: 2;
   margin-top: 10px;
 }
-.articale_card1 h6 {
+.articale_full_card1 h6 {
   font-size: 20px;
 }
-.articale_card1 a {
+.articale_full_card1 a {
   color: #000;
   font-size: 17px;
 }
@@ -613,46 +621,64 @@
 .articale_card1:hover img {
   transform: scale(1.12);
 }
+
 @media (max-width: 768px) {
-  .articale_title {
-    /* flex-direction: column; */
-    text-align: center;
-    text-align: center;
-    gap: 5px;
+  .articale_bg {
+    padding: 0 15px;
   }
-
   .articale_title h2 {
-    font-size: 26px;
-    transform: translateY(-15px);
-  }
+    font-size: 22px;
+    transform: translateY(-5px);
 
-  .articale_title p {
-    font-size: 14px;
+  }
+  .articale_title a {
+     font-size: 14px;
+  }
+  .articale_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px 10px 0px;
   }
 
   .articale_card {
+    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 25px;
-    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .articale_full_card1 {
+    width: 100%;
+    max-width: 350px;
   }
 
   .articale_card1 {
-    width: 90%;
-    text-align: center;
+    width: 100%;
+    height: auto;
   }
 
   .articale_card1 img {
     width: 100%;
     height: auto;
+    object-fit: cover; /* PERFECT IMAGE FIT */
+    border-radius: 8px;
   }
 
-  .articale_card1 h6 {
+  .articale_full_card1 h6 {
+    margin-top: 10px;
     font-size: 18px;
+    font-weight: 600;
+    text-align: center;
   }
 
-  .articale_card1 a {
-    font-size: 15px;
+  .articale_full_card1 a {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 14px;
+    text-decoration: underline;
+    color: black;
   }
 }
 
@@ -730,5 +756,172 @@
   .news_img img {
     object-fit: cover;
     width: fit-content;
+  }
+}
+
+/* ----------------------------------------- */
+.product_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.product_card {
+  background: #fff;
+  padding: 18px;
+  transition: all 0.25s ease-in-out;
+}
+
+.product_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+.card_img {
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.card_tags {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tag_new {
+  background: #009032;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.tag_discount {
+  background: #e4f1ff;
+  color: #0a63c7;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.addCartBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+.product_card:hover .addCartBtn {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: 20px;
+  cursor: pointer;
+}
+.card_body {
+  margin-top: 12px;
+}
+
+.stars {
+  color: #000000;
+  font-size: 14px;
+}
+
+.product_name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 8px 0;
+}
+.price_box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.new_price {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.old_price {
+  font-size: 14px;
+  text-decoration: line-through;
+  color: gray;
+}
+.Show_more_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.Show_more_btn button {
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  font-size: 16px;
+  background-color: transparent;
+}
+.Show_more_btn button:hover {
+  color: white;
+  background-color: #000;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .rightSection {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .product_grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .product_card {
+    padding: 15px;
+  }
+
+  .product_name {
+    font-size: 14px;
+  }
+
+  .new_price {
+    font-size: 16px;
+  }
+
+  .old_price {
+    font-size: 12px;
+  }
+
+  .addCartBtn {
+    width: 120px;
+    height: 36px;
+    font-size: 13px;
   }
 }

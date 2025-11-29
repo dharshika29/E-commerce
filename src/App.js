@@ -9,6 +9,7 @@ import Home3 from "./component/Home3";
 import Navbar from "./component/Navbar";
 import SignPopup from "./component/SignPopup";
 import ProductPage from "./component/ProductPage";
+import Account from "./component/Account";
 import Blog from "./component/Blog";
 import BlogPost from "./component/BlogPost";
 
@@ -41,6 +42,8 @@ function App() {
          <Route path="/" element={<Navigate to="/blog" replace />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPost />} />
+
+        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
   );
