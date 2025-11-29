@@ -550,11 +550,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(6px); /* For Safari support */
+  -webkit-backdrop-filter: blur(6px);
 }
-
+.overlay {
+  z-index: 999999;
+}
 .box {
   width: 900px;
   background: white;

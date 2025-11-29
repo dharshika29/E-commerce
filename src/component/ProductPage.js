@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { PRODUCT_DATA } from "./Shop1";
 import styles from "../styles/ProductPage.module.css";
@@ -10,22 +10,18 @@ export default function ProductPage() {
   const category = params.get("cat") || "all";
 
   const { id } = useParams();
-
   const allProducts = Object.values(PRODUCT_DATA).flat();
   const product = allProducts.find((p) => p.id === Number(id));
 
   const [qty, setQty] = useState(1);
   const [selectedColor, setSelectedColor] = useState("Black");
 
-  const offerEndRef = useRef(null);
+  // Offer end time stored in state, starts fresh on page load
+  const [offerEnd] = useState(() => new Date().getTime() + 2 * 24 * 60 * 60 * 1000);
 
-  if (!offerEndRef.current) {
-    offerEndRef.current = new Date().getTime() + 2 * 24 * 60 * 60 * 1000;
-  }
-
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = (endTime) => {
     const now = new Date().getTime();
-    const diff = offerEndRef.current - now;
+    const diff = endTime - now;
 
     if (diff <= 0) {
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -39,27 +35,22 @@ export default function ProductPage() {
     };
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(offerEnd));
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(offerEnd));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [offerEnd]);
 
   if (!product) return <h2>Product not found</h2>;
 
-  const images = [
-    product.img,
-    product.img2 || product.img,
-    product.img3 || product.img,
-  ];
+  const images = [product.img, product.img2 || product.img, product.img3 || product.img];
+
   const addToWishlist = () => {
     const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-    // Already exist-ஆ இருந்தா duplicate ஆகாதவாறு check
     const exists = wishlist.some((item) => item.id === product.id);
 
     if (!exists) {
@@ -86,7 +77,6 @@ export default function ProductPage() {
         <div className={styles.container}>
           <div className={styles.left}>
             <img src={product.img} alt="" className={styles.mainImg} />
-
             <div className={styles.gallery}>
               {images.map((img, index) => (
                 <img key={index} src={img} alt="" className={styles.thumb} />
@@ -95,9 +85,7 @@ export default function ProductPage() {
           </div>
 
           <div className={styles.right}>
-            <div className={styles.review}>
-              ★★★★★ <span>11 Reviews</span>
-            </div>
+            <div className={styles.review}>★★★★★ <span>11 Reviews</span></div>
 
             <h2 className={styles.title}>{product.name}</h2>
 
@@ -118,17 +106,14 @@ export default function ProductPage() {
                   <span>{String(timeLeft.days).padStart(2, "0")}</span>
                   <p>Days</p>
                 </div>
-
                 <div className={styles.timerItem}>
                   <span>{String(timeLeft.hours).padStart(2, "0")}</span>
                   <p>Hours</p>
                 </div>
-
                 <div className={styles.timerItem}>
                   <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
                   <p>Minutes</p>
                 </div>
-
                 <div className={styles.timerItem}>
                   <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
                   <p>Seconds</p>
@@ -143,16 +128,14 @@ export default function ProductPage() {
             <p className={styles.text}>{selectedColor}</p>
 
             <div className={styles.colorRow}>
-              {["#000", "#c9c1b3", "#d4a99c", "#c94444", "#ececec"].map(
-                (c, i) => (
-                  <div
-                    key={i}
-                    className={styles.colorBox}
-                    style={{ backgroundColor: c }}
-                    onClick={() => setSelectedColor(c)}
-                  ></div>
-                )
-              )}
+              {["#000", "#c9c1b3", "#d4a99c", "#c94444", "#ececec"].map((c, i) => (
+                <div
+                  key={i}
+                  className={styles.colorBox}
+                  style={{ backgroundColor: c }}
+                  onClick={() => setSelectedColor(c)}
+                ></div>
+              ))}
             </div>
 
             <div className={styles.actions}>
@@ -162,9 +145,7 @@ export default function ProductPage() {
                 <button onClick={() => setQty(qty + 1)}>+</button>
               </div>
 
-              <button className={styles.wishlist} onClick={addToWishlist}>
-                ♡ Wishlist
-              </button>
+              <button className={styles.wishlist} onClick={addToWishlist}>♡ Wishlist</button>
             </div>
 
             <button className={styles.addCart}>Add to Cart</button>

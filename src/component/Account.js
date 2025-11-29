@@ -508,7 +508,7 @@ export default function Account() {
                       <div className={styles.wishlist_row} key={item.id}>
                         {/* PRODUCT + IMAGE */}
                         <div className={styles.product_info}>
-                          <img src={item.img} className={styles.wishlist_img} />
+                          <img src={item.img} alt="" className={styles.wishlist_img} />
                           <p>{item.name}</p>
                         </div>
 

@@ -19,7 +19,9 @@ export default function Sfooter() {
             <div className={styles.emailBox}>
               <FiMail className={styles.mailIcon} />
               <input type="email" placeholder="Email address" />
-              <button className={styles.input_btn}>Signup</button>
+              <a href="/account">
+                <button className={styles.input_btn}>Signup</button>
+              </a>
             </div>
           </div>
         </div>
@@ -37,10 +39,10 @@ export default function Sfooter() {
 
           <nav className={styles.nav}>
             <a href="/">Home</a>
-            <a href="/">Shop</a>
-            <a href="/">Product</a>
-            <a href="/">Blog</a>
-            <a href="/">Contact Us</a>
+            <a href="/shop">Shop</a>
+            {/* <a href="/">Product</a> */}
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact Us</a>
           </nav>
         </div>
 

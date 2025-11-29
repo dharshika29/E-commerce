@@ -24,14 +24,12 @@ export default function Blog() {
   const [visibleCount, setVisibleCount] = useState(initialCount);
   const [expanded, setExpanded] = useState(false);
 
-  // FIRST DATA WITH IDs
   const data = [
     { id: 1, img: image1, title: "7 ways to decorate your home like a professional", date: "March 20, 2024" },
     { id: 2, img: image2, title: "Inside a beautiful kitchen organization", date: "March 20, 2024" },
     { id: 3, img: image3, title: "Decor your bedroom for your children", date: "March 20, 2024" },
   ];
 
-  // Repeated data also needs IDs
   const repeated = [
     { id: 4, img: image4, title: "Modern town home is beautiful & kid-friendly", date: "March 20, 2024" },
     { id: 5, img: image5, title: "Luxury interior styling for modern homes", date: "March 20, 2024" },
@@ -64,9 +62,9 @@ export default function Blog() {
 
           <div className={styles.shop_text}>
             <div className={styles.shop_icon}>
-              <a href="/"><h5>Home</h5></a>
+              <Link to="/"><h5>Home</h5></Link>
               <span><MdKeyboardArrowRight /></span>
-              <a href="#"><h5>Blog</h5></a>
+              <Link to="/blog"><h5>Blog</h5></Link>
             </div>
 
             <h1>Blog Page</h1>
