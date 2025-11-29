@@ -18,14 +18,16 @@ import ProductPage from "./component/ProductPage";
 import Account from "./component/Account";
 import Blog from "./component/Blog";
 import SingleBlog from "./component/SingleBlog";
-import PageWrapper from "./component/Pagewrapper"; // Page animation wrapper
+import PageWrapper from "./component/Pagewrapper";
 import ScrollToTop from "./component/ScrollTop";
+import { CartProvider } from "./component/CartContext";
+import Cart from "./component/Cart";
 
 function AppWrapper() {
   const location = useLocation();
   return (
     <>
-     <ScrollToTop />
+      <ScrollToTop />
       <PopupController />
 
       <Navbar />
@@ -104,6 +106,14 @@ function AppWrapper() {
               </PageWrapper>
             }
           />
+          <Route
+            path="/cart"
+            element={
+              <PageWrapper>
+                <Cart />
+              </PageWrapper>
+            }
+          />
         </Routes>
       </AnimatePresence>
     </>
@@ -112,9 +122,11 @@ function AppWrapper() {
 
 function App() {
   return (
-    <Router>
-      <AppWrapper />
-    </Router>
+    <CartProvider>
+      <Router>
+        <AppWrapper />
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -85,7 +85,7 @@ const PRODUCT_DATA = {
     {
       id: 5,
       name: "Loveseat Sofa",
-      price: "$199.00",
+      price: 199.00,
       old: "$400.00",
       img: shopcardimg1,
       isNew: true,

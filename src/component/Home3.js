@@ -22,7 +22,6 @@ import article1 from '../image3/j article1.png'
 import article2 from '../image3/j article2.png'
 import article3 from '../image3/j article3.png'
 import { FaArrowRightLong } from "react-icons/fa6";
-import { FaEnvelope } from "react-icons/fa";
 import insta1 from '../image3/j lastimg1.png';
 import insta2 from '../image3/j lastimg2.png';
 import insta3 from '../image3/j lastimg3.png';
@@ -227,12 +226,8 @@ function Home3() {
         ))}
       </div>
       <div className={styles.news}>
-        <h1 className={styles.hh3}>Join Our Newsletter</h1>
-        <p className={styles.pp5}>Sign up for deals, new products and promotions</p>
         <div className={styles.li}>
-          <li><FaEnvelope /></li>
-          <li>Email Address</li>
-        <li className={styles.lisi}>SignUp</li>
+         <p>Hockey is a fast-paced team sport<br></br> played on ice or field, where teams use<br></br>sticks to score goals by propelling a puck <br></br>or ball into the opponent's net.</p>
         </div>
       </div>
       <div className={styles.instagram}>

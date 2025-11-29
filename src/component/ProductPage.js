@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 import { PRODUCT_DATA } from "./Shop1";
 import styles from "../styles/ProductPage.module.css";
 import Reviews from "./Reviews";
+import { useCart } from "../component/CartContext";
 
 export default function ProductPage() {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const category = params.get("cat") || "all";
@@ -13,11 +17,17 @@ export default function ProductPage() {
   const allProducts = Object.values(PRODUCT_DATA).flat();
   const product = allProducts.find((p) => p.id === Number(id));
 
+  // ------------------------------
+  // 🔥 Hooks must be here (TOP LEVEL)
+  // ------------------------------
+
   const [qty, setQty] = useState(1);
   const [selectedColor, setSelectedColor] = useState("Black");
 
-  // Offer end time stored in state, starts fresh on page load
-  const [offerEnd] = useState(() => new Date().getTime() + 2 * 24 * 60 * 60 * 1000);
+  // Offer Timer
+  const [offerEnd] = useState(
+    () => new Date().getTime() + 2 * 24 * 60 * 60 * 1000
+  );
 
   const calculateTimeLeft = (endTime) => {
     const now = new Date().getTime();
@@ -45,10 +55,28 @@ export default function ProductPage() {
     return () => clearInterval(timer);
   }, [offerEnd]);
 
-  if (!product) return <h2>Product not found</h2>;
+  // Gallery
+  const images = [
+    product?.img,
+    product?.img2 || product?.img,
+    product?.img3 || product?.img,
+  ];
 
-  const images = [product.img, product.img2 || product.img, product.img3 || product.img];
+  const [mainImage, setMainImage] = useState(product?.img);
 
+  // ------------------------------
+  // 🔥 Now safe to return if no product
+  // ------------------------------
+  if (!product) {
+    return (
+      <div className={styles.notFound}>
+        <h2>Product Not Found</h2>
+        <Link to="/shop">Go Back to Shop</Link>
+      </div>
+    );
+  }
+
+  // Wishlist Store
   const addToWishlist = () => {
     const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     const exists = wishlist.some((item) => item.id === product.id);
@@ -65,33 +93,45 @@ export default function ProductPage() {
   return (
     <>
       <div className={styles.page}>
+        {/* Breadcrumb */}
         <div className={styles.breadcrumb}>
-          <a href="/">Home</a> &gt;
-          <a href="/shop"> Shop</a> &gt;
-          <a href={`/shop#${category}`}>
+          <Link to="/">Home</Link> &gt;
+          <Link to="/shop"> Shop</Link> &gt;
+          <Link to={`/shop#${category}`}>
             {category.charAt(0).toUpperCase() + category.slice(1)}
-          </a>
+          </Link>
           &gt; <span>{product.name}</span>
         </div>
 
         <div className={styles.container}>
+          {/* LEFT */}
           <div className={styles.left}>
-            <img src={product.img} alt="" className={styles.mainImg} />
+            <img src={mainImage} alt="" className={styles.mainImg} />
+
             <div className={styles.gallery}>
               {images.map((img, index) => (
-                <img key={index} src={img} alt="" className={styles.thumb} />
+                <img
+                  key={index}
+                  src={img}
+                  alt=""
+                  className={styles.thumb}
+                  onClick={() => setMainImage(img)}
+                />
               ))}
             </div>
           </div>
 
+          {/* RIGHT */}
           <div className={styles.right}>
-            <div className={styles.review}>★★★★★ <span>11 Reviews</span></div>
+            <div className={styles.review}>
+              ★★★★★ <span>11 Reviews</span>
+            </div>
 
             <h2 className={styles.title}>{product.name}</h2>
 
             <p className={styles.desc}>
               {product.description ||
-                "Lightweight, versatile, and designed for modern living spaces, this piece blends functionality with style. Built using high-quality materials, it offers excellent durability while maintaining a smooth, elegant finish. The removable tray top makes serving, organizing, and decorating effortless, and the compact structure ensures it fits beautifully in bedrooms, living rooms, balconies, or office corners. Perfect for holding beverages, books, plants, or décor items, this furniture piece enhances your space with a clean and minimal aesthetic that complements any interior."}
+                "Lightweight, versatile, and designed for modern living spaces."}
             </p>
 
             <div className={styles.priceWrap}>
@@ -99,6 +139,7 @@ export default function ProductPage() {
               <span className={styles.oldPrice}>${product.oldPrice}.00</span>
             </div>
 
+            {/* Timer */}
             <div className={styles.timerBox}>
               <h4>Offer expires in:</h4>
               <div className={styles.timerRow}>
@@ -121,34 +162,51 @@ export default function ProductPage() {
               </div>
             </div>
 
-            <h4 className={styles.subtitle}>Measurements</h4>
-            <p className={styles.text}>17 1/2x20 5/8 "</p>
-
+            {/* Colors */}
             <h4 className={styles.subtitle}>Choose Color</h4>
             <p className={styles.text}>{selectedColor}</p>
 
             <div className={styles.colorRow}>
-              {["#000", "#c9c1b3", "#d4a99c", "#c94444", "#ececec"].map((c, i) => (
+              {[
+                { hex: "#000", label: "Black" },
+                { hex: "#c9c1b3", label: "Beige" },
+                { hex: "#d4a99c", label: "Nude" },
+                { hex: "#c94444", label: "Red" },
+                { hex: "#ececec", label: "White" },
+              ].map((color, i) => (
                 <div
                   key={i}
                   className={styles.colorBox}
-                  style={{ backgroundColor: c }}
-                  onClick={() => setSelectedColor(c)}
+                  style={{ backgroundColor: color.hex }}
+                  onClick={() => setSelectedColor(color.label)}
                 ></div>
               ))}
             </div>
 
+            {/* Qty + Wishlist */}
             <div className={styles.actions}>
               <div className={styles.qtyBox}>
-                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)}>-</button>
+                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)}>
+                  -
+                </button>
                 <span>{qty}</span>
                 <button onClick={() => setQty(qty + 1)}>+</button>
               </div>
 
-              <button className={styles.wishlist} onClick={addToWishlist}>♡ Wishlist</button>
+              <button className={styles.wishlist} onClick={addToWishlist}>
+                ♡ Wishlist
+              </button>
             </div>
 
-            <button className={styles.addCart}>Add to Cart</button>
+            <button
+              className={styles.addCart}
+              onClick={() => {
+                addToCart(product, qty);
+                navigate("/cart");
+              }}
+            >
+              Add to Cart
+            </button>
 
             <div className={styles.extraInfo}>
               <p>SKU: 1117</p>
