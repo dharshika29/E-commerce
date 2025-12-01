@@ -19,11 +19,8 @@ function App() {
   return (
     <CartProvider>
     <Router>
-      {/* {showPopup && <SignPopup close={() => setShowPopup(false)} />} */}
       <PopupController />
-
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home1 />} />
         <Route path="/home/home1" element={<Home2 />} />
