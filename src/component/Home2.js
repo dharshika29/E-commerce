@@ -15,7 +15,6 @@ import { AiOutlineHeart } from "react-icons/ai";
 import headbandImg from "../Image2/s-shopcollection1.png";
 import earbudsImg from "../Image2/s-shopcollection3.png";
 import accessoriesImg from "../Image2/s-shopcollection2.png";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import seller1 from "../Image2/s best seller1.png";
 import seller2 from "../Image2/s-bestseller2.png";
 import seller3 from "../Image2/s best seller3.png";
@@ -30,9 +29,7 @@ import insta1 from "../Image2/s instagram1.jpg";
 import insta2 from "../Image2/s-women.png";
 import insta3 from "../Image2/s-man.png";
 import insta4 from "../Image2/s-headset.png";
-import join from "../Image2/s join1.png";
-import girlImg from "../Image2/s join2.png";
-import SignPopup from "./SignPopup";
+
 
 import Sfooter from "../component/Sfooter";
 function Home1() {
@@ -135,9 +132,6 @@ function Home1() {
       badge: "HOT",
     }
   ];
-
-
-
   const logo = [
     { id: 1, img: img1 },
     { id: 2, img: img2 },
@@ -146,7 +140,6 @@ function Home1() {
     { id: 5, img: img5 },
     { id: 6, img: img6 }
   ];
-
   const card = [
     {
       id: 1,
@@ -192,7 +185,6 @@ function Home1() {
 
   return (
     <>
-
       <div className={styles.hero}>
         <div className={styles.left}></div>
         <div className={styles.right}>
@@ -243,7 +235,7 @@ function Home1() {
           >
             <div className={styles.content}>
               <h3>Headband</h3>
-              <a className={styles.link} href="#">
+              <a className={styles.link} href="/">
                 Collection <span>→</span>
               </a>
             </div>
@@ -257,7 +249,7 @@ function Home1() {
             >
               <div className={styles.content}>
                 <h3>Earbuds</h3>
-                <a className={styles.link} href="#">
+                <a className={styles.link} href="/">
                   Collection <span>→</span>
                 </a>
               </div>
@@ -269,7 +261,7 @@ function Home1() {
             >
               <div className={styles.content}>
                 <h3>Accessories</h3>
-                <a className={styles.link} href="#">
+                <a className={styles.link} href="/">
                   Collection <span>→</span>
                 </a>
               </div>

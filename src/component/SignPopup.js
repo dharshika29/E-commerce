@@ -69,13 +69,11 @@ export default function SignInSignUpPopup({ close }) {
   return (
     <div className={styles.overlay}>
       <div className={styles.box}>
-        
-        {/* LEFT IMAGE */}
+
         <div className={styles.left}>
           <img src={chair} alt="chair" />
         </div>
 
-        {/* RIGHT FORM */}
         <div className={styles.right}>
           <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
 
@@ -86,10 +84,7 @@ export default function SignInSignUpPopup({ close }) {
             </span>
           </p>
 
-          {/* SUCCESS MESSAGE */}
           {success && <div className={styles.success}>{success}</div>}
-
-          {/* ERROR MESSAGE */}
           {error && <div className={styles.error}>{error}</div>}
 
           <form onSubmit={handleSubmit}>

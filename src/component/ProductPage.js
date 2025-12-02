@@ -1,42 +1,35 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import React, { useState, useEffect, useCallback } from "react";
+import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 import { PRODUCT_DATA } from "./Shop1";
 import styles from "../styles/ProductPage.module.css";
 import Reviews from "./Reviews";
-import { useNavigate } from "react-router-dom";
 import { useCart } from "../component/CartContext";
 
-
 export default function ProductPage() {
-  const { addToCart } = useCart(); // get addToCart function
-  const navigate = useNavigate();   // <-- ADD THIS
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const category = params.get("cat") || "all";
+
+  // --- Get Product ---
   const { id } = useParams();
-
-
   const allProducts = Object.values(PRODUCT_DATA).flat();
   const product = allProducts.find((p) => p.id === Number(id));
 
+  // --- Hooks ---
   const [qty, setQty] = useState(1);
   const [selectedColor, setSelectedColor] = useState("Black");
 
+  // Offer Timer
+  const offerEnd = new Date().getTime() + 2 * 24 * 60 * 60 * 1000;
 
-  const offerEndRef = useRef(null);
-
-  if (!offerEndRef.current) {
-    offerEndRef.current = new Date().getTime() + 2 * 24 * 60 * 60 * 1000;
-  }
-
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date().getTime();
-    const diff = offerEndRef.current - now;
+    const diff = offerEnd - now;
 
-    if (diff <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
     return {
       days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -44,7 +37,7 @@ export default function ProductPage() {
       minutes: Math.floor((diff / 1000 / 60) % 60),
       seconds: Math.floor((diff / 1000) % 60),
     };
-  };
+  }, [offerEnd]);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
@@ -54,43 +47,71 @@ export default function ProductPage() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
-
+  }, [calculateTimeLeft]);
 
 
   const images = [
-    product.img,
-    product.img2 || product.img,
-    product.img3 || product.img,
-  ];
+    product?.img,
+    product?.img2 || product?.img,
+    product?.img3 || product?.img,
+  ].filter(Boolean);
+
+  const [mainImage, setMainImage] = useState(images[0]);
+
+  // If product invalid
+  if (!product) {
+    return (
+      <div className={styles.notFound}>
+        <h2>Product Not Found</h2>
+        <Link to="/shop">Go Back to Shop</Link>
+      </div>
+    );
+  }
+
+  // Wishlist
+  const addToWishlist = () => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const exists = wishlist.some((item) => item.id === product.id);
+
+    if (exists) return alert("Already in wishlist");
+
+    wishlist.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    alert("Added to wishlist!");
+  };
 
   return (
     <>
       <div className={styles.page}>
-
+        {/* Breadcrumb */}
         <div className={styles.breadcrumb}>
-          <a href="/">Home</a> &gt;
-          <a href="/shop"> Shop</a> &gt;
-          <a href={`/shop#${category}`}>
+          <Link to="/">Home</Link> &gt;
+          <Link to="/shop"> Shop</Link> &gt;
+          <Link to={`/shop#${category}`}>
             {category.charAt(0).toUpperCase() + category.slice(1)}
-          </a>
+          </Link>
           &gt; <span>{product.name}</span>
         </div>
 
-
         <div className={styles.container}>
-
+          {/* LEFT */}
           <div className={styles.left}>
-            <img src={product.img} alt="" className={styles.mainImg} />
+            <img src={mainImage} alt="" className={styles.mainImg} />
 
             <div className={styles.gallery}>
               {images.map((img, index) => (
-                <img key={index} src={img} alt="" className={styles.thumb} />
+                <img
+                  key={index}
+                  src={img}
+                  alt=""
+                  className={styles.thumb}
+                  onClick={() => setMainImage(img)}
+                />
               ))}
             </div>
           </div>
 
-
+          {/* RIGHT */}
           <div className={styles.right}>
             <div className={styles.review}>
               ★★★★★ <span>11 Reviews</span>
@@ -100,73 +121,70 @@ export default function ProductPage() {
 
             <p className={styles.desc}>
               {product.description ||
-                "Lightweight, versatile, and designed for modern living spaces, this piece blends functionality with style. Built using high-quality materials, it offers excellent durability while maintaining a smooth, elegant finish. The removable tray top makes serving, organizing, and decorating effortless, and the compact structure ensures it fits beautifully in bedrooms, living rooms, balconies, or office corners. Perfect for holding beverages, books, plants, or décor items, this furniture piece enhances your space with a clean and minimal aesthetic that complements any interior."}
+                "Lightweight, versatile, and designed for modern living spaces."}
             </p>
 
             <div className={styles.priceWrap}>
-              <span className={styles.newPrice}>{product.price}</span>
-              <span className={styles.oldPrice}>
-                ${product.oldPrice}.00
-              </span>
+              <span className={styles.newPrice}>{product.price}.00</span>
+              {product.oldPrice && (
+                <span className={styles.oldPrice}>${product.oldPrice}.00</span>
+              )}
             </div>
 
-
+            {/* Timer */}
             <div className={styles.timerBox}>
               <h4>Offer expires in:</h4>
               <div className={styles.timerRow}>
-                <div className={styles.timerItem}>
-                  <span>{String(timeLeft.days).padStart(2, "0")}</span>
-                  <p>Days</p>
-                </div>
-
-                <div className={styles.timerItem}>
-                  <span>{String(timeLeft.hours).padStart(2, "0")}</span>
-                  <p>Hours</p>
-                </div>
-
-                <div className={styles.timerItem}>
-                  <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
-                  <p>Minutes</p>
-                </div>
-
-                <div className={styles.timerItem}>
-                  <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
-                  <p>Seconds</p>
-                </div>
+                {["days", "hours", "minutes", "seconds"].map((unit) => (
+                  <div key={unit} className={styles.timerItem}>
+                    <span>{String(timeLeft[unit]).padStart(2, "0")}</span>
+                    <p>{unit.charAt(0).toUpperCase() + unit.slice(1)}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <h4 className={styles.subtitle}>Measurements</h4>
-            <p className={styles.text}>17 1/2x20 5/8 "</p>
-
+            {/* Colors */}
             <h4 className={styles.subtitle}>Choose Color</h4>
             <p className={styles.text}>{selectedColor}</p>
 
             <div className={styles.colorRow}>
-              {["#000", "#c9c1b3", "#d4a99c", "#c94444", "#ececec"].map(
-                (c, i) => (
-                  <div
-                    key={i}
-                    className={styles.colorBox}
-                    style={{ backgroundColor: c }}
-                    onClick={() => setSelectedColor(c)}
-                  ></div>
-                )
-              )}
+              {[
+                { hex: "#000", label: "Black" },
+                { hex: "#c9c1b3", label: "Beige" },
+                { hex: "#d4a99c", label: "Nude" },
+                { hex: "#c94444", label: "Red" },
+                { hex: "#ececec", label: "White" },
+              ].map((color, i) => (
+                <div
+                  key={i}
+                  className={styles.colorBox}
+                  style={{ backgroundColor: color.hex }}
+                  onClick={() => setSelectedColor(color.label)}
+                ></div>
+              ))}
             </div>
 
+            {/* Qty + Wishlist */}
             <div className={styles.actions}>
               <div className={styles.qtyBox}>
-                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)}>
-                  -
-                </button>
+                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)}>-</button>
                 <span>{qty}</span>
                 <button onClick={() => setQty(qty + 1)}>+</button>
               </div>
 
-              <button className={styles.wishlist}>♡ Wishlist</button>
+              <button className={styles.wishlist} onClick={addToWishlist}>
+                ♡ Wishlist
+              </button>
             </div>
-            <button className={styles.addCart} onClick={() => { addToCart(product, qty); navigate("/cart"); }}>
+
+            <button
+              className={styles.addCart}
+              onClick={() => {
+                addToCart(product, qty);
+                navigate("/cart");
+              }}
+            >
               Add to Cart
             </button>
 
@@ -177,6 +195,7 @@ export default function ProductPage() {
           </div>
         </div>
       </div>
+
       <Reviews />
     </>
   );
