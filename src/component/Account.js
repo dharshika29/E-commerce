@@ -76,7 +76,6 @@ export default function Account() {
     setWishlistItems(wishlist);
   }, []);
 
-
   const handleImageClick = () => fileInputRef.current.click();
   const handleImageChange = (e) => {
     const file = e.target.files[0];

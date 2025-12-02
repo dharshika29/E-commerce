@@ -5,6 +5,8 @@ import { Bs3CircleFill, Bs2CircleFill, Bs1CircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {
+  localStorage.setItem("checkout_step", 1);
+
   const navigate = useNavigate();
   const { cart, updateQty, removeFromCart } = useCart();
 
@@ -18,7 +20,6 @@ function Cart() {
     localStorage.setItem("checkout_step", n);
   };
 
-
   const [shipping, setShipping] = useState(
     localStorage.getItem("shipping_method") || "free"
   );
@@ -26,7 +27,6 @@ function Cart() {
   useEffect(() => {
     localStorage.setItem("shipping_method", shipping);
   }, [shipping]);
-
 
   const parsePrice = (price) => {
     if (typeof price === "number") return price;
@@ -52,7 +52,6 @@ function Cart() {
     if (val < 1) return;
     updateQty(id, val);
   };
-
 
   const [checkoutData, setCheckoutData] = useState(() => {
     return (
@@ -111,9 +110,8 @@ function Cart() {
     prevOrders.push(newOrder);
     localStorage.setItem("accountOrders", JSON.stringify(prevOrders));
 
-    cart.forEach((i) => removeFromCart(i.id));
-
     localStorage.removeItem("checkoutData");
+    localStorage.removeItem("checkout_step");
 
     setCheckoutData({
       firstName: "",
@@ -137,6 +135,7 @@ function Cart() {
 
   const lastOrder =
     JSON.parse(localStorage.getItem("accountOrders"))?.slice(-1)[0] || {};
+
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>
