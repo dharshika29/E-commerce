@@ -13,29 +13,24 @@ export default function ProductPage() {
   const params = new URLSearchParams(location.search);
   const category = params.get("cat") || "all";
 
+  // --- Get Product ---
   const { id } = useParams();
   const allProducts = Object.values(PRODUCT_DATA).flat();
   const product = allProducts.find((p) => p.id === Number(id));
 
-  // ------------------------------
-  // 🔥 Hooks must be here (TOP LEVEL)
-  // ------------------------------
-
+  // --- Hooks ---
   const [qty, setQty] = useState(1);
   const [selectedColor, setSelectedColor] = useState("Black");
 
   // Offer Timer
-  const [offerEnd] = useState(
-    () => new Date().getTime() + 2 * 24 * 60 * 60 * 1000
-  );
+  const offerEnd = new Date().getTime() + 2 * 24 * 60 * 60 * 1000;
 
-  const calculateTimeLeft = (endTime) => {
+  const calculateTimeLeft = () => {
     const now = new Date().getTime();
-    const diff = endTime - now;
+    const diff = offerEnd - now;
 
-    if (diff <= 0) {
+    if (diff <= 0)
       return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
 
     return {
       days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -45,28 +40,27 @@ export default function ProductPage() {
     };
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(offerEnd));
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
+  // Timer update
   useEffect(() => {
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft(offerEnd));
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [offerEnd]);
+  }, []);
 
-  // Gallery
+  // --- Gallery ---
   const images = [
     product?.img,
     product?.img2 || product?.img,
     product?.img3 || product?.img,
-  ];
+  ].filter(Boolean);
 
-  const [mainImage, setMainImage] = useState(product?.img);
+  const [mainImage, setMainImage] = useState(images[0]);
 
-  // ------------------------------
-  // 🔥 Now safe to return if no product
-  // ------------------------------
+  // If product invalid
   if (!product) {
     return (
       <div className={styles.notFound}>
@@ -76,18 +70,16 @@ export default function ProductPage() {
     );
   }
 
-  // Wishlist Store
+  // Wishlist
   const addToWishlist = () => {
     const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     const exists = wishlist.some((item) => item.id === product.id);
 
-    if (!exists) {
-      wishlist.push(product);
-      localStorage.setItem("wishlist", JSON.stringify(wishlist));
-      alert("Added to wishlist!");
-    } else {
-      alert("Already in wishlist");
-    }
+    if (exists) return alert("Already in wishlist");
+
+    wishlist.push(product);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    alert("Added to wishlist!");
   };
 
   return (
@@ -135,30 +127,22 @@ export default function ProductPage() {
             </p>
 
             <div className={styles.priceWrap}>
-              <span className={styles.newPrice}>{product.price}</span>
-              <span className={styles.oldPrice}>${product.oldPrice}.00</span>
+              <span className={styles.newPrice}>{product.price}.00</span>
+              {product.oldPrice && (
+                <span className={styles.oldPrice}>${product.oldPrice}.00</span>
+              )}
             </div>
 
             {/* Timer */}
             <div className={styles.timerBox}>
               <h4>Offer expires in:</h4>
               <div className={styles.timerRow}>
-                <div className={styles.timerItem}>
-                  <span>{String(timeLeft.days).padStart(2, "0")}</span>
-                  <p>Days</p>
-                </div>
-                <div className={styles.timerItem}>
-                  <span>{String(timeLeft.hours).padStart(2, "0")}</span>
-                  <p>Hours</p>
-                </div>
-                <div className={styles.timerItem}>
-                  <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
-                  <p>Minutes</p>
-                </div>
-                <div className={styles.timerItem}>
-                  <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
-                  <p>Seconds</p>
-                </div>
+                {["days", "hours", "minutes", "seconds"].map((unit) => (
+                  <div key={unit} className={styles.timerItem}>
+                    <span>{String(timeLeft[unit]).padStart(2, "0")}</span>
+                    <p>{unit.charAt(0).toUpperCase() + unit.slice(1)}</p>
+                  </div>
+                ))}
               </div>
             </div>
 

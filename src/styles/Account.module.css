@@ -9,9 +9,52 @@
   font-weight: 700;
   margin-bottom: 40px;
 }
-.account_profile_leftside {
-  /* display: flex; */
-  /* justify-content: center; */
+/* ============================= */
+/*     ORDERS TABLE PERFECT      */
+/* ============================= */
+
+.order_wrapper {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 0;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+/* Header row */
+.table_header {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 20px;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+/* Order rows */
+.order_row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f2f2f2;
+  align-items: center;
+  font-size: 15px;
+  color: #444;
+}
+
+.order_row:last-child {
+  border-bottom: none;
+}
+
+.order_row:hover {
+  background: #fafafa;
+}
+
+.order_row p {
+  margin: 0;
 }
 
 .profileCard {
@@ -380,8 +423,8 @@
 }
 .table_header {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  padding: 18px 0;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+  padding: 18px 20px;
   font-weight: 600;
   color: #000000;
   border-bottom: 1px solid #e6e6e6;
@@ -511,3 +554,312 @@
   cursor: pointer;
   border-radius: 4px;
 }
+.wishlistRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 60px; /* 4 columns */
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.wishlistHeader {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 60px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.productInfo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+}
+
+.removeIcon {
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.removeIcon:hover {
+  color: red;
+}
+.addCartBtn {
+  background: black;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.sectionTitle {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.addressGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+.addrCard {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.addrCardHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.editBtn {
+  font-size: 14px;
+  cursor: pointer;
+  color: #555;
+}
+
+.addrCardBody p {
+  margin: 5px 0;
+}
+
+.noAddr {
+  color: #888;
+  font-style: italic;
+}
+
+.formBox {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+}
+
+.formRow {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.formRow input,
+.formRow select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #888;
+}
+
+.saveBtn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.addressGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.noAddressBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.addAddressBtn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.addAddressBtn:hover {
+  background-color: #4338ca;
+}
+
+.addressCard {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.addressHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.smallBtn {
+  padding: 0.3rem 0.6rem;
+  margin-right: 0.4rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.smallBtn:hover {
+  background-color: #2563eb;
+}
+
+.smallDangerBtn {
+  padding: 0.3rem 0.6rem;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.smallDangerBtn:hover {
+  background-color: #b91c1c;
+}
+
+.addressInfo p {
+  margin: 0.2rem 0;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+/* Overlay */
+.addressFormOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(2px);
+}
+
+/* Modal Box */
+.addressFormBox {
+  width: 520px;
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 14px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+  max-height: 55vh;
+  overflow-y: auto;
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Title */
+.modalTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* Grid */
+.formGrid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroupFull {
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label,
+.inputGroupFull label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.inputGroup input,
+.inputGroupFull input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Buttons */
+.formActions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.saveBtn {
+  background: #5a4fcf;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancelBtn {
+  background: #ddd;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+

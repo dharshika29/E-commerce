@@ -1,3 +1,3 @@
 body {
-  padding-top: 100px; /* Navbar-க்கு கீழ் safe space */
+  padding-top: 90px; /* same height as your navbar */
 }

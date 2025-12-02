@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
@@ -20,17 +15,21 @@ import Blog from "./component/Blog";
 import SingleBlog from "./component/SingleBlog";
 import PageWrapper from "./component/Pagewrapper";
 import ScrollToTop from "./component/ScrollTop";
-import { CartProvider } from "./component/CartContext";
 import Cart from "./component/Cart";
+import CartDrawer from "./component/CartDrawer";
 
 function AppWrapper() {
   const location = useLocation();
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
   return (
     <>
       <ScrollToTop />
       <PopupController />
 
-      <Navbar />
+      <Navbar openCart={() => setIsCartOpen(true)} />
+
+      <CartDrawer isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -121,16 +120,9 @@ function AppWrapper() {
 }
 
 function App() {
-  return (
-    <CartProvider>
-      <Router>
-        <AppWrapper />
-      </Router>
-    </CartProvider>
-  );
+  return <AppWrapper />; // <<< FIX: no router, no provider here
 }
 
-// Popup Controller
 function PopupController() {
   const location = useLocation();
   const [showPopup, setShowPopup] = useState(false);

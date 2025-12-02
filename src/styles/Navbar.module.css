@@ -1,6 +1,4 @@
-/* ------------------------- */
-/* NAVBAR WRAPPER */
-/* ------------------------- */
+
 .navbarWrapper {
   width: 100%;
   position: fixed;
@@ -246,4 +244,11 @@
     align-items: center;
     gap: 18px;
   }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 2000 !important;   /* must be above drawer */
 }
