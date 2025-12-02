@@ -18,7 +18,7 @@
   padding-left: 40px;
 }
 .title {
-  font-size: 70px;
+  font-size: 50px;
   font-weight: 600;
 }
 .subtitle{
@@ -219,25 +219,25 @@ display: flex;
   opacity: 0.6;
 }
 .hero3 {
- max-height: 100vh;
+ /* max-height: 100vh; */
   overflow: hidden;
-  padding: 40px 80px;
+  /* padding: 40px 80px; */
 }
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 25px;
+
 }
 .bigCard {
   grid-row: span 2;
   background: #f5f5f5;
- margin-left: 100px;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
   max-height: 90vh;
+  position: relative;
+  left: 90px;
 }
 
 .bigImage {
@@ -250,9 +250,10 @@ display: flex;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
-  max-height: 80%;
-  margin-top: 15px;
+  width: 100%;
+  max-height: 100%;
+  margin: 5px;
+  
  
 }
 
@@ -261,6 +262,7 @@ display: flex;
   height: auto;
   background: none;
   margin-left: 80px;
+  margin-top: 50px;
 }
 
 .textBox {
@@ -322,11 +324,15 @@ font-size: 50px;
   margin-left: 33%;
   list-style:none;
   gap: 10px;
-  margin-top: 50px;
+  margin-top: 100px;
   font-size: 17px;
-  border-bottom: 1px solid;
   width: 35%;
  
+}
+.li p{
+  text-align: center;
+   margin-top: 100px;
+   font-size: 29px;
 }
 .lisi{
   padding-left: 300px;

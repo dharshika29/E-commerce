@@ -227,12 +227,8 @@ function Home3() {
         ))}
       </div>
       <div className={styles.news}>
-        <h1 className={styles.hh3}>Join Our Newsletter</h1>
-        <p className={styles.pp5}>Sign up for deals, new products and promotions</p>
         <div className={styles.li}>
-          <li><FaEnvelope /></li>
-          <li>Email Address</li>
-        <li className={styles.lisi}>SignUp</li>
+         <p>Hockey is a fast-paced team sport<br></br> played on ice or field, where teams use<br></br>sticks to score goals by propelling a puck <br></br>or ball into the opponent's net.</p>
         </div>
       </div>
       <div className={styles.instagram}>

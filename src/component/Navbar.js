@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "../styles/Navbar.module.css";
+
 import {
   FiSearch,
   FiUser,
@@ -9,19 +10,25 @@ import {
   FiMenu,
   FiX,
 } from "react-icons/fi";
-export default function Navbar() {
-   const navigate = useNavigate();
+
+export default function Navbar({ onCartOpen }) {   // ⬅ added prop
+  const navigate = useNavigate();
+
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+
   const toggleDropdown = (name) => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
+
   const closeMobile = () => {
     setMobileOpen(false);
     setActiveDropdown(null);
   };
+
   const isActive = (path) => location.pathname === path;
+
   return (
     <div className={styles.navbarWrapper}>
       <div className={styles.offerBar}>
@@ -30,14 +37,20 @@ export default function Navbar() {
           Shop Now →
         </Link>
       </div>
+
       <nav className={styles.nav}>
+        {/* LOGO */}
         <div className={styles.logo}>3legant.</div>
+
+        {/* MOBILE MENU ICON */}
         <div
           className={styles.mobileIcon}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <FiX /> : <FiMenu />}
         </div>
+
+        {/* MENU LINKS */}
         <ul className={`${styles.links} ${mobileOpen ? styles.showMenu : ""}`}>
           <li className={styles.dropItem}>
             <div className={styles.menuTitle}>
@@ -53,6 +66,7 @@ export default function Navbar() {
                 onClick={() => toggleDropdown("home")}
               />
             </div>
+
             {activeDropdown === "home" && (
               <div className={styles.dropdownMenu}>
                 <Link to="/home/home1" onClick={closeMobile}>
@@ -64,6 +78,7 @@ export default function Navbar() {
               </div>
             )}
           </li>
+
           <li>
             <Link
               to="/shop"
@@ -73,6 +88,7 @@ export default function Navbar() {
               Shop
             </Link>
           </li>
+
           <li>
             <Link
               to="/blog"
@@ -82,6 +98,7 @@ export default function Navbar() {
               Blog
             </Link>
           </li>
+
           <li>
             <Link
               to="/contact"
@@ -92,14 +109,23 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
+
+        {/* NAV ICONS */}
         <div className={styles.icons}>
           <FiSearch className={styles.icon} />
+
           <FiUser
-        className={styles.icon}
-        onClick={() => navigate("/account")}
-        style={{ cursor: "pointer" }}
-      />
-          <FiShoppingBag className={styles.icon}/>
+            className={styles.icon}
+            onClick={() => navigate("/account")}
+            style={{ cursor: "pointer" }}
+          />
+
+          {/* CART ICON – OPENS SIDEBAR */}
+          <FiShoppingBag
+            className={styles.icon}
+            onClick={onCartOpen}    // ⬅ opens cart popup
+            style={{ cursor: "pointer" }}
+          />
         </div>
       </nav>
     </div>
