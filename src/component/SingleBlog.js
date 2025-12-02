@@ -20,29 +20,19 @@ export default function SingleBlog() {
           <span className={styles.breadcrumbTitle}>{blog.title}</span>
         </div>
 
-        {/* Category */}
         <div className={styles.category}>ARTICLE</div>
-
-        {/* Title */}
         <h1 className={styles.title}>{blog.title}</h1>
-
-        {/* Author Row */}
         <div className={styles.authorRow}>
           <span>👤 Henrik Annemark</span>
           <span>📅 {blog.date}</span>
         </div>
-
-        {/* Main Image */}
         <img className={styles.mainImage} src={blog.img} alt={blog.title} />
-
-        {/* Paragraph 1 */}
         <p className={styles.textBlock}>
           Your bathroom serves a variety of functions on a daily basis. From
           your own place to start off the work, wind down after a busy day, and
           relax after special days with comfort and warmth.
         </p>
 
-        {/* Section */}
         <h2 className={styles.heading}>
           A cleaning hub with built-in ventilation
         </h2>
@@ -51,29 +41,21 @@ export default function SingleBlog() {
           cleaning equipment. Using the right items for cleaning and organizing
           makes it easier and helps create a fresh feeling.
         </p>
-
-        {/* Image Grid */}
         <div className={styles.imageGrid}>
           <img src={blog.extra1} alt="Bathroom design 1" />
           <img src={blog.extra2} alt="Bathroom design 2" />
         </div>
-
-        {/* Storage */}
         <h2 className={styles.heading}>Storage with a calming effect</h2>
         <p className={styles.textBlock}>
           Shelves in natural materials and soft colors keep your bathroom items
           within easy reach but stored neatly.
         </p>
-
-        {/* Clutter */}
         <h2 className={styles.heading}>Kit your clutter for easy access</h2>
         <p className={styles.textBlock}>
           A labelled system helps everyone find what they need without
           searching.
         </p>
       </div>
-
-      {/* Flex Side Section */}
       <div className={styles.flexSection}>
         <img className={styles.flexImage} src={blog.extra3} alt="Towel setup" />
 

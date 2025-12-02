@@ -8,7 +8,6 @@ import { FaServer, FaStar } from "react-icons/fa";
 import { CgMenuGridR } from "react-icons/cg";
 import { PiSquaresFourFill, PiSquareSplitHorizontalFill } from "react-icons/pi";
 
-// shop cards
 import shopcardimg1 from "../img1/Shop1/1.png";
 import shopcardimg2 from "../img1/Shop1/2.png";
 import shopcardimg3 from "../img1/Shop1/3.png";
@@ -18,7 +17,7 @@ import shopcardimg6 from "../img1/Shop1/6.png";
 import shopcardimg7 from "../img1/Shop1/7.png";
 import shopcardimg8 from "../img1/Shop1/8.png";
 import shopcardimg9 from "../img1/Shop1/9.png";
-// living room
+
 import Livingimg1 from "../img1/Shop1/living room/1.jpg";
 import Livingimg2 from "../img1/Shop1/living room/2.jpg";
 import Livingimg3 from "../img1/Shop1/living room/3.jpg";
@@ -28,7 +27,7 @@ import Livingimg6 from "../img1/Shop1/living room/6.jpg";
 import Livingimg7 from "../img1/Shop1/living room/7.jpg";
 import Livingimg8 from "../img1/Shop1/living room/8.jpg";
 import Livingimg9 from "../img1/Shop1/living room/9.jpg";
-// Bedroomimg
+
 import Bedroomimg1 from "../img1/Shop1/bedroom/1.jpg";
 import Bedroomimg2 from "../img1/Shop1/bedroom/2.jpg";
 import Bedroomimg3 from "../img1/Shop1/bedroom/3.jpg";
@@ -38,7 +37,7 @@ import Bedroomimg6 from "../img1/Shop1/bedroom/6.jpg";
 import Bedroomimg7 from "../img1/Shop1/bedroom/7.jpg";
 import Bedroomimg8 from "../img1/Shop1/bedroom/8.jpg";
 import Bedroomimg9 from "../img1/Shop1/bedroom/9.jpg";
-// Kitchen
+
 import Kitchenimg1 from "../img1/Shop1/Kitchen/1.jpg";
 import Kitchenimg2 from "../img1/Shop1/Kitchen/2.jpg";
 import Kitchenimg3 from "../img1/Shop1/Kitchen/3.jpg";
@@ -48,7 +47,7 @@ import Kitchenimg6 from "../img1/Shop1/Kitchen/6.jpg";
 import Kitchenimg7 from "../img1/Shop1/Kitchen/7.jpg";
 import Kitchenimg8 from "../img1/Shop1/Kitchen/8.jpg";
 import Kitchenimg9 from "../img1/Shop1/Kitchen/9.jpg";
-// bathroomimg1
+
 import bathroomimg1 from "../img1/Shop1/bathroom/1.jpg";
 import bathroomimg2 from "../img1/Shop1/bathroom/2.jpg";
 import bathroomimg3 from "../img1/Shop1/bathroom/3.jpg";
@@ -58,7 +57,7 @@ import bathroomimg6 from "../img1/Shop1/bathroom/6.jpg";
 import bathroomimg7 from "../img1/Shop1/bathroom/7.jpg";
 import bathroomimg8 from "../img1/Shop1/bathroom/8.jpg";
 import bathroomimg9 from "../img1/Shop1/bathroom/9.jpg";
-// Dinning
+
 import dinningimg1 from "../img1/Shop1/dinning/1.jpg";
 import dinningimg2 from "../img1/Shop1/dinning/2.jpg";
 import dinningimg3 from "../img1/Shop1/dinning/3.jpg";
@@ -68,7 +67,7 @@ import dinningimg6 from "../img1/Shop1/dinning/6.jpg";
 import dinningimg7 from "../img1/Shop1/dinning/7.jpg";
 import dinningimg8 from "../img1/Shop1/dinning/8.jpg";
 import dinningimg9 from "../img1/Shop1/dinning/9.jpg";
-// Outdoor
+
 import outdoorimg1 from "../img1/Shop1/outdoor/1.jpg";
 import outdoorimg2 from "../img1/Shop1/outdoor/2.jpg";
 import outdoorimg3 from "../img1/Shop1/outdoor/3.jpg";
@@ -738,7 +737,6 @@ export default function Shop1() {
               </div>
             </div>
 
-            {/* RIGHT CATEGORY PRODUCTS */}
             <div className={`col-md-9 ${styles.shop_card_col2}`}>
               <ProductGrid
                 title={

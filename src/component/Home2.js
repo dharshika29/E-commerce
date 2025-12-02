@@ -132,9 +132,6 @@ function Home1() {
       badge: "HOT",
     }
   ];
-
-
-
   const logo = [
     { id: 1, img: img1 },
     { id: 2, img: img2 },
@@ -143,7 +140,6 @@ function Home1() {
     { id: 5, img: img5 },
     { id: 6, img: img6 }
   ];
-
   const card = [
     {
       id: 1,
@@ -189,7 +185,6 @@ function Home1() {
 
   return (
     <>
-
       <div className={styles.hero}>
         <div className={styles.left}></div>
         <div className={styles.right}>

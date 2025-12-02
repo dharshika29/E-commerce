@@ -129,7 +129,6 @@ export default function Navbar() {
                 className={styles.icon}
                 onClick={() => navigate("/account")}
               />
-              {/* ✅ Open cart drawer on click */}
               <FiShoppingBag
                 className={styles.icon}
                 onClick={() => setCartOpen(true)}
@@ -138,7 +137,6 @@ export default function Navbar() {
           </nav>
         </div>
 
-        {/* Cart Drawer */}
         <CartDrawer isOpen={cartOpen} onClose={() => setCartOpen(false)} />
       </div>
     </>

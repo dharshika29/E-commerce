@@ -9,12 +9,11 @@ export default function Account() {
   const [category, setCategory] = useState("account");
   const navigate = useNavigate();
 
-  // Profile
   const [profileImg, setProfileImg] = useState(img);
   const [displayName, setDisplayName] = useState("");
   const fileInputRef = useRef(null);
 
-  // Account form
+ 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,7 +25,6 @@ export default function Account() {
   const [showNew, setShowNew] = useState(false);
   const [showRepeat, setShowRepeat] = useState(false);
 
-  // Addresses
   const [addrFirstName, setAddrFirstName] = useState("");
   const [addrLastName, setAddrLastName] = useState("");
   const [street, setStreet] = useState("");
@@ -39,15 +37,13 @@ export default function Account() {
   const [showAddressForm, setShowAddressForm] = useState(false);
   const [editingIndex, setEditingIndex] = useState(null);
 
-  // Orders and wishlist
+
   const [orders, setOrders] = useState([]);
   const [wishlistItems, setWishlistItems] = useState([]);
 
-  // Alerts
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
 
-  // Load data
   useEffect(() => {
     const savedData = JSON.parse(localStorage.getItem("accountData")) || {};
     setFirstName(savedData.firstName || "");
@@ -80,7 +76,7 @@ export default function Account() {
     setWishlistItems(wishlist);
   }, []);
 
-  // Profile image
+
   const handleImageClick = () => fileInputRef.current.click();
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -89,7 +85,6 @@ export default function Account() {
     }
   };
 
-  // Form validation
   const validateForm = () => {
     let newErrors = {};
     if (!firstName.trim()) newErrors.firstName = "First name is required";
@@ -126,7 +121,6 @@ export default function Account() {
     }
   };
 
-  // Address handlers
   const handleEditAddress = (index) => {
     const addr = savedAddresses[index];
     if (!addr) return;
@@ -203,7 +197,6 @@ export default function Account() {
         <h1>My Account</h1>
         <div className={`container ${styles.account_profile}`}>
           <div className={`row ${styles.account_profile_row}`}>
-            {/* LEFT SIDEBAR */}
             <div className={`col-md-3 ${styles.account_profile_leftside}`}>
               <div className={styles.profileCard}>
                 <div className={styles.profileCard_img}>
@@ -277,9 +270,7 @@ export default function Account() {
               </div>
             </div>
 
-            {/* RIGHT CONTENT */}
             <div className={`col-md-9 ${styles.account_profile_rightside}`}>
-              {/* ACCOUNT FORM */}
               {category === "account" && (
                 <>
                   <h2 className={styles.sectionTitle}>Account Details</h2>
@@ -398,7 +389,7 @@ export default function Account() {
                 </>
               )}
 
-              {/* ADDRESS */}
+
               {category === "address" && (
                 <>
                   <h2 className={styles.sectionTitle}>Address Details</h2>
@@ -464,7 +455,7 @@ export default function Account() {
                 </>
               )}
 
-              {/* ORDERS */}
+
               {category === "orders" && (
                 <>
                   <h2 className={styles.sectionTitle}>Your Orders</h2>
@@ -491,7 +482,7 @@ export default function Account() {
                 </>
               )}
 
-              {/* WISHLIST */}
+
               {category === "wishlist" && (
                 <>
                   <h2 className={styles.sectionTitle}>Your Wishlist</h2>
@@ -549,7 +540,6 @@ export default function Account() {
         </div>
       </div>
 
-      {/* ADDRESS MODAL */}
       {showAddressForm && (
         <div className={styles.addressFormOverlay}>
           <div className={styles.addressFormBox}>
@@ -649,7 +639,6 @@ export default function Account() {
         </div>
       )}
 
-      {/* ALERT */}
       {showAlert && (
         <div
           className={styles.alert_overlay}

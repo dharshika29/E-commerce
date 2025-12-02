@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useLocation, Link, useNavigate } from "react-router-dom";
 import { PRODUCT_DATA } from "./Shop1";
 import styles from "../styles/ProductPage.module.css";
@@ -25,12 +25,11 @@ export default function ProductPage() {
   // Offer Timer
   const offerEnd = new Date().getTime() + 2 * 24 * 60 * 60 * 1000;
 
-  const calculateTimeLeft = () => {
+  const calculateTimeLeft = useCallback(() => {
     const now = new Date().getTime();
     const diff = offerEnd - now;
 
-    if (diff <= 0)
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
     return {
       days: Math.floor(diff / (1000 * 60 * 60 * 24)),
@@ -38,20 +37,19 @@ export default function ProductPage() {
       minutes: Math.floor((diff / 1000 / 60) % 60),
       seconds: Math.floor((diff / 1000) % 60),
     };
-  };
+  }, [offerEnd]);
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-  // Timer update
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [calculateTimeLeft]);
 
-  // --- Gallery ---
+
   const images = [
     product?.img,
     product?.img2 || product?.img,
@@ -170,9 +168,7 @@ export default function ProductPage() {
             {/* Qty + Wishlist */}
             <div className={styles.actions}>
               <div className={styles.qtyBox}>
-                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)}>
-                  -
-                </button>
+                <button onClick={() => setQty(qty > 1 ? qty - 1 : 1)}>-</button>
                 <span>{qty}</span>
                 <button onClick={() => setQty(qty + 1)}>+</button>
               </div>

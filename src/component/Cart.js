@@ -8,9 +8,6 @@ function Cart() {
   const navigate = useNavigate();
   const { cart, updateQty, removeFromCart } = useCart();
 
-  /* ---------------------------
-      STEP CONTROLLER
-  --------------------------- */
   const [step, setStep] = useState(() => {
     const saved = localStorage.getItem("checkout_step");
     return saved ? Number(saved) : 1;
@@ -21,9 +18,7 @@ function Cart() {
     localStorage.setItem("checkout_step", n);
   };
 
-  /* ---------------------------
-      SHIPPING METHOD
-  --------------------------- */
+
   const [shipping, setShipping] = useState(
     localStorage.getItem("shipping_method") || "free"
   );
@@ -32,9 +27,7 @@ function Cart() {
     localStorage.setItem("shipping_method", shipping);
   }, [shipping]);
 
-  /* ---------------------------
-      PRICE HELPERS
-  --------------------------- */
+
   const parsePrice = (price) => {
     if (typeof price === "number") return price;
     if (typeof price === "string")
@@ -60,9 +53,7 @@ function Cart() {
     updateQty(id, val);
   };
 
-  /* ---------------------------
-      CHECKOUT FORM STATE
-  --------------------------- */
+
   const [checkoutData, setCheckoutData] = useState(() => {
     return (
       JSON.parse(localStorage.getItem("checkoutData")) || {
@@ -94,7 +85,6 @@ function Cart() {
 
     localStorage.setItem("checkoutData", JSON.stringify(checkoutDataWithItems));
 
-    // Save Address for Account Page
     const address = {
       firstName: checkoutData.firstName,
       lastName: checkoutData.lastName,
@@ -108,7 +98,6 @@ function Cart() {
 
     localStorage.setItem("checkoutAddress", JSON.stringify([address]));
 
-    // Save Order in Account Page
     const newOrder = {
       id: "ORD" + new Date().getTime(),
       date: new Date().toLocaleDateString(),
@@ -122,13 +111,10 @@ function Cart() {
     prevOrders.push(newOrder);
     localStorage.setItem("accountOrders", JSON.stringify(prevOrders));
 
-    // Clear cart
     cart.forEach((i) => removeFromCart(i.id));
 
-    // 🔥 CLEAR CHECKOUT FORM DATA FROM LOCAL STORAGE
     localStorage.removeItem("checkoutData");
 
-    // 🔥 RESET STATE TO EMPTY FIELDS
     setCheckoutData({
       firstName: "",
       lastName: "",
@@ -146,26 +132,17 @@ function Cart() {
       items: [],
     });
 
-    // GO TO COMPLETE PAGE
     goToStep(3);
   };
 
-  /* ---------------------------
-      COMPLETE PAGE — LAST ORDER
-  --------------------------- */
   const lastOrder =
     JSON.parse(localStorage.getItem("accountOrders"))?.slice(-1)[0] || {};
-
-  /* ---------------------------
-      UI START
-  --------------------------- */
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>
         {step === 1 ? "Cart" : step === 2 ? "Checkout" : "Complete!"}
       </h1>
 
-      {/* STEP HEADERS */}
       <div className={styles.buttons}>
         <p
           className={step === 1 ? styles.activeStep : ""}
@@ -188,10 +165,6 @@ function Cart() {
           <Bs3CircleFill /> Order Complete
         </p>
       </div>
-
-      {/* ---------------------------
-          STEP 1 — CART PAGE
-      --------------------------- */}
       {step === 1 && (
         <div className={styles.container}>
           <table className={styles.table}>
@@ -249,8 +222,6 @@ function Cart() {
               ))}
             </tbody>
           </table>
-
-          {/* SUMMARY */}
           <div className={styles.summaryBox}>
             <h3>Cart Summary</h3>
 
@@ -299,10 +270,6 @@ function Cart() {
           </div>
         </div>
       )}
-
-      {/* ---------------------------
-          STEP 2 — CHECKOUT FORM
-      --------------------------- */}
       {step === 2 && (
         <div className={styles.checkoutWrapper}>
           <div className={styles.leftSection}>
@@ -343,8 +310,6 @@ function Cart() {
                 placeholder="Email"
               />
             </div>
-
-            {/* SHIPPING ADDRESS */}
             <div className={styles.cardBox}>
               <h3>Shipping Address</h3>
 
@@ -393,7 +358,6 @@ function Cart() {
               />
             </div>
 
-            {/* PAYMENT */}
             <div className={styles.cardBox}>
               <h3>Payment Method</h3>
 
@@ -449,8 +413,6 @@ function Cart() {
               Place Order
             </button>
           </div>
-
-          {/* SUMMARY RIGHT */}
           <div className={styles.rightSection}>
             <div className={styles.summaryCard}>
               <h3>Order Summary</h3>
@@ -487,16 +449,11 @@ function Cart() {
         </div>
       )}
 
-      {/* ---------------------------
-          STEP 3 — ORDER COMPLETE
-      --------------------------- */}
       {step === 3 && (
         <div className={styles.orderCompleteWrapper}>
           <div className={styles.orderCard}>
             <h2 className={styles.thankyou}>Thank You! 🎉</h2>
             <h1 className={styles.mainTitle}>Your order has been received</h1>
-
-            {/* Product Preview */}
             <div className={styles.productRow}>
               {(lastOrder.items || []).map((item) => (
                 <div className={styles.productBox} key={item.id}>
@@ -505,8 +462,6 @@ function Cart() {
                 </div>
               ))}
             </div>
-
-            {/* ORDER DETAILS */}
             <div className={styles.detailsBox}>
               <p>
                 <span>Order Code:</span> {lastOrder.id}
