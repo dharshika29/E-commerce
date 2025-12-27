@@ -22,7 +22,6 @@ import article1 from '../image3/j article1.png'
 import article2 from '../image3/j article2.png'
 import article3 from '../image3/j article3.png'
 import { FaArrowRightLong } from "react-icons/fa6";
-import { FaEnvelope } from "react-icons/fa";
 import insta1 from '../image3/j lastimg1.png';
 import insta2 from '../image3/j lastimg2.png';
 import insta3 from '../image3/j lastimg3.png';
@@ -222,7 +221,7 @@ function Home3() {
           <div className={styles.category}>
             <img src={articles.img} alt="" width="100%" />
             <p className={styles.pp4}>{articles.desc}</p>
-            <a href="#">Read More <FaArrowRightLong /></a>
+            <a href="/">Read More <FaArrowRightLong /></a>
           </div>
         ))}
       </div>

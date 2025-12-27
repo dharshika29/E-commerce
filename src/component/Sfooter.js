@@ -8,7 +8,6 @@ export default function Sfooter() {
   return (
     <>
       <div className={styles.banner}>
-        {/* <img src={join} alt="Headphone" className={styles.leftImg} /> */}
         <div className={styles.name2}>
           <div className={styles.centerContent}>
             <h2 className={styles.tit}>Join Our Newsletter</h2>
@@ -25,11 +24,9 @@ export default function Sfooter() {
             </div>
           </div>
         </div>
-        {/* 
-        <img src={girlImg} alt="Girl" className={styles.rightImg} /> */}
+    
       </div>
 
-      {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.footerTop}>
           <p className={styles.logoo}>
@@ -40,7 +37,6 @@ export default function Sfooter() {
           <nav className={styles.nav}>
             <a href="/">Home</a>
             <a href="/shop">Shop</a>
-            {/* <a href="/">Product</a> */}
             <a href="/blog">Blog</a>
             <a href="/contact">Contact Us</a>
           </nav>

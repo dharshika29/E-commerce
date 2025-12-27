@@ -6,7 +6,6 @@ const Product = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
-  // If state is null → redirect to shop page
   if (!state) {
     navigate("/shop");
     return null;
@@ -19,13 +18,9 @@ const Product = () => {
       </div>
 
       <div className={styles.productSection}>
-
-        {/* Left */}
         <div className={styles.left}>
           <img src={state.img} className={styles.productImg} alt="" />
         </div>
-
-        {/* Right */}
         <div className={styles.right}>
           <h2 className={styles.title}>{state.title}</h2>
 

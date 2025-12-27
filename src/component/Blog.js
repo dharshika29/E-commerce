@@ -17,8 +17,8 @@ import image7 from "../Image2/s-img7.png";
 import image8 from "../Image2/s-img5.png";
 import image9 from "../Image2/s-img6.png";
 import image10 from "../Image2/s-img5.png";
-
 import Sfooter from "./Sfooter";
+
 
 export default function Blog() {
   const initialCount = 6;
@@ -26,79 +26,19 @@ export default function Blog() {
   const [expanded, setExpanded] = useState(false);
 
   const data = [
-    {
-      id: 1,
-      img: image1,
-      title: "7 ways to decorate your home like a professional",
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 1",
-    },
-    {
-      id: 2,
-      img: image2,
-      title: "Inside a beautiful kitchen organization",
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 2",
-    },
-    {
-      id: 3,
-      img: image3,
-      title: "Decor your bedroom for your children",
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 3",
-    },
+    { id: 1, img: image1, title: "7 ways to decorate your home like a professional", date: "March 20, 2024" },
+    { id: 2, img: image2, title: "Inside a beautiful kitchen organization", date: "March 20, 2024" },
+    { id: 3, img: image3, title: "Decor your bedroom for your children", date: "March 20, 2024" },
   ];
 
   const repeated = [
-    {
-      id: 4,
-      title: "Modern town home is beautiful & kid-friendly",
-      img: image4,
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 4",
-    },
-    {
-      id: 5,
-      title: "Luxury interior styling for modern homes",
-      img: image5,
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 5",
-    },
-    {
-      id: 6,
-      title: "Perfect light setups for living rooms",
-      img: image6,
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 6",
-    },
-    {
-      id: 7,
-      title: "How to choose the perfect furniture",
-      img: image7,
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 7",
-    },
-    {
-      id: 8,
-      title: "Small home decoration ideas",
-      img: image8,
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 8",
-    },
-    {
-      id: 9,
-      title: "Modern minimalist interior trends",
-      img: image9,
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 9",
-    },
-    {
-      id: 10,
-      title: "Stylish and budget-friendly bedroom setup",
-      img: image10,
-      date: "March 20, 2024",
-      description: "Detailed description for blog post 10",
-    },
+    { id: 4, img: image4, title: "Modern town home is beautiful & kid-friendly", date: "March 20, 2024" },
+    { id: 5, img: image5, title: "Luxury interior styling for modern homes", date: "March 20, 2024" },
+    { id: 6, img: image6, title: "Perfect light setups for living rooms", date: "March 20, 2024" },
+    { id: 7, img: image7, title: "How to choose the perfect furniture", date: "March 20, 2024" },
+    { id: 8, img: image8, title: "Small home decoration ideas", date: "March 20, 2024" },
+    { id: 9, img: image9, title: "Modern minimalist interior trends", date: "March 20, 2024" },
+    { id: 10, img: image10, title: "Stylish and budget-friendly bedroom setup", date: "March 20, 2024" },
   ];
 
   const allData = [...data, ...repeated];
@@ -123,15 +63,9 @@ export default function Blog() {
 
           <div className={styles.shop_text}>
             <div className={styles.shop_icon}>
-              <a href="/">
-                <h5>Home</h5>
-              </a>
-              <span>
-                <MdKeyboardArrowRight />
-              </span>
-              <a href="#">
-                <h5>Blog</h5>
-              </a>
+              <Link to="/"><h5>Home</h5></Link>
+              <span><MdKeyboardArrowRight /></span>
+              <Link to="/blog"><h5>Blog</h5></Link>
             </div>
 
             <h1>Blog Page</h1>
@@ -165,12 +99,7 @@ export default function Blog() {
 
         <div className={styles.grid}>
           {allData.slice(0, visibleCount).map((item) => (
-            <Link
-              to={`/blog/${item.id}`}
-              key={item.id}
-              className={styles.card}
-              style={{ textDecoration: "none", color: "inherit" }}
-            >
+            <Link to={`/blog/${item.id}`} className={styles.card} key={item.id}>
               <div className={styles.imgBox}>
                 <img src={item.img} alt={item.title} />
               </div>

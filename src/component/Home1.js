@@ -40,7 +40,6 @@ function Home1() {
 }
 export default Home1;
 
-// Home slide img -------------------------------------------------------------------
 function Homeslide() {
   const hslide = [
     {
@@ -73,17 +72,11 @@ function Homeslide() {
   return (
     <div div className={styles.home_page}>
       <div className={styles.hslidebg}>
-        {/* <div className={styles.slideTitleBox}>
-          <h3 className={styles.slideMainTitle}><span>3</span>legant.</h3>
-          <p className={styles.slideTag}>Modern Furniture Store</p>
-          <p className={styles.slideTag}>Style your home with comfort</p>
-        </div> */}
         <div
           className={`${styles.slideWrapper} ${
             slide.reverse ? styles.reverse : ""
           } ${styles[fadeState]}`}
         >
-          {/* slide img--------------------------------------------  */}
           <div
             className={` ${styles.slideimg} ${
               hslide.id === 1 ? styles.slidesimg1 : styles.slideimg2
@@ -93,7 +86,6 @@ function Homeslide() {
           </div>
         </div>
       </div>
-      {/* slide botton title-------------------------------------------------- */}
       <div className={styles.bottom_text_bg}>
         <div className={styles.bottom_text1}>
           <h1>
@@ -109,7 +101,6 @@ function Homeslide() {
         </div>
       </div>
 
-      {/* --------- home Living Room--------- */}
       <div className={`container ${styles.home_product_container}`}>
         <div className={styles.home_product_row}>
           <div className={styles.home_product_col1}>
@@ -138,7 +129,6 @@ function Homeslide() {
         </div>
       </div>
 
-      {/* =======New Arrivals--------------------------------------- */}
       <div className={styles.new_arrivals}>
         <div className={styles.new1}>
           <h1>New Arrivals</h1>
@@ -151,7 +141,6 @@ function Homeslide() {
         </div>
       </div>
 
-      {/* delivery card --------------------------------------------- */}
       <div className={styles.delivery_wrap}>
         <div className={styles.delivery_card}>
           <div className={styles.delivery_icon}>
@@ -202,7 +191,6 @@ function Homeslide() {
         </div>
       </div>
 
-      {/* HUNDREDS of New lower prices!------------------------- */}
       <div className={styles.hundres_bg}>
         <div className={`row ${styles.hundres_row}`}>
           <div className={`col-md-6 ${styles.hundres_col1}`}>
@@ -224,12 +212,12 @@ function Homeslide() {
           </div>
         </div>
       </div>
-
-      {/* Articles-------------------------------- */}
       <div className={styles.articale_bg}>
         <div className={styles.articale_title}>
           <h2>Articles</h2>
-          <a href="/blog"><p>More Articles →</p></a>
+          <a href="/blog">
+            <p>More Articles →</p>
+          </a>
         </div>
         <div className={styles.articale_card}>
           <div className={styles.articale_full_card1}>
@@ -257,28 +245,11 @@ function Homeslide() {
           </div>
         </div>
       </div>
-
-      {/* Join Our Newsletter------------------------------- */}
-      {/* <div className={styles.news_bg}>
-        <div className={styles.news_img} >
-        <img src={newsletterimg} alt="" />
-        </div>
-        <div className={styles.news_text}>
-          <h1>Join Our Newsletter</h1>
-          <p>Sign up for deals, new products and promotions</p>
-          <div className={styles.news_icon}>
-            <i><MdOutlineEmail /></i>
-          <input type="email" placeholder="Email address" />
-          <span>Signup</span>
-          </div>
-        </div>
-      </div> */}
       <Sfooter />
     </div>
   );
 }
 
-/* =======New Arrivals--------------------------------------- */
 function Cardhome(category) {
   const navigate = useNavigate();
 

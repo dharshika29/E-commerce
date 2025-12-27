@@ -1,21 +1,58 @@
+/* ===============================
+   Shop Hero / Banner
+================================= */
 .shop_bg {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
+
 .shop_img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.1);
+  animation: imageZoom 8s ease-in-out infinite alternate;
 }
+
+/* Slow Zoom Animation */
+@keyframes imageZoom {
+  from { transform: scale(1.1); }
+  to { transform: scale(1.18); }
+}
+
 .shop_text {
   position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #000000;
+  color: #000;
+}
+
+.shop_text h1 {
+  font-size: 70px;
+  font-weight: 600;
+  margin: 10px 0;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: textReveal 1s forwards;
+}
+
+.shop_text p {
+  font-size: 25px;
+  margin-top: 5px;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: textReveal 1s 0.3s forwards;
+}
+
+@keyframes textReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .shop_icon {
@@ -25,23 +62,15 @@
   gap: 6px;
   font-size: 25px;
 }
+
 .shop_icon a {
   text-decoration: none;
   color: black;
 }
+
 .shop_icon span {
   transform: translateY(-6px);
   font-size: 30px;
-}
-.shop_text h1 {
-  font-size: 70px;
-  font-weight: 600;
-  margin: 10px 0;
-}
-
-.shop_text p {
-  font-size: 25px;
-  margin-top: 5px;
 }
 
 .container {
@@ -103,50 +132,107 @@
 .icons {
   display: flex;
   gap: 10px;
-  margin-left: 10px;
 }
 
-.iconBox {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #000;
-}
-
+/* ===============================
+   Product Grid
+================================= */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 30px;
 }
 
+/* ===============================
+   Product Card
+================================= */
+
+/* IMPORTANT: Remove underline from entire Link card */
+a.card {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+a.card:hover {
+  text-decoration: none !important;
+}
+
 .card {
-  display: flex;
-  flex-direction: column;
-  gap: 10px; 
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: cardFade 0.8s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes cardFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Hover Zoom */
+.imgBox {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
 }
 
 .imgBox img {
   width: 100%;
-  height: auto;
-  border-radius: 8px; 
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
+.imgBox:hover img {
+  transform: scale(1.08);
+}
+
+/* Card Text */
 .cardText {
-  padding: 8px 0;
+  margin-top: 12px;
 }
 
-
-.card h3 {
-  margin: 12px 0 6px;
+.cardText h3 {
   font-size: 18px;
   font-weight: 600;
+  color: #000;
+  margin-bottom: 6px;
+}
+
+/* Remove underline from title & date */
+.cardText h3,
+.cardText p,
+.cardText a,
+.date {
+  text-decoration: none !important;
+  color: #000;
 }
 
 .date {
   font-size: 14px;
-  color: grey;
+  color: #666;
 }
 
-.loadMore {
+/* ===============================
+   Buttons
+================================= */
+.loadMore, .addCart, .wishlist {
   margin: 40px auto 0;
   display: block;
   padding: 10px 22px;
@@ -154,8 +240,30 @@
   background: transparent;
   border-radius: 25px;
   font-size: 15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: all 0.3s ease;
 }
-.loadMore:hover{
-background-color: black;
-color: white;
+
+.loadMore:hover, .addCart:hover, .wishlist:hover {
+  color: #fff;
+  background: #000;
+}
+
+.loadMore::after, .addCart::after, .wishlist::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 0;
+  background: rgba(255,255,255,0.1);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.loadMore:hover::after, .addCart:hover::after, .wishlist:hover::after {
+  width: 100%;
 }

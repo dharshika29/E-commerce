@@ -1,100 +1,108 @@
-/* TOP STEP BUTTONS */
+/* ------------------- TOP STEPS ------------------- */
 .buttons {
   display: flex;
-  gap: 60px;
-  margin-top: 40px;
   justify-content: center;
+  gap: 70px;
+  margin-top: 25px;
 }
 
 .buttons p {
   font-size: 18px;
-  color: black;
-  font-family: inherit;
+  font-weight: 600;
   cursor: pointer;
-  position: relative;
   display: flex;
   align-items: center;
-  gap: 6px;
-  transition: 0.3s ease;
+  gap: 8px;
+  color: #999;
+  transition: 0.2s;
 }
 
 .buttons p:hover {
-  color: #45B26B;
+  color: #000;
 }
 
-/* Underline animation */
-.buttons p:after {
-  content: "";
-  bottom: -2px;
-  left: 50%;
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background-color: #45B26B;
-  transition: 0.4s;
+.buttons svg {
+  color: #000;
+  font-size: 22px;
 }
 
-.buttons p:hover:after {
-  width: 100%;
-  left: 0%;
-}
-
-/* MAIN CONTAINER */
+/* ------------------- MAIN WRAPPER ------------------- */
 .main {
-  width: 85%;
-  margin: auto;
-  padding: 30px 0;
-  font-family: "Poppins", sans-serif;
+  width: 92%;
+  max-width: 1250px;
+  margin: 30px auto 60px;
 }
 
-/* PAGE TITLE */
+/* ------------------- TITLE ------------------- */
 .title {
-  font-size: 42px;
+  font-size: 46px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 15px;
 }
 
-/* GRID LAYOUT — FIXED */
+/* ------------------- FIXED GRID ------------------- */
 .container {
   display: grid;
-  grid-template-columns: 1fr  350px;
+  grid-template-columns: 1fr 360px;
   gap: 40px;
+  margin-top: 50px;
   align-items: start;
-  margin-top: 70px;
 }
 
-/* TABLE */
+/* ------------------- CART TABLE ------------------- */
 .table {
   width: 100%;
   border-collapse: collapse;
 }
 
 .table th {
+  font-size: 14px;
+  padding-bottom: 20px;
   text-align: left;
-  padding-bottom: 10px;
-  font-size: 15px;
   font-weight: 600;
-}
-
-.table td {
-  padding: 15px 10px;
+  color: #555;
   border-bottom: 1px solid #eee;
-  vertical-align: middle;  /* FIX: align content correctly */
 }
 
-/* FIX: Table row equal height */
-.table tr {
-  height: 95px;
-}
-
-/* FIX: Product Column Width */
+/* PERFECT COLUMN ALIGNMENT */
 .table th:nth-child(1),
 .table td:nth-child(1) {
   width: 45%;
 }
 
-/* PRODUCT CELL */
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 15%;
+  text-align: left;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 20%;
+  text-align: left;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 10%;
+  text-align: right;
+}
+
+.table th:nth-child(5),
+.table td:nth-child(5) {
+  width: 10%;
+  text-align: center;
+}
+
+.table td {
+  padding: 20px 5px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  font-size: 15px;
+}
+
+/* ------------------- PRODUCT CELL ------------------- */
 .productCell {
   display: flex;
   align-items: center;
@@ -102,78 +110,72 @@
 }
 
 .productImg {
-  width: 70px;
-  height: 70px;
+  width: 75px;
+  height: 75px;
   object-fit: cover;
   border-radius: 6px;
-  flex-shrink: 0; /* FIX: don't squeeze image */
 }
 
 .pname {
   font-weight: 600;
   font-size: 16px;
-  color: #333;
+  line-height: 1.3;
+  color: #000;
 }
 
-/* PRICE + QTY + SUBTOTAL ALIGNMENT */
-.table td:nth-child(2),
-.table td:nth-child(4) {
-  text-align: right;
-  white-space: nowrap;
-}
-
-/* QUANTITY BUTTONS */
-.table td:nth-child(3) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+/* ------------------- QUANTITY ------------------- */
+.qty {
+  padding: 0 12px;
+  display: inline-block;
+  font-size: 15px;
 }
 
 .incredecre {
-  padding: 6px 12px;
-  border-radius: 4px;
-  border: 1px solid #ddd;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
   background: white;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  transition: 0.3s;
+  font-weight: bold;
+  transition: 0.15s;
 }
 
 .incredecre:hover {
-  background: #45B26B;
+  background: #000;
   color: white;
 }
 
-/* REMOVE BUTTON */
+/* ------------------- REMOVE BUTTON ------------------- */
 .remove {
-  border: 1px solid #ddd;
-  background: white;
-  padding: 7px 12px;
-  border-radius: 6px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
   cursor: pointer;
-  font-size: 15px;
-  transition: 0.3s ease;
+  color: #777;
+  transition: 0.2s;
 }
 
 .remove:hover {
-  background: #ff4d4f;
-  color: white;
-  border-color: #ff4d4f;
+  color: #ff4d4f;
 }
 
-/* CART SUMMARY BOX */
+/* ------------------- SUMMARY BOX ------------------- */
 .summaryBox {
   background: white;
-  border: 1px solid #eaeaea;
+  border: 1px solid #ccc;
   padding: 25px;
   border-radius: 12px;
+  position: sticky;
+  top: 110px;
   height: fit-content;
 }
 
 .summaryBox h3 {
   font-size: 22px;
+  font-weight: 700;
   margin-bottom: 25px;
 }
 
@@ -181,122 +183,136 @@
 .radioBox {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-bottom: 25px;
+  gap: 12px;
 }
 
 .radioBox label {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 14px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
   font-size: 15px;
-  transition: 0.3s ease;
+  transition: 0.2s;
 }
 
 .radioBox label:hover {
-  border-color: #45B26B;
+  border-color: #000;
 }
 
-/* PRICE ROWS */
+.radioBox input {
+  margin-right: 10px;
+}
+
+/* TOTALS */
 .priceRow,
 .totalRow {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
-}
-
-.priceRow {
-  border-bottom: 1px solid #eee;
+  margin: 18px 0;
+  font-size: 16px;
 }
 
 .totalRow h3 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
 }
 
-/* CHECKOUT BUTTON */
+/* ------------------- CHECKOUT BUTTON ------------------- */
 .checkoutBtn {
   width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  background: black;
+  padding: 16px;
+  border-radius: 10px;
+  background: #000;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
-  margin-top: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  margin-top: 18px;
+  transition: 0.2s;
 }
 
 .checkoutBtn:hover {
   background: #45B26B;
 }
 
-/* RESPONSIVE */
+/* ------------------- RESPONSIVE ------------------- */
 @media (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
   }
 
   .summaryBox {
+    position: relative;
+    top: 0;
     margin-top: 20px;
   }
 }
+/* ------------------- CHECKOUT WRAPPER ------------------- */
 .checkoutWrapper {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 380px;
-  gap: 35px;
-  padding: 20px 40px;
+  grid-template-columns: 1fr 360px;
+  gap: 40px;
+  margin-top: 40px;
   align-items: start;
 }
 
+/* LEFT SIDE SECTIONS */
 .leftSection {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
+/* CARD STYLING */
 .cardBox {
   background: #fff;
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
+  border: 1px solid #ddd;
   padding: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;  
+  border-radius: 12px;
 }
 
 .cardBox h3 {
-  margin-bottom: 5px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 18px;
 }
 
+/* FORM INPUTS */
+.cardBox input,
+.cardBox select {
+  /* width: 100%; */
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  outline: none;
+  transition: 0.2s;
+}
 
+.cardBox input:focus,
+.cardBox select:focus {
+  border-color: #000;
+}
+
+/* TWO COLUMN ROW */
 .twoCol {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-.cardBox input,
-.cardBox select {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #bfbfbf;
-  border-radius: 8px;
-  font-size: 15px;
+  gap: 15px;
 }
 
+/* RADIO BUTTON ROW */
 .radioRow {
   display: flex;
-  gap: 12px;
-  font-size: 15px;
   align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 
 .radioRow input {
@@ -304,98 +320,200 @@
   height: 18px;
 }
 
-.paymentInputs {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+/* PLACE ORDER BUTTON */
 .placeOrderBtn {
-  padding: 15px;
-  background: #000;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 17px;
-  cursor: pointer;
-  width: 100%;
   margin-top: 10px;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
 }
+
+.placeOrderBtn:hover {
+  background: #45B26B;
+}
+
+/* ------------------- RIGHT SIDE ORDER SUMMARY ------------------- */
 .rightSection {
   position: sticky;
-  top: 20px;
+  top: 100px;
 }
 
 .summaryCard {
-  border: 1px solid #dcdcdc;
-  border-radius: 10px;
+  border: 1px solid #ddd;
   padding: 25px;
+  border-radius: 12px;
   background: #fff;
 }
+
+.summaryCard h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ORDER ITEM */
 .summaryItem {
-  display: grid;
-  grid-template-columns: 60px 1fr auto;
-  gap: 15px;
+  display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  justify-content: space-between;
+  margin-bottom: 18px;
 }
 
 .summaryItem img {
-  width: 60px;
-  height: 60px;
+  width: 65px;
+  height: 65px;
+  border-radius: 8px;
   object-fit: cover;
 }
 
+.summaryItem p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.summaryItem span {
+  font-weight: 600;
+}
+
+/* COUPON ROW */
 .couponRow {
   display: grid;
   grid-template-columns: 1fr 90px;
-  gap: 12px;
-  margin: 15px 0;
+  gap: 10px;
+  margin: 20px 0;
 }
 
-.priceRow,
+.couponRow input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.couponRow button {
+  border: none;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* PRICE ROWS */
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 16px;
+}
+
 .totalRow2 {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
-}
-
-.totalRow2 h3 {
-  font-size: 21px;
+  margin-top: 25px;
+  font-size: 20px;
   font-weight: 700;
 }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .checkoutWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .rightSection {
+    position: relative;
+    top: 0;
+  }
+}
+/* =====================
+   MAIN WRAPPER
+===================== */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+/* =====================
+   STEP BUTTONS (TOP NAV)
+===================== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.buttons p {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 6px;
+  transition: 0.3s ease;
+}
+
+.buttons p:hover {
+  color: #2bb673;
+  border-bottom: 2px solid #2bb673;
+}
+
+/* =====================
+   STEP 3 — ORDER COMPLETE
+===================== */
 .orderCompleteWrapper {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
+  padding: 40px 0;
 }
 
 .orderCard {
-  width: 700px;
-  background: #fff;
-  padding: 40px;
-  border-radius: 20px;
+  width: 70%;
+  background: white;
+  border-radius: 16px;
+  padding: 60px 40px;
   text-align: center;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .thankyou {
-  font-size: 28px;
-  color: #333;
+  font-size: 22px;
+  color: #666;
   margin-bottom: 10px;
 }
 
 .mainTitle {
-  font-size: 36px;
-  font-weight: 700;
-  color: #111;
-  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
   line-height: 1.3;
 }
+
+/* =====================
+   PRODUCT PREVIEW BLOCK
+===================== */
 .productRow {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 30px;
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
 .productBox {
@@ -407,43 +525,384 @@
   height: 85px;
   object-fit: cover;
   border-radius: 10px;
-}
-.qtyBadge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #000;
-  color: #fff;
-  font-size: 14px;
-  padding: 4px 8px;
-  border-radius: 50%;
-  font-weight: bold;
-}
-.detailsBox {
-  text-align: left;
-  margin: 0 auto;
-  width: 60%;
-  margin-bottom: 35px;
+  border: 1px solid #ddd;
+  padding: 5px;
 }
 
-.detailsBox p {
+.qtyBadge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #000;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
   display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =====================
+   ORDER DETAILS BOX
+===================== */
+.detailsBox {
+  text-align: left;
+  width: 55%;
+  margin: 0 auto 40px;
+  line-height: 28px;
+  font-size: 15px;
 }
 
 .detailsBox span {
-  font-weight: bold;
-  color: #555;
+  font-weight: 600;
+  color: #333;
+  margin-right: 5px;
 }
 
+/* =====================
+   PURCHASE HISTORY BUTTON
+===================== */
 .historyBtn {
-  background: #111;
-  color: #fff;
+  background: #000;
+  color: white;
   border: none;
-  padding: 14px 28px;
-  border-radius: 30px;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-size: 15px;
   cursor: pointer;
+  transition: 0.3s;
+}
 
+.historyBtn:hover {
+  background: #444;
+}
+
+/* =====================
+   TABLE + CART PAGE DEFAULT
+===================== */
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  gap: 20px;
+}
+
+.table {
+  width: 65%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.productImg {
+  width: 80px;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.productCell {
+  display: flex;
+  align-items: center;
+}
+
+.qty {
+  padding: 0 10px;
+}
+
+.incredecre {
+  padding: 4px 10px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.remove {
+  border: none;
+  background: none;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* =====================
+   CART SUMMARY BOX
+===================== */
+.summaryBox {
+  width: 32%;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.radioBox label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.priceRow,
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.checkoutBtn {
+  width: 100%;
+  padding: 12px;
+  background: black;
+  color: white;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+/* =====================
+   CHECKOUT PAGE
+===================== */
+.checkoutWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.leftSection {
+  width: 65%;
+}
+
+.cardBox {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.cardBox input,
+.cardBox select {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding-left: 12px;
+}
+.radioRow label,
+.radioRow input {
+height: 10px;
+width: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding-left: 12px;
+
+}
+.twoCol {
+  display: flex;
+  gap: 15px;
+}
+
+.radioRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.placeOrderBtn {
+  background: #000;
+  color: white;
+  padding: 14px;
+  border-radius: 40px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* =====================
+   RIGHT SUMMARY CARD
+===================== */
+.rightSection {
+  width: 35%;
+}
+
+.summaryItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.summaryItem img {
+  width: 65px;
+  height: 65px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.couponRow {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.couponRow input {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.couponRow button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: #000;
+  color: white;
+}
+
+.cartContainer {
+  width: 100%;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* ===== TOP STEP BUTTONS ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-bottom: 50px;
+}
+
+.buttons p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  padding-bottom: 6px;
+  color: #888;
+  position: relative;
+  transition: 0.3s;
+}
+
+.buttons p:hover {
+  color: #2db942;
+}
+
+.activeStep {
+  color: #2db942 !important;
+  font-weight: 600;
+}
+
+.activeStep::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2db942;
+  border-radius: 2px;
+}
+
+/* ===== ORDER COMPLETE WHITE CARD ===== */
+.completeBox {
+  width: 60%;
+  margin: 0 auto;
+  background: white;
+  padding: 50px 40px;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.completeBox h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.completeBox h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+/* ===== PRODUCTS ROW ===== */
+.productRow {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.item {
+  position: relative;
+}
+
+.item img {
+  width: 80px;
+  height: auto;
+}
+
+.item span {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background: #2db942;
+  color: white;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+/* ===== DETAILS ===== */
+.details {
+  text-align: left;
+  width: fit-content;
+  margin: 0 auto 30px;
+  font-size: 15px;
+  line-height: 28px;
+}
+
+.details p strong {
+  width: 140px;
+  display: inline-block;
+}
+
+/* ===== BUTTON ===== */
+.historyBtn {
+  background: black;
+  color: white;
+  padding: 10px 26px;
+  font-size: 15px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.historyBtn:hover {
+  background: #2db942;
+}
+@media(min-width:1441px)and (max-width:1950px){
+  .cart-main{
+    max-width: 0;
+    margin: 0;
+    padding: 0;
+  }
 }

@@ -8,35 +8,25 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
-  // ⭐ FLYOUT POPUP STATE
-  const [flyoutOpen, setFlyoutOpen] = useState(false);
-
-  // ===== CART LOCAL STORAGE =====
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // ===== CART FUNCTIONS =====
-  const addToCart = (product, qty = 1) => {
+  const addToCart = (item) => {
     setCart((prev) => {
-      const existing = prev.find((item) => item.id === product.id);
+      const existing = prev.find((i) => i.id === item.id);
       if (existing) {
-        return prev.map((item) =>
-          item.id === product.id ? { ...item, qty: item.qty + qty } : item
+        return prev.map((i) =>
+          i.id === item.id ? { ...i, qty: i.qty + (item.qty || 1) } : i
         );
-      } else {
-        return [...prev, { ...product, qty }];
       }
+      return [...prev, { ...item, qty: item.qty || 1 }];
     });
-
-    // ⭐ Automatically open flyout when added to cart
-    setFlyoutOpen(true);
   };
 
-  const updateQty = (id, newQty) => {
-    if (newQty < 1) return;
+  const updateQty = (id, qty) => {
     setCart((prev) =>
-      prev.map((item) => (item.id === id ? { ...item, qty: newQty } : item))
+      prev.map((item) => (item.id === id ? { ...item, qty } : item))
     );
   };
 
@@ -46,28 +36,17 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => setCart([]);
 
-  // ⭐ OPEN / CLOSE FLYOUT FUNCTIONS
-  const openFlyout = () => setFlyoutOpen(true);
-  const closeFlyout = () => setFlyoutOpen(false);
-
   return (
     <CartContext.Provider
-      value={{
-        cart,
-        addToCart,
-        updateQty,
-        removeFromCart,
-        clearCart,
-
-        // flyout values
-        flyoutOpen,
-        openFlyout,
-        closeFlyout,
-      }}
+      value={{ cart, addToCart, updateQty, removeFromCart, clearCart }}
     >
       {children}
     </CartContext.Provider>
   );
 };
 
-export const useCart = () => useContext(CartContext);
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (!context) throw new Error("useCart must be used within a CartProvider");
+  return context;
+};

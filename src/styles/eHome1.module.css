@@ -925,3 +925,14 @@
     font-size: 13px;
   }
 }
+@media (min-width: 1441px) and (max-width: 1950px) {
+  .slideimg{
+    margin-top: 25px;
+  }
+  .hundres_col1 img{
+    width: 100%;
+  }
+  .articale_card1 img{
+    width:500px;
+  }
+}
