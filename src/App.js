@@ -123,7 +123,7 @@ function AppWrapper() {
 }
 
 function App() {
-  return <AppWrapper />; // <<< FIX: no router, no provider here
+  return <AppWrapper />; 
 }
 
 function PopupController() {
