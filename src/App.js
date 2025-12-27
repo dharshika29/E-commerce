@@ -18,12 +18,14 @@ import ScrollToTop from "./component/ScrollTop";
 import Cart from "./component/Cart";
 import CartDrawer from "./component/CartDrawer";
 
+
 function AppWrapper() {
   const location = useLocation();
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
     <>
+   
       <ScrollToTop />
       <PopupController />
 
@@ -115,12 +117,13 @@ function AppWrapper() {
           />
         </Routes>
       </AnimatePresence>
+    
     </>
   );
 }
 
 function App() {
-  return <AppWrapper />; // <<< FIX: no router, no provider here
+  return <AppWrapper />; 
 }
 
 function PopupController() {
@@ -129,6 +132,7 @@ function PopupController() {
 
   useEffect(() => {
     const homePages = ["/", "/home/home1", "/home/home2"];
+
     if (homePages.includes(location.pathname)) {
       const timer = setTimeout(() => setShowPopup(true), 0);
       return () => clearTimeout(timer);

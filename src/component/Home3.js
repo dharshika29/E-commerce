@@ -92,7 +92,7 @@ function Home3() {
             Whether you’re just starting out,have played<br></br> your whole life or you're a
             Tour pro, your<br></br>  swing is like a fingerprint.
           </p>
-          <button className={styles.btn}>Shopping Now</button>
+       <a href="/shop"><button className={styles.btn}>Shopping Now</button></a>
         </div>
       </div>
       <h1 className={styles.hh1}>Featured</h1>
@@ -107,7 +107,7 @@ function Home3() {
                   src={items.img}
                   className={styles.cardimg}
                 />
-                <button className={styles.cartBtn}>ADD TO CART</button>
+                <a href="/"><button className={styles.cartBtn}>ADD TO CART</button></a>
               </div>
               <Card.Body>
                 <Card.Title>

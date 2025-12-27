@@ -1,4 +1,4 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
+
 import React from "react";
 import styles from "../styles/ContactUs.module.css";
 
@@ -10,7 +10,8 @@ import Sfooter from "./Sfooter";
 export default function ContactUs() {
   return (
     <div>
-      <div className={`container ${styles.contact_page}`}>
+      <div className={styles.contact_page}>
+        <div className={styles.main}>
         <div className={styles.contact_page_title}>
           <h2>
             We believe in sustainable decor. We’re passionate about life at
@@ -32,7 +33,7 @@ export default function ContactUs() {
             <h2>About Us</h2>
             <p>
               3legant is a gift & decorations store based in HCMC, Vietnam. Est
-              since 2019. <br /> Our customer service is always prepared to
+              since 2019. Our customer service is always prepared to
               support you 24/7
             </p>
             <a href="/shop">
@@ -98,6 +99,7 @@ export default function ContactUs() {
             </div>
           </div>
         </div>
+      </div>
       </div>
       <Sfooter/>
     </div>
