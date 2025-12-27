@@ -8,8 +8,13 @@ export default function CartDrawer({ isOpen, onClose }) {
   const { cart, updateQty, removeFromCart } = useCart();
   const navigate = useNavigate();
 
-  const parsePrice = (price) =>
-    typeof price === "number" ? price : parseFloat(price.replace(/[$,]/g, "")) || 0;
+  const parsePrice = (price) => {
+    if (price === undefined || price === null) return 0;
+
+    if (typeof price === "number") return price;
+
+    return parseFloat(price.toString().replace(/[$,]/g, "")) || 0;
+  };
 
   const formatPrice = (num) =>
     Number(num).toLocaleString("en-US", { style: "currency", currency: "USD" });
@@ -53,12 +58,17 @@ export default function CartDrawer({ isOpen, onClose }) {
                       -
                     </button>
                     <span>{item.qty}</span>
-                    <button onClick={() => handleQtyChange(item.id, item.qty + 1)}>
+                    <button
+                      onClick={() => handleQtyChange(item.id, item.qty + 1)}
+                    >
                       +
                     </button>
                   </div>
                 </div>
-                <button className={styles.remove} onClick={() => removeFromCart(item.id)}>
+                <button
+                  className={styles.remove}
+                  onClick={() => removeFromCart(item.id)}
+                >
                   X
                 </button>
               </div>
