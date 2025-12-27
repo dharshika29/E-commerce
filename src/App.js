@@ -132,6 +132,7 @@ function PopupController() {
 
   useEffect(() => {
     const homePages = ["/", "/home/home1", "/home/home2"];
+
     if (homePages.includes(location.pathname)) {
       const timer = setTimeout(() => setShowPopup(true), 0);
       return () => clearTimeout(timer);

@@ -192,7 +192,7 @@ function Home1() {
             Listen to the <span>amazing</span> music sound.
           </h1>
           <p className={styles.subtitley}>Experience music like never before</p>
-          <button className={styles.btn}>Shopping Now</button>
+          <a href="/shop"><button className={styles.btn}>Shopping Now</button></a>
         </div>
       </div>
       <div className={styles.hero1}>

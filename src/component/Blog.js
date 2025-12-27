@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "../styles/s-blog.module.css";
 
 import shopbgimg from "../Image2/s-blog1.png";
@@ -16,8 +17,8 @@ import image7 from "../Image2/s-img7.png";
 import image8 from "../Image2/s-img5.png";
 import image9 from "../Image2/s-img6.png";
 import image10 from "../Image2/s-img5.png";
+import Sfooter from "./Sfooter";
 
-import { Link } from "react-router-dom";
 
 export default function Blog() {
   const initialCount = 6;
@@ -123,6 +124,7 @@ export default function Blog() {
           )}
         </div>
       </div>
+      <Sfooter />
     </>
   );
 }
